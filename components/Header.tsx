@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
         >
           <a href="#" className="block transition-transform hover:scale-105 active:scale-95">
             <img 
-              src="https://storage.googleapis.com/replit/images/1739324072671_6846f48f43063f92ed191ce6b41f71a7.png" 
+              src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png" 
               alt="Newtec Logo" 
               className="h-9 md:h-11 object-contain filter drop-shadow-lg"
               loading="eager"
