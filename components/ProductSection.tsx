@@ -27,8 +27,8 @@ export const ProductSection: React.FC = () => {
             { 
               name: "Ceftriaxona Newtec", 
               type: "Ceftriaxona sódica", 
-              icon: "💉", 
-              isImage: false,
+              icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ceftriaxona-newtec-laboratorio-ibero-americano.png", 
+              isImage: true,
               color: "from-blue-100 to-white" 
             }
           ].map((prod, i) => (
@@ -76,7 +76,7 @@ export const ProductSection: React.FC = () => {
                 {m === 1 ? '?' : '✨'}
               </div>
               <h3 className="text-2xl font-brand font-black mb-3 opacity-30 uppercase tracking-tight">PRÓXIMAMENTE</h3>
-              <p className="text-lg opacity-20 italic font-light">"Algo bueno está por llegar..."</p>
+              <p className="text-lg opacity-20 italic font-light italic">"Algo bueno está por llegar..."</p>
               <div className="mt-10 px-6 py-2 rounded-full border border-white/10 text-[10px] font-black tracking-[0.2em] uppercase opacity-30">
                 Revelado en {m === 1 ? '2026' : '2027'}
               </div>
