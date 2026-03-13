@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+// Unificamos el trazo en 1.2 para que los iconos de líneas simples no opaquen al microscopio
 const IconWrapper = ({ children, isCustom = false }: { children: React.ReactNode, isCustom?: boolean }) => (
   <div className="w-16 h-16 mb-8 flex items-center justify-center relative group-hover:scale-110 transition-transform duration-500">
     <div className="absolute inset-0 bg-purple-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -9,7 +10,7 @@ const IconWrapper = ({ children, isCustom = false }: { children: React.ReactNode
       fill={isCustom ? "currentColor" : "none"} 
       viewBox={isCustom ? "0 0 100 100" : "0 0 24 24"}
       stroke={isCustom ? "none" : "currentColor"}
-      strokeWidth={1.8}
+      strokeWidth={1.2} 
       strokeLinecap="round" 
       strokeLinejoin="round"
     >
@@ -78,7 +79,7 @@ export const Features: React.FC = () => {
             desc="Maquinaria de vanguardia que elimina errores humanos y optimiza la estabilidad química del fármaco."
             icon={
               <IconWrapper>
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" strokeWidth={2} />
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
               </IconWrapper>
             }
           />
@@ -88,8 +89,8 @@ export const Features: React.FC = () => {
             desc="Trazabilidad total y rigurosidad analítica. Superamos la norma en cada lote gracias a procesos modernos."
             icon={
               <IconWrapper>
-                <path d="M9 11l3 3L22 4" strokeWidth={2.5} />
-                <path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9c1.5 0 3 .4 4.2 1.1" strokeWidth={2} />
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 12l3 3 5-5" />
               </IconWrapper>
             }
           />
