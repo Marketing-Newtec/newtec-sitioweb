@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Componente de Icono SVG mejorado
+// Componente de Icono SVG optimizado
 const IconWrapper = ({ children }: { children: React.ReactNode }) => (
   <div className="w-16 h-16 mb-8 flex items-center justify-center relative group-hover:scale-110 transition-transform duration-500">
     <div className="absolute inset-0 bg-purple-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-    <svg className="w-full h-full text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
+    <svg className="w-full h-full text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
       {children}
     </svg>
   </div>
@@ -61,14 +61,15 @@ export const Features: React.FC = () => {
             desc="Procesos controlados de llenado en ambientes ISO-5, garantizando la máxima seguridad para el paciente crítico."
             icon={
               <IconWrapper>
-                {/* MICROSCOPIO PROFESIONAL BASADO EN REFERENCIA */}
-                <path d="M4 21h16" />
-                <path d="M7 21h2c0-3 1-5 4-5h1" />
-                <path d="M11 16c4 0 5-2 5-5" />
-                <path d="M9 13h5" />
-                <path d="M17.5 3.5l-4 7" strokeWidth="2"/>
-                <path d="M13 3l1.5-1 4 7-1.5 1z" />
-                <circle cx="12" cy="16" r="1" fill="currentColor" />
+                {/* MICROSCOPIO IDÉNTICO A REFERENCIA */}
+                <path d="M5 21l2-3h10l2 3H5z" /> {/* Base trapezoidal */}
+                <path d="M10 18c0-4 1-7 6-7" />   {/* Brazo curvo exterior */}
+                <path d="M10 18c0-2.5.5-4.5 3.5-4.5" /> {/* Brazo curvo interior */}
+                <circle cx="14" cy="11" r="2.5" /> {/* Revólver / Unión */}
+                <path d="M7 16h6" /> {/* Platina */}
+                <path d="M11 8l7-5.5 2.5 3-7 5.5-2.5-3z" /> {/* Tubo óptico principal */}
+                <path d="M18.5 2.5l2 1.5" /> {/* Ocular superior */}
+                <path d="M10 9l2 1.5" /> {/* Objetivo inferior */}
               </IconWrapper>
             }
           />
@@ -78,7 +79,7 @@ export const Features: React.FC = () => {
             desc="Maquinaria de vanguardia que elimina errores humanos y optimiza la estabilidad química del fármaco."
             icon={
               <IconWrapper>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
               </IconWrapper>
             }
           />
@@ -88,7 +89,8 @@ export const Features: React.FC = () => {
             desc="Trazabilidad total y rigurosidad analítica. Superamos la norma en cada lote gracias a procesos modernos."
             icon={
               <IconWrapper>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                <path d="M9 12l2 2 4-4" />
+                <path d="M12 3l2.5 2.5h3.5v3.5L21 12l-2.5 2.5v3.5h-3.5L12 21l-2.5-2.5H6v-3.5L3 12l2.5-2.5V6h3.5L12 3z" />
               </IconWrapper>
             }
           />
