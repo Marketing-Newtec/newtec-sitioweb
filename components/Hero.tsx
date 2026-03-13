@@ -10,7 +10,7 @@ export const Hero: React.FC = () => {
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-purple-500 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse"></div>
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-indigo-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse delay-1000"></div>
       </div>
-
+{/*
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -25,7 +25,7 @@ export const Hero: React.FC = () => {
         >
           Argentina • España • Calidad Superior
         </motion.div>
-        
+*/}        
         <h1 className="font-brand text-7xl md:text-9xl lg:text-[10rem] font-black mb-10 leading-[0.85] tracking-tighter">
           INNOVACIÓN <br />
           <motion.span 
