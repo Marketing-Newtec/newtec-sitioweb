@@ -28,11 +28,11 @@ export const Features: React.FC = () => {
             viewport={{ once: true }}
             className="max-w-4xl text-center lg:text-left flex flex-col items-center lg:items-start"
           >
-            {/* Título: Triple línea en móvil, doble línea en desktop */}
+            {/* Título: Triple línea en móvil, color púrpura unificado en el cierre */}
             <h2 className="text-[10vw] xs:text-5xl md:text-7xl lg:text-6xl xl:text-8xl font-brand font-black mb-6 md:mb-8 leading-[0.9] tracking-tighter uppercase">
-              <span className="block">Equipamiento</span>
-              <span className="block md:inline">de última</span>
-              <span className="block text-purple-300"> generación.</span>
+              <span className="block text-white">Equipamiento</span>
+              <span className="block md:inline text-purple-300">de última</span>
+              <span className="block md:inline text-purple-300"> generación.</span>
             </h2>
             <div className="h-1.5 md:h-2 w-32 md:w-48 bg-gradient-to-r from-transparent via-white to-transparent lg:from-white lg:to-transparent rounded-full"></div>
           </motion.div>
