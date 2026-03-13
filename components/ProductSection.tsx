@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -18,8 +17,20 @@ export const ProductSection: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {[
-            { name: "Ampi Sulba Newtec", type: "Ampicilina + Sulbactam", icon: "💊", color: "from-purple-100 to-white" },
-            { name: "Ceftriaxona Newtec", type: "Ceftriaxona sódica", icon: "💉", color: "from-blue-100 to-white" }
+            { 
+              name: "Ampi Sulba Newtec", 
+              type: "Ampicilina + Sulbactam", 
+              icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ampisulba-newtec-laboratorio-iberoamericano.png", 
+              isImage: true,
+              color: "from-purple-100 to-white" 
+            },
+            { 
+              name: "Ceftriaxona Newtec", 
+              type: "Ceftriaxona sódica", 
+              icon: "💉", 
+              isImage: false,
+              color: "from-blue-100 to-white" 
+            }
           ].map((prod, i) => (
             <motion.div 
               key={prod.name}
@@ -31,9 +42,19 @@ export const ProductSection: React.FC = () => {
               className="group bg-white rounded-[3rem] p-10 text-purple-900 shadow-2xl relative flex flex-col items-center text-center cursor-default"
             >
               <div className="absolute top-6 right-8 bg-purple-100 px-4 py-1.5 rounded-full text-[10px] font-black tracking-widest text-purple-600 uppercase">Disponible</div>
-              <div className="w-40 h-40 bg-purple-50 rounded-full flex items-center justify-center text-6xl shadow-inner mb-10 group-hover:rotate-6 transition-all duration-500">
-                {prod.icon}
+              
+              <div className="w-40 h-40 bg-purple-50 rounded-full flex items-center justify-center shadow-inner mb-10 group-hover:rotate-6 transition-all duration-500 overflow-hidden p-4">
+                {prod.isImage ? (
+                  <img 
+                    src={prod.icon} 
+                    alt={prod.name} 
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  <span className="text-6xl">{prod.icon}</span>
+                )}
               </div>
+
               <h3 className="text-2xl font-brand font-black mb-3 leading-tight">{prod.name}</h3>
               <p className="text-[11px] font-black text-purple-400 mb-6 tracking-widest uppercase">ANTIBIÓTICO BETALACTÁMICO</p>
               <p className="text-base leading-relaxed text-purple-900/60 font-medium">{prod.type}. Polvo estéril para solución inyectable de máxima pureza.</p>
@@ -55,9 +76,9 @@ export const ProductSection: React.FC = () => {
                 {m === 1 ? '?' : '✨'}
               </div>
               <h3 className="text-2xl font-brand font-black mb-3 opacity-30 uppercase tracking-tight">PRÓXIMAMENTE</h3>
-              <p className="text-lg opacity-20 italic font-light italic">"Algo bueno está por llegar..."</p>
+              <p className="text-lg opacity-20 italic font-light">"Algo bueno está por llegar..."</p>
               <div className="mt-10 px-6 py-2 rounded-full border border-white/10 text-[10px] font-black tracking-[0.2em] uppercase opacity-30">
-                Revelado en {m === 1 ? '2024' : '2025'}
+                Revelado en {m === 1 ? '2026' : '2027'}
               </div>
             </motion.div>
           ))}
