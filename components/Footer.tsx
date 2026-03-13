@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
         <div className="lg:col-span-2">
           <motion.img 
             whileHover={{ scale: 1.05 }}
-            src="https://storage.googleapis.com/replit/images/1739324072671_6846f48f43063f92ed191ce6b41f71a7.png" 
+            src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png" 
             alt="Newtec Logo" 
             className="h-10 mb-10 object-contain" 
           />
@@ -52,8 +52,8 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black tracking-[0.5em] uppercase opacity-30">
-        <p>&copy; {currentYear} NEWTEC LABORATORIOS S.A. ALL RIGHTS RESERVED.</p>
-        <p className="text-center md:text-right">DESIGNED FOR EXCELLENCE &bull; GMP/EMA COMPLIANT</p>
+        <p>&copy; {currentYear} LABORATORIO IBERO AMERICANO S.A. TODOS LOS DERECHOS RESERVADOS.</p>
+        <p className="text-center md:text-right">DISEÑADO POR IT - LABORATORIO IBERO AMERICANO S.A.</p>
       </div>
     </footer>
   );
