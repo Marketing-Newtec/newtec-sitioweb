@@ -31,7 +31,7 @@ export const OriginSection: React.FC = () => {
               className="flex flex-col w-24 h-14 rounded-xl overflow-hidden shadow-2xl border border-white/20 aura-glow"
             >
               <div className="bg-[#C60B1E] h-1/4"></div>
-              <div className="bg-[#FFC400] h-1/2 flex items-center justify-center text-xs">🛡️</div>
+              <div className="bg-[#FFC400] h-1/2 flex items-center justify-center text-xs"></div>
               <div className="bg-[#C60B1E] h-1/4"></div>
             </motion.div>
           </motion.div>
