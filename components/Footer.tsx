@@ -8,49 +8,54 @@ export const Footer: React.FC = () => {
     <footer className="bg-[#411e63] pt-32 pb-12 px-6 mt-20 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-20 mb-32 relative z-10">
-        <div className="lg:col-span-2">
+      {/* Grid configurado para 4 columnas en Desktop, 2 en tablets y 1 en móvil */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-32 relative z-10">
+        
+        {/* Columna 1: Newtec */}
+        <div>
           <motion.img 
             whileHover={{ scale: 1.05 }}
             src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png" 
             alt="Newtec Logo" 
             className="h-10 mb-10 object-contain" 
           />
-          <p className="text-purple-100/60 text-lg max-w-sm mb-12 leading-relaxed italic font-light">
+          <p className="text-purple-100/60 text-base leading-relaxed italic font-light">
             "Tecnología y Calidad: El ADN de un laboratorio que llegó para transformar la salud hospitalaria argentina."
           </p>
-
-          {/* VERSIÓN ORIGINAL OCULTA (IZQUIERDA) - COMENTADA PARA USO FUTURO */}
-          {/* <div className="mt-12 mb-12">
-            <h5 className="text-[10px] font-black tracking-[0.4em] uppercase opacity-40 mb-6">Nuestro Partner</h5>
-            <a 
-              href="https://www.distribuidoragamma.com.ar/web/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block group"
-            >
-              <motion.img 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
-                alt="Distribuidora Gamma" 
-                className="h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all"
-              />
-            </a>
-          </div>
-          */}
-
-          <div className="flex gap-4">
+          <div className="mt-8">
             <span className="text-[10px] font-black tracking-[0.3em] uppercase px-5 py-2.5 bg-white/5 border border-white/10 rounded-full text-purple-200">
               GCP Certified S.A.
             </span>
           </div>
         </div>
 
+        {/* Columna 2: Nuestro Partner (Gamma) */}
+        <div>
+          <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Nuestro Partner</h4>
+          <a 
+            href="https://www.distribuidoragamma.com.ar/web/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block group"
+          >
+            <motion.img 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
+              alt="Distribuidora Gamma" 
+              className="h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all"
+            />
+          </a>
+          <p className="mt-8 text-purple-100/40 text-[11px] leading-relaxed uppercase tracking-wider font-bold">
+            Distribuidor Logístico <br /> Estratégico
+          </p>
+        </div>
+
+        {/* Columna 3: Navegación */}
         <div>
           <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Navegación</h4>
           <ul className="space-y-6 text-purple-100/70 text-base font-semibold">
-            {['Tecnología', 'Portafolio', 'Alianza', 'Sumate'].map(item => (
+            {['Tecnología', 'Portafolio', 'Alianza'].map(item => (
               <li key={item}>
                 <a href={`#${item.toLowerCase()}`} className="hover:text-white transition-all hover:translate-x-2 inline-block">
                   {item}
@@ -60,6 +65,7 @@ export const Footer: React.FC = () => {
           </ul>
         </div>
 
+        {/* Columna 4: Legal & Contacto */}
         <div>
           <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Legal & Contacto</h4>
           <ul className="space-y-6 text-purple-100/70 text-base font-semibold">
@@ -67,31 +73,12 @@ export const Footer: React.FC = () => {
             <li><a href="#" className="hover:text-white transition-all hover:translate-x-2 inline-block">Privacidad</a></li>
             <li><a href="mailto:info@newtec.com.ar" className="hover:text-white transition-all hover:translate-x-2 inline-block underline decoration-purple-500 underline-offset-8">info@newtec.com.ar</a></li>
             <li className="pt-6 text-white/90 font-black tracking-wider text-sm">Buenos Aires, Argentina</li>
-            
-            {/* NUEVA UBICACIÓN DEL PARTNER (DERECHA) */}
-            <li className="pt-10">
-              <h5 className="text-[10px] font-black tracking-[0.4em] uppercase opacity-40 mb-4">Nuestro Partner</h5>
-              <a 
-                href="https://www.distribuidoragamma.com.ar/web/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block group"
-              >
-                <motion.img 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
-                  alt="Distribuidora Gamma" 
-                  className="h-12 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all"
-                />
-              </a>
-            </li>
           </ul>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black tracking-[0.5em] uppercase opacity-30">
-        <p>&copy; {currentYear} LABORATORIO IBERO AMERICANO S.A. TODOS LOS DERECHOS RESERVADOS.</p>
+        <p>&copy; {currentYear} LABORATORIO IBERO AMERICANO S.A. - TODOS LOS DERECHOS RESERVADOS.</p>
         <p className="text-center md:text-right">DISEÑADO POR IT - LABORATORIO IBERO AMERICANO S.A.</p>
       </div>
     </footer>
