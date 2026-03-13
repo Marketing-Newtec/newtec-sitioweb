@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -20,6 +19,19 @@ export const Footer: React.FC = () => {
           <p className="text-purple-100/60 text-lg max-w-sm mb-12 leading-relaxed italic font-light">
             "Tecnología y Calidad: El ADN de un laboratorio que llegó para transformar la salud hospitalaria argentina."
           </p>
+
+          {/* Nueva Sección: Nuestro Partner */}
+          <div className="mt-12 mb-12">
+            <h5 className="text-[10px] font-black tracking-[0.4em] uppercase opacity-40 mb-6">Nuestro Partner</h5>
+            <div className="flex items-center gap-4">
+              <img 
+                src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
+                alt="Distribuidora Gamma" 
+                className="h-14 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-all cursor-default"
+              />
+            </div>
+          </div>
+
           <div className="flex gap-4">
             <span className="text-[10px] font-black tracking-[0.3em] uppercase px-5 py-2.5 bg-white/5 border border-white/10 rounded-full text-purple-200">
               GCP Certified S.A.
