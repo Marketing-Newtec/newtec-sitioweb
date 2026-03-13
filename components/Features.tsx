@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -10,9 +9,7 @@ const FeatureCard: React.FC<{ title: string; desc: string; icon: string; delay: 
     viewport={{ once: true }}
     className="glass-card p-12 rounded-[2.5rem] transition-all hover:-translate-y-4 group hover:border-white/30 hover:bg-white/5 relative overflow-hidden"
   >
-    <div className="absolute top-0 right-0 p-8 text-white/5 text-8xl font-black group-hover:text-white/10 transition-colors uppercase pointer-events-none">
-      {title.split(' ')[0]}
-    </div>
+    {/* Se eliminó el div que contenía el texto gigante de fondo */}
     <div className="text-5xl mb-10 group-hover:scale-110 transition-transform inline-block drop-shadow-glow">
       {icon}
     </div>
