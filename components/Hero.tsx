@@ -14,10 +14,10 @@ export const Hero: React.FC = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="relative z-10 text-center max-w-4xl lg:max-w-5xl xl:max-w-6xl"
+        className="relative z-10 text-center max-w-4xl lg:max-w-5xl"
       >
-        {/* Título: Escalado progresivo para 1024px (lg) y 1440px (xl) */}
-        <h1 className="font-brand text-[12vw] xs:text-6xl md:text-8xl lg:text-[6.5rem] xl:text-[8.5rem] 2xl:text-[10rem] font-black mb-6 md:mb-10 leading-[1.1] md:leading-[0.95] tracking-tighter">
+        {/* Título: Reducido para laptops de 15" (breakpoint lg y xl) */}
+        <h1 className="font-brand text-[12vw] xs:text-6xl md:text-8xl lg:text-[5.5rem] xl:text-[7.5rem] 2xl:text-[9rem] font-black mb-6 md:mb-10 leading-[1.1] md:leading-[0.95] tracking-tighter">
           INNOVACIÓN <br />
           <motion.span 
             initial={{ opacity: 0, x: -50 }}
@@ -29,17 +29,17 @@ export const Hero: React.FC = () => {
           </motion.span>
         </h1>
 
-        {/* Bajada: Reducida en laptops para mayor armonía */}
+        {/* Bajada: Más compacta para no saturar la pantalla de 15" */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="text-lg md:text-2xl lg:text-xl xl:text-2xl font-light text-purple-100/80 max-w-2xl lg:max-w-3xl mx-auto mb-10 md:mb-16 leading-relaxed px-2 md:px-4"
+          className="text-lg md:text-xl lg:text-lg xl:text-xl font-light text-purple-100/80 max-w-2xl mx-auto mb-10 md:mb-16 leading-relaxed px-2 md:px-4"
         >
           Llegamos para redefinir los estándares de la industria hospitalaria con la tecnología más moderna de la región.
         </motion.p>
 
-        {/* Botón: Ajuste de padding para pantallas medianas */}
+        {/* Botón */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
         >
           <a 
             href="#portafolio" 
-            className="group relative px-8 py-4 md:px-10 md:py-5 lg:px-12 lg:py-6 bg-white text-[#592B82] font-black text-lg md:text-xl rounded-2xl overflow-hidden shadow-2xl transition-all hover:shadow-white/20 hover:scale-105 active:scale-95"
+            className="group relative px-8 py-4 md:px-10 md:py-5 lg:px-11 lg:py-5 bg-white text-[#592B82] font-black text-lg rounded-2xl overflow-hidden shadow-2xl transition-all hover:shadow-white/20 hover:scale-105 active:scale-95"
           >
             <span className="relative z-10">DESCUBRÍ NEWTEC</span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
