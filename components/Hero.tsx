@@ -47,11 +47,11 @@ export const Hero: React.FC = () => {
           Llegamos para redefinir los estándares de la industria hospitalaria con la tecnología más moderna de la región.
         </motion.p>
 
-        <motion.div 
+<motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5 }}
-          className="flex flex-col sm:flex-row gap-8 justify-center items-center"
+          className="flex justify-center items-center"
         >
           <a 
             href="#portafolio" 
@@ -60,11 +60,7 @@ export const Hero: React.FC = () => {
             <span className="relative z-10">DESCUBRÍ NEWTEC</span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </a>
-          <p className="text-xs font-bold tracking-[0.3em] text-purple-200/50 uppercase border-b border-white/10 pb-1">
-            "Tecnología y Calidad"
-          </p>
         </motion.div>
-      </motion.div>
 
       <motion.div 
         animate={{ y: [0, 10, 0] }}
