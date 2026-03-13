@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-[110vh] flex flex-col justify-center items-center px-6 overflow-hidden">
+    <section className="relative min-h-[100vh] md:min-h-[110vh] flex flex-col justify-center items-center px-6 overflow-hidden">
       {/* Dynamic Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-purple-500 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse"></div>
@@ -16,30 +16,30 @@ export const Hero: React.FC = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative z-10 text-center max-w-6xl"
       >
-        {/* Título Principal Ajustado */}
-        <h1 className="font-brand text-[12vw] xs:text-6xl md:text-9xl lg:text-[10rem] font-black mb-8 md:mb-10 leading-[0.85] tracking-tighter">
+        {/* Título Principal: Ajuste de leading en móvil para el tilde */}
+        <h1 className="font-brand text-[12vw] xs:text-6xl md:text-9xl lg:text-[10rem] font-black mb-6 md:mb-10 leading-[1.1] md:leading-[0.85] tracking-tighter">
           INNOVACIÓN <br />
           <motion.span 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
-            className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-white/40 inline-block text-glow"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-white/40 inline-block text-glow pt-2 md:pt-0"
           >
             MÉDICA
           </motion.span>
         </h1>
 
-        {/* Bajada de Texto Ajustada */}
+        {/* Bajada de Texto: Reducción de margin inferior en móvil */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="text-lg md:text-3xl font-light text-purple-100/80 max-w-4xl mx-auto mb-12 md:mb-16 leading-relaxed px-2 md:px-4"
+          className="text-lg md:text-3xl font-light text-purple-100/80 max-w-4xl mx-auto mb-10 md:mb-16 leading-relaxed px-2 md:px-4"
         >
           Llegamos para redefinir los estándares de la industria hospitalaria con la tecnología más moderna de la región.
         </motion.p>
 
-        {/* Botón Ajustado para móviles */}
+        {/* Botón */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
