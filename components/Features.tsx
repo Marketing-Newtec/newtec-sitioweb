@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Componente de Icono SVG para mantener el código limpio
+// Componente de Icono SVG mejorado
 const IconWrapper = ({ children }: { children: React.ReactNode }) => (
   <div className="w-16 h-16 mb-8 flex items-center justify-center relative group-hover:scale-110 transition-transform duration-500">
     <div className="absolute inset-0 bg-purple-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-    <svg className="w-full h-full text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className="w-full h-full text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
       {children}
     </svg>
   </div>
@@ -29,7 +29,6 @@ export const Features: React.FC = () => {
   return (
     <section id="tecnología" className="py-12 md:py-40 px-6 relative">
       <div className="max-w-7xl mx-auto">
-        {/* Encabezado centrado en móvil */}
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end gap-10 md:gap-12 mb-16 md:mb-32 text-center lg:text-left">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
@@ -55,7 +54,6 @@ export const Features: React.FC = () => {
           </motion.p>
         </div>
 
-        {/* Grid de Cards con Iconos Vectoriales */}
         <div className="grid md:grid-cols-3 gap-6 md:gap-10">
           <FeatureCard 
             delay={0.2}
@@ -63,8 +61,14 @@ export const Features: React.FC = () => {
             desc="Procesos controlados de llenado en ambientes ISO-5, garantizando la máxima seguridad para el paciente crítico."
             icon={
               <IconWrapper>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v1.242c0 .289.268.497.55.474.59-.048 1.188-.048 1.778 0 .282.023.55-.185.55-.474V3.104c0-.289-.268-.497-.55-.474a15.394 15.394 0 00-1.778 0c-.282.023-.55.185-.55.474zM4.135 7.815a.75.75 0 01.574-.793 20.33 20.33 0 013.39-.371.75.75 0 01.8.695c.023.232.038.466.044.701a.75.75 0 01-.691.768c-.143.01-.286.02-.43.03a.75.75 0 00-.636.568c-.186.603-.31 1.225-.372 1.862a.75.75 0 01-.714.674 15.35 15.35 0 00-2.342.152.75.75 0 01-.84-.666 11.454 11.454 0 01.211-3.62z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l9-5-9-5-9 5 9 5zm0 0v6.5M12 20.5L3 16" />
+                {/* MICROSCOPIO PROFESIONAL BASADO EN REFERENCIA */}
+                <path d="M4 21h16" />
+                <path d="M7 21h2c0-3 1-5 4-5h1" />
+                <path d="M11 16c4 0 5-2 5-5" />
+                <path d="M9 13h5" />
+                <path d="M17.5 3.5l-4 7" strokeWidth="2"/>
+                <path d="M13 3l1.5-1 4 7-1.5 1z" />
+                <circle cx="12" cy="16" r="1" fill="currentColor" />
               </IconWrapper>
             }
           />
