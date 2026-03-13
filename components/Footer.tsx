@@ -20,16 +20,23 @@ export const Footer: React.FC = () => {
             "Tecnología y Calidad: El ADN de un laboratorio que llegó para transformar la salud hospitalaria argentina."
           </p>
 
-          {/* Nueva Sección: Nuestro Partner */}
+          {/* Sección: Nuestro Partner con Enlace */}
           <div className="mt-12 mb-12">
             <h5 className="text-[10px] font-black tracking-[0.4em] uppercase opacity-40 mb-6">Nuestro Partner</h5>
-            <div className="flex items-center gap-4">
-              <img 
+            <a 
+              href="https://www.distribuidoragamma.com.ar/web/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block group"
+            >
+              <motion.img 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
                 alt="Distribuidora Gamma" 
-                className="h-14 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-all cursor-default"
+                className="h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all"
               />
-            </div>
+            </a>
           </div>
 
           <div className="flex gap-4">
