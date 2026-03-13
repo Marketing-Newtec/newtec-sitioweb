@@ -16,20 +16,20 @@ export const Hero: React.FC = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative z-10 text-center max-w-6xl"
       >
-        {/* Título Principal: Ajuste de leading en móvil para el tilde */}
-        <h1 className="font-brand text-[12vw] xs:text-6xl md:text-9xl lg:text-[10rem] font-black mb-6 md:mb-10 leading-[1.1] md:leading-[0.85] tracking-tighter">
+        {/* Título Principal: Interlineado ajustado para el tilde en móvil y desktop */}
+        <h1 className="font-brand text-[12vw] xs:text-6xl md:text-9xl lg:text-[10rem] font-black mb-6 md:mb-10 leading-[1.1] md:leading-[0.95] tracking-tighter">
           INNOVACIÓN <br />
           <motion.span 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
-            className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-white/40 inline-block text-glow pt-2 md:pt-0"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-white/40 inline-block text-glow pt-3 md:pt-4"
           >
             MÉDICA
           </motion.span>
         </h1>
 
-        {/* Bajada de Texto: Reducción de margin inferior en móvil */}
+        {/* Bajada de Texto */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
