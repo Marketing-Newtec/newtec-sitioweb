@@ -20,8 +20,8 @@ export const Footer: React.FC = () => {
             "Tecnología y Calidad: El ADN de un laboratorio que llegó para transformar la salud hospitalaria argentina."
           </p>
 
-          {/* Sección: Nuestro Partner con Enlace */}
-          <div className="mt-12 mb-12">
+          {/* VERSIÓN ORIGINAL OCULTA (IZQUIERDA) - COMENTADA PARA USO FUTURO */}
+          {/* <div className="mt-12 mb-12">
             <h5 className="text-[10px] font-black tracking-[0.4em] uppercase opacity-40 mb-6">Nuestro Partner</h5>
             <a 
               href="https://www.distribuidoragamma.com.ar/web/" 
@@ -38,6 +38,7 @@ export const Footer: React.FC = () => {
               />
             </a>
           </div>
+          */}
 
           <div className="flex gap-4">
             <span className="text-[10px] font-black tracking-[0.3em] uppercase px-5 py-2.5 bg-white/5 border border-white/10 rounded-full text-purple-200">
@@ -66,6 +67,25 @@ export const Footer: React.FC = () => {
             <li><a href="#" className="hover:text-white transition-all hover:translate-x-2 inline-block">Privacidad</a></li>
             <li><a href="mailto:info@newtec.com.ar" className="hover:text-white transition-all hover:translate-x-2 inline-block underline decoration-purple-500 underline-offset-8">info@newtec.com.ar</a></li>
             <li className="pt-6 text-white/90 font-black tracking-wider text-sm">Buenos Aires, Argentina</li>
+            
+            {/* NUEVA UBICACIÓN DEL PARTNER (DERECHA) */}
+            <li className="pt-10">
+              <h5 className="text-[10px] font-black tracking-[0.4em] uppercase opacity-40 mb-4">Nuestro Partner</h5>
+              <a 
+                href="https://www.distribuidoragamma.com.ar/web/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block group"
+              >
+                <motion.img 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
+                  alt="Distribuidora Gamma" 
+                  className="h-12 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all"
+                />
+              </a>
+            </li>
           </ul>
         </div>
       </div>
