@@ -16,19 +16,8 @@ export const Hero: React.FC = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative z-10 text-center max-w-6xl"
       >
-        {/* Argentina • España • Calidad Superior (COMENTADO) */}
-        {/*
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="inline-block px-5 py-2 mb-10 rounded-full border border-white/20 glass-card text-[10px] md:text-xs font-black tracking-[0.4em] uppercase text-purple-100"
-        >
-          Argentina • España • Calidad Superior
-        </motion.div>
-        */}
-        
-        <h1 className="font-brand text-7xl md:text-9xl lg:text-[10rem] font-black mb-10 leading-[0.85] tracking-tighter">
+        {/* Título Principal Ajustado */}
+        <h1 className="font-brand text-[12vw] xs:text-6xl md:text-9xl lg:text-[10rem] font-black mb-8 md:mb-10 leading-[0.85] tracking-tighter">
           INNOVACIÓN <br />
           <motion.span 
             initial={{ opacity: 0, x: -50 }}
@@ -40,15 +29,17 @@ export const Hero: React.FC = () => {
           </motion.span>
         </h1>
 
+        {/* Bajada de Texto Ajustada */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="text-xl md:text-3xl font-light text-purple-100/80 max-w-4xl mx-auto mb-16 leading-relaxed px-4"
+          className="text-lg md:text-3xl font-light text-purple-100/80 max-w-4xl mx-auto mb-12 md:mb-16 leading-relaxed px-2 md:px-4"
         >
           Llegamos para redefinir los estándares de la industria hospitalaria con la tecnología más moderna de la región.
         </motion.p>
 
+        {/* Botón Ajustado para móviles */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,15 +48,13 @@ export const Hero: React.FC = () => {
         >
           <a 
             href="#portafolio" 
-            className="group relative px-12 py-6 bg-white text-[#592B82] font-black text-xl rounded-2xl overflow-hidden shadow-2xl transition-all hover:shadow-white/20 hover:scale-105 active:scale-95"
+            className="group relative px-8 py-4 md:px-12 md:py-6 bg-white text-[#592B82] font-black text-lg md:text-xl rounded-2xl overflow-hidden shadow-2xl transition-all hover:shadow-white/20 hover:scale-105 active:scale-95"
           >
             <span className="relative z-10">DESCUBRÍ NEWTEC</span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </a>
         </motion.div>
       </motion.div>
-
-      {/* LA LÍNEA VERTICAL QUE ESTABA AQUÍ HA SIDO ELIMINADA */}
     </section>
   );
 };
