@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
           Llegamos para redefinir los estándares de la industria hospitalaria con la tecnología más moderna de la región.
         </motion.p>
 
-<motion.div 
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5 }}
@@ -61,6 +61,7 @@ export const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </a>
         </motion.div>
+      </motion.div>
 
       <motion.div 
         animate={{ y: [0, 10, 0] }}
