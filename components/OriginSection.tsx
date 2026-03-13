@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -10,6 +9,7 @@ export const OriginSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-24 relative z-10">
         <div className="lg:w-1/2">
+          {/* Contenedor de Banderas */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,8 @@ export const OriginSection: React.FC = () => {
               </div>
               <div className="bg-[#C60B1E] h-1/4"></div>
             </motion.div>
-            
+          </motion.div> {/* <--- Aquí faltaba cerrar este (el de las banderas) */}
+
           <motion.h2 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -75,14 +76,12 @@ export const OriginSection: React.FC = () => {
             transition={{ duration: 1 }}
             className="relative z-10 aura-glow rounded-[4rem] overflow-hidden border border-white/10"
           >
-            {/* High-quality laboratory visualization with "aura" */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#592B82]/80 via-transparent to-transparent z-10"></div>
             <img 
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/laboratorio-ibero-americano-newtec.png" 
               alt="Instalaciones de vanguardia Newtec-laboratorio" 
               className="w-full h-[600px] object-cover transition-transform duration-[3s] group-hover:scale-110" 
             />
-            {/* Stylized flag mast representation in overlay */}
             <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-black/40 backdrop-blur-sm">
                <div className="text-center">
                   <div className="text-6xl mb-4">🇦🇷 🇪🇸</div>
@@ -101,7 +100,6 @@ export const OriginSection: React.FC = () => {
             </p>
           </motion.div>
           
-          {/* Aura effect behind image */}
           <div className="absolute -inset-10 bg-purple-500/20 blur-[100px] -z-10 group-hover:bg-purple-500/30 transition-colors"></div>
         </div>
       </div>
