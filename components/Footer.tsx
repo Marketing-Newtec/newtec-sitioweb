@@ -46,9 +46,6 @@ export const Footer: React.FC = () => {
               className="h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all"
             />
           </a>
-          <p className="mt-8 text-purple-100/40 text-[11px] leading-relaxed uppercase tracking-wider font-bold">
-            Distribuidor Logístico <br /> Estratégico
-          </p>
         </div>
 
         {/* Columna 3: Navegación */}
