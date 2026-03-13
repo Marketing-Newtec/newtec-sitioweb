@@ -72,8 +72,8 @@ export const OriginSection: React.FC = () => {
             {/* High-quality laboratory visualization with "aura" */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#592B82]/80 via-transparent to-transparent z-10"></div>
             <img 
-              src="https://images.unsplash.com/photo-1579154273155-276686364115?auto=format&fit=crop&q=80&w=1200" 
-              alt="Instalaciones de vanguardia Newtec" 
+              src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/laboratorio-ibero-americano-newtec.png" 
+              alt="Instalaciones de vanguardia Newtec-laboratorio" 
               className="w-full h-[600px] object-cover transition-transform duration-[3s] group-hover:scale-110" 
             />
             {/* Stylized flag mast representation in overlay */}
