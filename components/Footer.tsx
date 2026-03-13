@@ -62,14 +62,22 @@ export const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* Columna 4: Legal & Contacto */}
+        {/* Columna 4: Legal y contacto */}
         <div>
-          <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Legal & Contacto</h4>
+          <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Legal y contacto</h4>
           <ul className="space-y-6 text-purple-100/70 text-base font-semibold">
-            <li><a href="#" className="hover:text-white transition-all hover:translate-x-2 inline-block">Ética y Compliance</a></li>
-            <li><a href="#" className="hover:text-white transition-all hover:translate-x-2 inline-block">Privacidad</a></li>
-            <li><a href="mailto:info@newtec.com.ar" className="hover:text-white transition-all hover:translate-x-2 inline-block underline decoration-purple-500 underline-offset-8">info@newtec.com.ar</a></li>
-            <li className="pt-6 text-white/90 font-black tracking-wider text-sm">Buenos Aires, Argentina</li>
+            <li>
+              <a 
+                href="mailto:info@laboratorionewtec.com.ar" 
+                className="hover:text-white transition-all hover:translate-x-2 inline-block underline decoration-purple-500 underline-offset-8"
+              >
+                info@laboratorionewtec.com.ar
+              </a>
+            </li>
+            <li className="pt-6 text-white/90 font-black tracking-wider text-sm leading-relaxed">
+              Tandil, Buenos Aires,<br />
+              Argentina
+            </li>
           </ul>
         </div>
       </div>
