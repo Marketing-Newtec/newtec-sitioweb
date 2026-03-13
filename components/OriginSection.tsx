@@ -34,13 +34,14 @@ export const OriginSection: React.FC = () => {
               <div className="bg-[#C60B1E] h-1/4"></div>
               <div className="bg-[#FFC400] h-1/2 flex items-center justify-center">
                 <img 
-                  src="URL_DE_TU_IMAGEN_EN_WORDPRESS" 
+                  src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/escudo-espana.png" 
                   alt="Escudo de España" 
                   className="h-full w-auto py-0.5 object-contain"
                 />
               </div>
               <div className="bg-[#C60B1E] h-1/4"></div>
             </motion.div>
+            
           <motion.h2 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
