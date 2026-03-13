@@ -25,17 +25,22 @@ export const OriginSection: React.FC = () => {
               <div className="bg-white h-1/3 flex items-center justify-center text-xs">☀️</div>
               <div className="bg-[#74ACDF] h-1/3"></div>
             </motion.div>
+
             {/* Spain Flag representation */}
             <motion.div 
               whileHover={{ y: -5, scale: 1.05 }}
               className="flex flex-col w-24 h-14 rounded-xl overflow-hidden shadow-2xl border border-white/20 aura-glow"
             >
               <div className="bg-[#C60B1E] h-1/4"></div>
-              <div className="bg-[#FFC400] h-1/2 flex items-center justify-center text-xs"></div>
+              <div className="bg-[#FFC400] h-1/2 flex items-center justify-center">
+                <img 
+                  src="URL_DE_TU_IMAGEN_EN_WORDPRESS" 
+                  alt="Escudo de España" 
+                  className="h-full w-auto py-0.5 object-contain"
+                />
+              </div>
               <div className="bg-[#C60B1E] h-1/4"></div>
             </motion.div>
-          </motion.div>
-
           <motion.h2 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
