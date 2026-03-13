@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -14,10 +13,12 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        
+        {/* Contenedor del Logo: Centrado en móvil, izquierda en desktop */}
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-4"
+          className="flex-1 md:flex-none flex justify-center md:justify-start"
         >
           <a href="#" className="block transition-transform hover:scale-105 active:scale-95">
             <img 
@@ -29,6 +30,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           </a>
         </motion.div>
         
+        {/* Navegación Desktop: Se mantiene igual */}
         <motion.nav 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,6 +50,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             SUMATE
           </a>
         </motion.nav>
+
       </div>
     </header>
   );
