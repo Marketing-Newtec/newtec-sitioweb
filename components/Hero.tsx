@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -10,13 +9,15 @@ export const Hero: React.FC = () => {
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-purple-500 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse"></div>
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-indigo-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse delay-1000"></div>
       </div>
-{/*
+
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative z-10 text-center max-w-6xl"
       >
+        {/* Argentina • España • Calidad Superior (COMENTADO) */}
+        {/*
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -25,7 +26,8 @@ export const Hero: React.FC = () => {
         >
           Argentina • España • Calidad Superior
         </motion.div>
-*/}        
+        */}
+        
         <h1 className="font-brand text-7xl md:text-9xl lg:text-[10rem] font-black mb-10 leading-[0.85] tracking-tighter">
           INNOVACIÓN <br />
           <motion.span 
@@ -63,13 +65,7 @@ export const Hero: React.FC = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div 
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-20 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-px h-20 bg-gradient-to-b from-white to-transparent opacity-30"></div>
-      </motion.div>
+      {/* LA LÍNEA VERTICAL QUE ESTABA AQUÍ HA SIDO ELIMINADA */}
     </section>
   );
 };
