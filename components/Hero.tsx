@@ -27,14 +27,14 @@ export const Hero: React.FC = () => {
         </motion.div>
         
         <h1 className="font-brand text-7xl md:text-9xl lg:text-[10rem] font-black mb-10 leading-[0.85] tracking-tighter">
-          NUEVA <br />
+          INNOVACIÓN <br />
           <motion.span 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
             className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-white/40 inline-block text-glow"
           >
-            ERA
+            MÉDICA
           </motion.span>
         </h1>
 
