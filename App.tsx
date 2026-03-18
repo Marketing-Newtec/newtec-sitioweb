@@ -31,7 +31,7 @@ const App: React.FC = () => {
         <Features />
         <ProductSection />
         <OriginSection />
-        <HRSection />
+        <AboutSection />
       </main>
 
       <Footer />
