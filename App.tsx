@@ -5,10 +5,11 @@ import { Hero } from './components/Hero';
 import { Features } from './components/Features';
 import { ProductSection } from './components/ProductSection';
 import { OriginSection } from './components/OriginSection';
+import { AboutSection } from './components/AboutSection';
 import { HRSection } from './components/HRSection';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
-import { AboutSection } from './components/AboutSection';
+
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
