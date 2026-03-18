@@ -1,8 +1,11 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const HRSection: React.FC = () => {
+  // --- SECCIÓN OCULTA ---
+  // Para volver a mostrar el formulario, simplemente elimina o comenta la línea de abajo:
+  return null; 
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
