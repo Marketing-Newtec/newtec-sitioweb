@@ -15,7 +15,7 @@ export const AboutSection: React.FC = () => {
     },
     { 
       id: 3, 
-      title: "CALIDAD TOTAL\nY PROCESOS RIGUROSOS", 
+      title: "CALIDAD Y\nPROCESOS RIGUROSOS", 
       desc: "Trabajamos con procesos de calidad rigurosos y eficientes, asegurando altos estándares en cada etapa del desarrollo." 
     },
     { 
@@ -41,9 +41,9 @@ export const AboutSection: React.FC = () => {
   ];
 
   return (
-    <section id="nosotros" className="relative overflow-hidden bg-[#411e63]">
-      {/* SECCIÓN SUPERIOR: MISIÓN Y VISIÓN (Fondo Limpio) */}
-      <div className="py-24 md:py-32 px-6 relative z-10 bg-white/5">
+    <section id="nosotros" className="relative overflow-hidden bg-white/5">
+      {/* SECCIÓN SUPERIOR: MISIÓN Y VISIÓN */}
+      <div className="py-24 md:py-32 px-6 relative z-10">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
@@ -73,17 +73,18 @@ export const AboutSection: React.FC = () => {
         </div>
       </div>
 
-      {/* SECCIÓN INFERIOR: VALORES CON PARALLAX */}
+      {/* SECCIÓN INFERIOR: VALORES CON PARALLAX MEJORADO */}
       <div className="relative py-24 md:py-40 px-6">
-        {/* Background con Parallax y Overlay Violeta */}
+        {/* Nueva Imagen de Fondo con mayor visibilidad y Parallax */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-fixed opacity-10"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-fixed opacity-20"
           style={{ 
-            backgroundImage: `url('https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/laboratorio-newtec-fondo.png')`,
+            backgroundImage: `url('https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/5H2A4873-scaled.jpg')`,
           }}
         ></div>
-        {/* Capa de sombreado violeta para integración */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#411e63] via-transparent to-[#411e63]"></div>
+        
+        {/* Overlays para suavizar la imagen y unificar el fondo */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-[#411e63]/20 to-transparent"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div 
@@ -105,7 +106,7 @@ export const AboutSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px] p-8 rounded-[2.5rem] bg-[#411e63]/60 backdrop-blur-md border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.4)] hover:shadow-purple-500/20 hover:border-white/20 transition-all duration-300 group"
+                className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px] p-8 rounded-[2.5rem] bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-purple-500/20 hover:border-white/20 transition-all duration-300 group"
               >
                 <div className="text-white font-brand font-black text-3xl mb-4 opacity-100 group-hover:text-purple-400 transition-colors">
                   {val.id}
