@@ -8,6 +8,7 @@ import { OriginSection } from './components/OriginSection';
 import { HRSection } from './components/HRSection';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
+import { AboutSection } from './components/AboutSection';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
