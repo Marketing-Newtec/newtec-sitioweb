@@ -5,8 +5,8 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-[#411e63] pt-32 pb-12 px-6 mt-20 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+    <footer className="pt-24 pb-12 px-6 relative overflow-hidden bg-transparent">
+      {/* Eliminamos la línea de gradiente que podía generar ese borde visual */}
       
       {/* Grid configurado para 4 columnas en Desktop, 2 en tablets y 1 en móvil */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-32 relative z-10">
