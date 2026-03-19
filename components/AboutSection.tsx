@@ -35,7 +35,7 @@ export const AboutSection: React.FC = () => {
     },
     { 
       id: 7, 
-      title: "SUSTENTABILIDAD Y\nCRECIMIENTO EMPRESARIAL", 
+      title: "SUSTENTABILIDAD Y\nEMPRESARIAL", 
       desc: "La búsqueda de rentabilidad como factor necesario para impulsar el crecimiento tecnológico, innovativo y de bienestar de los colaboradores y el entorno social." 
     }
   ];
