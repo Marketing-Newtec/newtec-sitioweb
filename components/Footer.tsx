@@ -6,8 +6,6 @@ export const Footer: React.FC = () => {
   
   return (
     <footer className="pt-24 pb-12 px-6 relative overflow-hidden bg-transparent">
-      {/* Eliminamos la línea de gradiente que podía generar ese borde visual */}
-      
       {/* Grid configurado para 4 columnas en Desktop, 2 en tablets y 1 en móvil */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-32 relative z-10">
         
@@ -52,7 +50,7 @@ export const Footer: React.FC = () => {
         <div>
           <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Navegación</h4>
           <ul className="space-y-6 text-purple-100/70 text-base font-semibold">
-            {['Tecnología', 'Portafolio', 'Alianza'].map(item => (
+            {['Tecnología', 'Portafolio', 'Alianza', 'Nosotros'].map(item => (
               <li key={item}>
                 <a href={`#${item.toLowerCase()}`} className="hover:text-white transition-all hover:translate-x-2 inline-block">
                   {item}
