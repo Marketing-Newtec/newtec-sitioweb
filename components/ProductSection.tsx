@@ -46,7 +46,7 @@ export const ProductSection: React.FC = () => {
                   key={prod.id}
                   onMouseEnter={() => setHoveredProduct(prod)}
                   onMouseLeave={() => setHoveredProduct(null)}
-                  onClick={() => setHoveredProduct(prod)} // Para mejor UX en tablets/móvil
+                  onClick={() => setHoveredProduct(prod)}
                   className={`px-6 py-4 lg:py-5 lg:px-8 rounded-2xl border transition-all duration-300 flex items-center gap-4 group ${
                     hoveredProduct?.id === prod.id 
                       ? 'bg-white border-white/20 shadow-xl scale-[1.02]' 
@@ -77,13 +77,23 @@ export const ProductSection: React.FC = () => {
                   exit={{ opacity: 0, scale: 1.05 }}
                   className="w-full max-w-[400px] bg-white rounded-[3rem] p-10 md:p-12 text-purple-900 shadow-2xl relative flex flex-col items-center text-center border border-white/10"
                 >
-                  <div className="w-36 h-36 bg-purple-50 rounded-full flex items-center justify-center mb-8 p-4">
-                    <img src={hoveredProduct.icon} alt={hoveredProduct.name} className="w-full h-full object-contain drop-shadow-xl" />
+                  {/* Contenedor del Círculo e Imagen */}
+                  <div className="w-36 h-36 bg-purple-50 rounded-full flex items-center justify-center mb-8 overflow-hidden">
+                    <img 
+                      src={hoveredProduct.icon} 
+                      alt={hoveredProduct.name} 
+                      className={`object-contain drop-shadow-xl transition-transform duration-500 ${
+                        hoveredProduct.line === "Línea para hemoterapia" 
+                        ? 'scale-[1.6]' // Aumento del 60% para maximizar visibilidad en hemoterapia
+                        : 'scale-[1.1]' // Aumento leve para antibióticos
+                      }`} 
+                    />
                   </div>
+                  
                   <h3 className="text-xl md:text-2xl font-brand font-black mb-2 uppercase leading-tight">{hoveredProduct.name}</h3>
                   <p className="text-[10px] font-black text-purple-400 mb-6 tracking-widest uppercase">{hoveredProduct.line}</p>
                   <p className="text-sm md:text-base leading-relaxed text-purple-900/60 font-medium">
-                    {hoveredProduct.type}. {hoveredProduct.line === "Antibiótico Betalactámico" ? "Polvo estéril de máxima pureza." : "Libre de látex."}
+                    {hoveredProduct.type} {hoveredProduct.line === "Antibiótico Betalactámico" ? "Polvo estéril de máxima pureza." : "Libre de látex."}
                   </p>
                 </motion.div>
               ) : (
@@ -93,7 +103,6 @@ export const ProductSection: React.FC = () => {
                   animate={{ opacity: 1 }}
                   className="w-full max-w-[400px] rounded-[3rem] border-2 border-dashed border-white/10 h-[450px] flex flex-col items-center justify-center text-center p-12"
                 >
-                  {/* Icono de Ojo con Líneas Blancas Sutiles */}
                   <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="opacity-20 mb-8">
                     <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
                     <circle cx="12" cy="12" r="3" />
