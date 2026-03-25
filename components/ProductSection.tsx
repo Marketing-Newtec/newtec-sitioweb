@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 
 export const ProductSection: React.FC = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(-1); // -1 indica que no hay producto seleccionado (Estado Inicial)
   const [hoveredProduct, setHoveredProduct] = useState<any>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const products = [
     { id: 1, name: "Ampi Sulba Newtec", line: "Antibiótico Betalactámico", type: "Ampicilina 1 g + Sulbactam 500 mg", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ampisulba-newtec-laboratorio-iberoamericano.png" },
@@ -16,18 +17,25 @@ export const ProductSection: React.FC = () => {
     { id: 8, name: "Bolsa de transferencia", line: "Línea para hemoterapia", type: "Almacenamiento de glóbulos rojos (300/600 ml) y plaquetas (300 ml).", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-transferencia-newtec.png" }
   ];
 
-  const activeProduct = hoveredProduct || products[index];
+  // Detectar si es móvil para activar el slider
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 1024;
+      setIsMobile(mobile);
+      if (mobile && index === -1) setIndex(0); // En móvil empezamos siempre en el primero
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, [index]);
 
-  // Función para manejar el deslizamiento (Swipe)
-  const handleDragEnd = (event: any, info: PanInfo) => {
+  const activeProduct = hoveredProduct || (index >= 0 ? products[index] : null);
+
+  const handleDragEnd = (_: any, info: PanInfo) => {
+    if (!isMobile) return;
     const threshold = 50;
-    if (info.offset.x < -threshold && index < products.length - 1) {
-      setIndex(index + 1);
-      setHoveredProduct(null);
-    } else if (info.offset.x > threshold && index > 0) {
-      setIndex(index - 1);
-      setHoveredProduct(null);
-    }
+    if (info.offset.x < -threshold && index < products.length - 1) setIndex(index + 1);
+    else if (info.offset.x > threshold && index > 0) setIndex(index - 1);
   };
 
   return (
@@ -35,91 +43,93 @@ export const ProductSection: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Encabezado Centrado */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16 md:mb-24"
-        >
+        <motion.div className="text-center mb-16 md:mb-24">
           <h2 className="text-[9vw] md:text-5xl lg:text-7xl font-brand font-black mb-6 md:mb-8 uppercase tracking-tighter leading-[0.9]">
             Los productos insignia <br className="hidden md:block" /> 
             <span className="text-purple-400">de nuestro portfolio</span>
           </h2>
           <p className="text-lg md:text-xl text-purple-100/60 font-light max-w-3xl mx-auto leading-relaxed px-4">
-            Comenzamos con la excelencia. Continuamos con la innovación. <br className="hidden md:block" /> Explora nuestro listado técnico.
+            Comenzamos con la excelencia. Continuamos con la innovación.
           </p>
         </motion.div>
 
         <div className="flex flex-col lg:grid lg:grid-cols-[1fr,1fr] gap-10 lg:gap-16 items-start">
           
-          {/* PANEL IZQUIERDO: Listado Compacto */}
+          {/* PANEL IZQUIERDO: Listado Sincronizado */}
           <div className="w-full overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 scrollbar-hide">
-            <div className="flex lg:flex-col gap-3 lg:gap-4 min-w-max lg:min-w-0">
+            <motion.div 
+              className="flex lg:flex-col gap-3 lg:gap-4 min-w-max lg:min-w-0"
+              animate={isMobile ? { x: -(index * 120) + 100 } : { x: 0 }} // Desplazamiento automático de botones en móvil
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            >
               {products.map((prod, i) => (
                 <motion.button
                   key={prod.id}
-                  onMouseEnter={() => { setHoveredProduct(prod); setIndex(i); }}
-                  onMouseLeave={() => setHoveredProduct(null)}
-                  onClick={() => { setIndex(i); setHoveredProduct(null); }}
-                  className={`px-6 py-4 lg:py-5 lg:px-8 rounded-2xl border transition-all duration-300 flex items-center gap-4 group ${
+                  onMouseEnter={() => !isMobile && setHoveredProduct(prod)}
+                  onMouseLeave={() => !isMobile && setHoveredProduct(null)}
+                  onClick={() => setIndex(i)}
+                  className={`px-6 py-4 lg:py-5 lg:px-8 rounded-2xl border transition-all duration-300 flex items-center gap-4 ${
                     activeProduct?.id === prod.id 
                       ? 'bg-white border-white/20 shadow-xl scale-[1.02]' 
-                      : 'bg-white/5 border-white/5 hover:border-white/10 hover:bg-white/10'
+                      : 'bg-white/5 border-white/5 hover:border-white/10'
                   }`}
                 >
-                  <div className={`w-2 h-2 rounded-full shrink-0 ${
-                    prod.line === "Antibiótico Betalactámico" ? 'bg-purple-400' : 'bg-red-500'
-                  }`}></div>
-                  <h3 className={`text-xs md:text-sm font-brand font-black uppercase tracking-[0.1em] whitespace-nowrap transition-colors ${
-                    activeProduct?.id === prod.id ? 'text-purple-900' : 'text-white'
-                  }`}>
+                  <div className={`w-2 h-2 rounded-full shrink-0 ${prod.line === "Antibiótico Betalactámico" ? 'bg-purple-400' : 'bg-red-500'}`} />
+                  <h3 className={`text-xs md:text-sm font-brand font-black uppercase tracking-[0.1em] whitespace-nowrap ${activeProduct?.id === prod.id ? 'text-purple-900' : 'text-white'}`}>
                     {prod.name}
                   </h3>
                 </motion.button>
               ))}
-            </div>
+            </motion.div>
           </div>
 
-          {/* PANEL DERECHO: Card Dinámica con Swipe para Móvil */}
-          <div className="w-full flex justify-center items-center lg:sticky lg:top-40 min-h-[450px] md:min-h-[550px] touch-none">
+          {/* PANEL DERECHO: Card / Placeholder */}
+          <div className="w-full flex flex-col items-center lg:sticky lg:top-40 min-h-[450px] md:min-h-[550px]">
             <AnimatePresence mode="wait">
-              <motion.div 
-                key={activeProduct.id}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                onDragEnd={handleDragEnd}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                className="w-full max-w-[400px] bg-white rounded-[3rem] p-10 md:p-12 text-purple-900 shadow-2xl relative flex flex-col items-center text-center border border-white/10 cursor-grab active:cursor-grabbing"
-              >
-                <div className="w-40 h-40 bg-purple-50 rounded-full flex items-center justify-center mb-8 overflow-hidden relative">
-                  <img 
-                    src={activeProduct.icon} 
-                    alt={activeProduct.name} 
-                    className={`object-contain drop-shadow-xl transition-transform duration-500 ${
-                      activeProduct.line === "Línea para hemoterapia" 
-                      ? 'scale-[1.35] w-full h-full' 
-                      : 'scale-100 p-4 w-full h-full'
-                    }`} 
-                  />
-                </div>
-                
-                <h3 className="text-xl md:text-2xl font-brand font-black mb-2 uppercase leading-tight">{activeProduct.name}</h3>
-                <p className="text-[10px] font-black text-purple-400 mb-6 tracking-widest uppercase">{activeProduct.line}</p>
-                <p className="text-sm md:text-base leading-relaxed text-purple-900/60 font-medium px-2">
-                  {activeProduct.type}. {activeProduct.line === "Antibiótico Betalactámico" ? "Polvo estéril de máxima pureza." : "Libre de látex."}
-                </p>
-
-                {/* Indicador de Swipe (solo visible en móvil) */}
-                <div className="mt-8 flex gap-1.5 md:hidden">
-                  {products.map((_, i) => (
-                    <div key={i} className={`h-1 rounded-full transition-all ${i === index ? 'w-4 bg-purple-400' : 'w-1 bg-purple-100'}`} />
-                  ))}
-                </div>
-              </motion.div>
+              {activeProduct ? (
+                <motion.div 
+                  key={activeProduct.id}
+                  drag={isMobile ? "x" : false}
+                  dragConstraints={{ left: 0, right: 0 }}
+                  onDragEnd={handleDragEnd}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
+                  className="w-full max-w-[400px] bg-white rounded-[3rem] p-10 md:p-12 text-purple-900 shadow-2xl relative flex flex-col items-center text-center border border-white/10"
+                >
+                  <div className="w-40 h-40 bg-purple-50 rounded-full flex items-center justify-center mb-8 overflow-hidden relative">
+                    <img 
+                      src={activeProduct.icon} 
+                      alt={activeProduct.name} 
+                      className={`object-contain drop-shadow-xl transition-transform duration-500 ${activeProduct.line === "Línea para hemoterapia" ? 'scale-[1.35] w-full h-full' : 'scale-100 p-4 w-full h-full'}`} 
+                    />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-brand font-black mb-2 uppercase leading-tight">{activeProduct.name}</h3>
+                  <p className="text-[10px] font-black text-purple-400 mb-6 tracking-widest uppercase">{activeProduct.line}</p>
+                  <p className="text-sm md:text-base leading-relaxed text-purple-900/60 font-medium px-2">
+                    {activeProduct.type}. {activeProduct.line === "Antibiótico Betalactámico" ? "Polvo estéril de máxima pureza." : "Libre de látex."}
+                  </p>
+                </motion.div>
+              ) : (
+                <motion.div key="placeholder" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="w-full max-w-[400px] rounded-[3rem] border-2 border-dashed border-white/10 h-[450px] flex flex-col items-center justify-center text-center p-12">
+                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="opacity-20 mb-8">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  <h3 className="text-xl font-brand font-black uppercase text-white/30 tracking-tight">Visualización</h3>
+                  <p className="text-white/20 font-light text-sm mt-4 px-6">Selecciona un producto del listado para ver su presentación técnica.</p>
+                </motion.div>
+              )}
             </AnimatePresence>
+
+            {/* Puntos de Navegación fuera de la Card (Solo Móvil) */}
+            {isMobile && (
+              <div className="mt-8 flex gap-2">
+                {products.map((_, i) => (
+                  <div key={i} className={`h-1.5 rounded-full transition-all duration-300 ${i === index ? 'w-6 bg-purple-400' : 'w-1.5 bg-white/20'}`} />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
