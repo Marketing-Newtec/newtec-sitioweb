@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 
 export const ProductSection: React.FC = () => {
-  const [index, setIndex] = useState(-1); // -1 indica que no hay producto seleccionado (Estado Inicial)
+  const [index, setIndex] = useState(-1);
   const [hoveredProduct, setHoveredProduct] = useState<any>(null);
   const [isMobile, setIsMobile] = useState(false);
+  
+  // Referencias para el scroll automático de los botones
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const products = [
     { id: 1, name: "Ampi Sulba Newtec", line: "Antibiótico Betalactámico", type: "Ampicilina 1 g + Sulbactam 500 mg", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ampisulba-newtec-laboratorio-iberoamericano.png" },
@@ -17,12 +21,22 @@ export const ProductSection: React.FC = () => {
     { id: 8, name: "Bolsa de transferencia", line: "Línea para hemoterapia", type: "Almacenamiento de glóbulos rojos (300/600 ml) y plaquetas (300 ml).", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-transferencia-newtec.png" }
   ];
 
-  // Detectar si es móvil para activar el slider
+  // Efecto para centrar el botón activo en móvil
+  useEffect(() => {
+    if (isMobile && index !== -1 && buttonRefs.current[index]) {
+      buttonRefs.current[index]?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
+  }, [index, isMobile]);
+
   useEffect(() => {
     const checkMobile = () => {
       const mobile = window.innerWidth < 1024;
       setIsMobile(mobile);
-      if (mobile && index === -1) setIndex(0); // En móvil empezamos siempre en el primero
+      if (mobile && index === -1) setIndex(0);
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);
@@ -42,7 +56,6 @@ export const ProductSection: React.FC = () => {
     <section id="portafolio" className="py-24 md:py-40 px-6 overflow-hidden bg-white/5 relative">
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* Encabezado Centrado */}
         <motion.div className="text-center mb-16 md:mb-24">
           <h2 className="text-[9vw] md:text-5xl lg:text-7xl font-brand font-black mb-6 md:mb-8 uppercase tracking-tighter leading-[0.9]">
             Los productos insignia <br className="hidden md:block" /> 
@@ -55,20 +68,20 @@ export const ProductSection: React.FC = () => {
 
         <div className="flex flex-col lg:grid lg:grid-cols-[1fr,1fr] gap-10 lg:gap-16 items-start">
           
-          {/* PANEL IZQUIERDO: Listado Sincronizado */}
-          <div className="w-full overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 scrollbar-hide">
-            <motion.div 
-              className="flex lg:flex-col gap-3 lg:gap-4 min-w-max lg:min-w-0"
-              animate={isMobile ? { x: -(index * 120) + 100 } : { x: 0 }} // Desplazamiento automático de botones en móvil
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            >
+          {/* PANEL IZQUIERDO: Listado con Scroll Automático */}
+          <div 
+            ref={scrollContainerRef}
+            className="w-full overflow-x-auto lg:overflow-visible pb-8 lg:pb-0 scrollbar-hide snap-x"
+          >
+            <div className="flex lg:flex-col gap-3 lg:gap-4 min-w-max lg:min-w-0 px-[10vw] lg:px-0">
               {products.map((prod, i) => (
                 <motion.button
                   key={prod.id}
+                  ref={el => buttonRefs.current[i] = el}
                   onMouseEnter={() => !isMobile && setHoveredProduct(prod)}
                   onMouseLeave={() => !isMobile && setHoveredProduct(null)}
                   onClick={() => setIndex(i)}
-                  className={`px-6 py-4 lg:py-5 lg:px-8 rounded-2xl border transition-all duration-300 flex items-center gap-4 ${
+                  className={`px-6 py-4 lg:py-5 lg:px-8 rounded-2xl border transition-all duration-300 flex items-center gap-4 snap-center ${
                     activeProduct?.id === prod.id 
                       ? 'bg-white border-white/20 shadow-xl scale-[1.02]' 
                       : 'bg-white/5 border-white/5 hover:border-white/10'
@@ -80,7 +93,7 @@ export const ProductSection: React.FC = () => {
                   </h3>
                 </motion.button>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* PANEL DERECHO: Card / Placeholder */}
@@ -95,7 +108,7 @@ export const ProductSection: React.FC = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 1.05 }}
-                  className="w-full max-w-[400px] bg-white rounded-[3rem] p-10 md:p-12 text-purple-900 shadow-2xl relative flex flex-col items-center text-center border border-white/10"
+                  className="w-full max-w-[400px] bg-white rounded-[3rem] p-10 md:p-12 text-purple-900 shadow-2xl relative flex flex-col items-center text-center border border-white/10 cursor-grab active:cursor-grabbing"
                 >
                   <div className="w-40 h-40 bg-purple-50 rounded-full flex items-center justify-center mb-8 overflow-hidden relative">
                     <img 
@@ -122,7 +135,6 @@ export const ProductSection: React.FC = () => {
               )}
             </AnimatePresence>
 
-            {/* Puntos de Navegación fuera de la Card (Solo Móvil) */}
             {isMobile && (
               <div className="mt-8 flex gap-2">
                 {products.map((_, i) => (
