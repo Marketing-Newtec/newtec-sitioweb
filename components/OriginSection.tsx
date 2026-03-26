@@ -36,7 +36,7 @@ export const OriginSection: React.FC = () => {
               <div className="bg-[#FFC400] h-1/2 flex items-center justify-center">
                 <img 
                   src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/escudo-espana.png" 
-                  alt="Escudo de España" 
+                  alt="Alianza estratégica España - Newtec" 
                   className="h-full w-auto py-0.5 object-contain"
                 />
               </div>
@@ -66,14 +66,14 @@ export const OriginSection: React.FC = () => {
               Orgullosamente impulsados por capitales argentinos y españoles.
             </p>
 
-            {/* Párrafo Unificado */}
-            <p className="text-base md:text-lg text-purple-100/60 font-normal leading-relaxed max-w-xl">
+            {/* Párrafo Unificado con font-size de 20px */}
+            <p className="text-[20px] text-purple-100/60 font-normal leading-relaxed max-w-xl">
               Esta sinergia nos permite integrar visión estratégica, capacidad industrial y experiencia técnica. Con los productos Newtec materializamos un compromiso orientado a elevar los estándares de calidad farmacéutica en la región.
             </p>
           </motion.div>
         </div>
 
-        {/* Bloque de Imagen y Decoración */}
+        {/* Bloque de Imagen */}
         <div className="lg:w-1/2 w-full relative group">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9, rotate: -1 }}
@@ -89,25 +89,23 @@ export const OriginSection: React.FC = () => {
               className="w-full h-[350px] md:h-[600px] object-cover transition-transform duration-[3s] group-hover:scale-110" 
             />
             {/* Overlay en Hover con Banderas Visuales */}
-            <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-black/50 backdrop-blur-sm">
+            <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-black/50 backdrop-blur-sm px-6">
                <div className="text-center flex flex-col items-center">
                   
-                  {/* Contenedor de Banderas Visuales en el Hover (w-12 h-7) */}
+                  {/* Banderas Visuales en el Hover */}
                   <div className="flex gap-3 mb-6">
-                    {/* Argentina Visual Flag */}
-                    <div className="flex flex-col w-12 h-7 rounded h-7 overflow-hidden shadow-xl border border-white/20 bg-white/5">
+                    <div className="flex flex-col w-12 h-7 rounded overflow-hidden shadow-xl border border-white/20 bg-white/5">
                       <div className="bg-[#74ACDF] h-1/3"></div>
                       <div className="bg-white h-1/3 flex items-center justify-center text-[6px]">☀️</div>
                       <div className="bg-[#74ACDF] h-1/3"></div>
                     </div>
 
-                    {/* Spain Visual Flag */}
-                    <div className="flex flex-col w-12 h-7 rounded h-7 overflow-hidden shadow-xl border border-white/20 bg-white/5">
+                    <div className="flex flex-col w-12 h-7 rounded overflow-hidden shadow-xl border border-white/20 bg-white/5">
                       <div className="bg-[#C60B1E] h-1/4"></div>
                       <div className="bg-[#FFC400] h-1/2 flex items-center justify-center">
                         <img 
                           src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/escudo-espana.png" 
-                          alt="Alianza estratégica España - Newtec" 
+                          alt="Escudo España Newtec" 
                           className="h-full w-auto py-0.5 object-contain"
                         />
                       </div>
