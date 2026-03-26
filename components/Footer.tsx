@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Columna 2: Nuestro Partner (Logo Sutil -30%) */}
+        {/* Columna 2: Nuestro Partner (Logo Equilibrado - Punto Intermedio) */}
         <div>
           <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Nuestro Partner</h4>
           <a 
@@ -37,12 +37,12 @@ export const Footer: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-block group"
           >
-            {/* Logo: h-[1.05rem] (reducción drástica de 30% respecto al h-14 original) */}
+            {/* Logo: h-[1.45rem] (Punto intermedio equilibrado, ~40% más grande que el minimalista anterior) */}
             <motion.img 
               whileHover={{ scale: 1.05 }}
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
               alt="Distribuidora Gamma" 
-              className="h-[1.05rem] w-auto object-contain opacity-80 group-hover:opacity-100 transition-all drop-shadow-md"
+              className="h-[1.45rem] w-auto object-contain opacity-80 group-hover:opacity-100 transition-all drop-shadow-md"
             />
           </a>
         </div>
