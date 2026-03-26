@@ -8,12 +8,12 @@ export const Footer: React.FC = () => {
     <footer className="pt-24 pb-12 px-6 relative overflow-hidden bg-transparent">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-32 relative z-10">
         
-        {/* Columna 1: Identidad Institucional */}
+        {/* Columna 1: Identidad Institucional Ajustada */}
         <div>
           <div className="mb-10">
-            <h3 className="font-brand font-black text-2xl md:text-xl lg:text-[1.35rem] xl:text-3xl leading-[1.1] tracking-tighter text-white uppercase">
+            <h3 className="font-brand font-black text-2xl md:text-xl lg:text-[1.25rem] xl:text-[1.75rem] leading-[1.1] tracking-tight text-white uppercase">
               Laboratorio <br className="hidden md:block" />
-              Ibero Americano
+              <span className="whitespace-nowrap">Ibero Americano</span>
             </h3>
           </div>
           <p className="text-purple-100/60 text-base leading-relaxed italic font-light">
