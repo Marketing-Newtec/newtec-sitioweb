@@ -109,12 +109,12 @@ export const ProductSection: React.FC = () => {
                   
                   <h3 className="text-xl md:text-2xl font-brand font-black mb-2 uppercase leading-tight">{activeProduct.name.split('|')[0]}</h3>
                   
-                  {/* Logos de marcas para Hemoterapia */}
+                  {/* Logos de marcas para Hemoterapia: Escalados para Desktop */}
                   {activeProduct.hasLogos && (
-                    <div className="flex items-center justify-center gap-6 mb-4 mt-2 bg-purple-50/50 py-2 px-6 rounded-full">
-                      <img src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/TIANHE.png" alt="Tianhe" className="h-4 md:h-5 object-contain opacity-80" />
-                      <div className="w-[1px] h-4 bg-purple-200" />
-                      <img src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/hemobag.png" alt="Hemobag" className="h-4 md:h-5 object-contain opacity-80" />
+                    <div className="flex items-center justify-center gap-6 md:gap-10 mb-6 mt-3 bg-purple-50/70 py-3 px-6 md:px-10 rounded-full">
+                      <img src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/TIANHE.png" alt="Tianhe" className="h-4 md:h-7 object-contain opacity-90" />
+                      <div className="w-[1px] h-5 md:h-8 bg-purple-200" />
+                      <img src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/hemobag.png" alt="Hemobag" className="h-4 md:h-7 object-contain opacity-90" />
                     </div>
                   )}
 
