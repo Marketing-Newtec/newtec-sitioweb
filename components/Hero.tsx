@@ -16,9 +16,9 @@ export const Hero: React.FC = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative z-10 text-center max-w-4xl lg:max-w-6xl pt-10 md:pt-20"
       >
-        {/* Título Institucional: Control de saltos de línea por dispositivo */}
-        <h1 className="font-brand text-[10vw] xs:text-5xl md:text-7xl lg:text-[4.5rem] xl:text-[6.5rem] font-black mb-6 leading-relaxed md:leading-[1.15] tracking-tighter uppercase">
-          Laboratorio <br className="block" />
+        {/* Título Institucional: Ajustado para Móvil (Ibero Americano en una sola línea) */}
+        <h1 className="font-brand text-[9.5vw] xs:text-[2.8rem] md:text-7xl lg:text-[4.5rem] xl:text-[6.5rem] font-black mb-6 leading-[1.2] md:leading-[1.15] tracking-tighter uppercase">
+          Laboratorio <br />
           <motion.span 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
           </motion.span>
         </h1>
 
-        {/* Línea de Marca: 24px Desktop / Adaptativo Móvil */}
+        {/* Línea de Marca: Logo +10% en Desktop */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -41,11 +41,11 @@ export const Hero: React.FC = () => {
           </span>
           <div className="relative group">
             <div className="absolute inset-0 bg-white/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            {/* Logo: h-5 en móvil (igual), h-5/6 en escritorio (50% más pequeño que los h-10/12 anteriores) */}
+            {/* Logo: md:h-6.5 (~10% más que el h-5/6 anterior) para equilibrar con Productos */}
             <img 
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png" 
               alt="Newtec Logo" 
-              className="h-5 xs:h-6 md:h-5 lg:h-6 object-contain relative z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+              className="h-5 xs:h-6 md:h-6 lg:h-7 object-contain relative z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
             />
           </div>
           <span className="text-[3.5vw] md:text-2xl font-light tracking-tighter text-purple-200/80">
@@ -53,12 +53,12 @@ export const Hero: React.FC = () => {
           </span>
         </motion.div>
 
-        {/* Bajada */}
+        {/* Bajada: 18px en móvil (text-[18px]) */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="text-base md:text-xl lg:text-lg xl:text-xl font-light text-purple-100/70 max-w-3xl mx-auto mb-12 md:mb-20 leading-relaxed px-4 md:px-0"
+          className="text-[18px] md:text-xl lg:text-lg xl:text-xl font-light text-purple-100/70 max-w-3xl mx-auto mb-12 md:mb-20 leading-relaxed px-4 md:px-0"
         >
           Llegamos para redefinir los estándares de la industria farmacéutica hospitalaria con la tecnología más moderna de la región.
         </motion.p>
