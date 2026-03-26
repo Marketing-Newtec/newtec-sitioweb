@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -9,15 +9,16 @@ export const Footer: React.FC = () => {
       {/* Grid configurado para 4 columnas en Desktop, 2 en tablets y 1 en móvil */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-32 relative z-10">
         
-        {/* Columna 1: Identidad Institucional */}
+        {/* Columna 1: Identidad Institucional Corregida */}
         <div>
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="mb-10"
           >
-            <h3 className="font-brand font-black text-2xl md:text-3xl leading-[1.1] tracking-tighter text-white uppercase">
-              Laboratorio <br />
+            {/* lg:text-2xl asegura las dos líneas en pantallas de 15" (1080p) */}
+            <h3 className="font-brand font-black text-2xl md:text-2xl lg:text-2xl xl:text-3xl leading-[1.1] tracking-tighter text-white uppercase">
+              Laboratorio <br className="hidden md:block" />
               Ibero Americano
             </h3>
           </motion.div>
