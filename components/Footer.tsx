@@ -12,7 +12,6 @@ export const Footer: React.FC = () => {
         {/* Columna 1: Identidad Institucional (20px) */}
         <div>
           <div className="mb-10">
-            {/* text-[20px] para un acabado sutil y elegante */}
             <h3 className="font-brand font-black text-[20px] leading-[1.2] tracking-tighter text-white uppercase">
               Laboratorio <br className="hidden md:block" />
               <span className="whitespace-nowrap">Ibero Americano</span>
@@ -28,7 +27,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Columna 2: Nuestro Partner (Logo Equilibrado - Punto Intermedio) */}
+        {/* Columna 2: Nuestro Partner (Logo con +60% de tamaño) */}
         <div>
           <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Nuestro Partner</h4>
           <a 
@@ -37,12 +36,12 @@ export const Footer: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-block group"
           >
-            {/* Logo: h-[1.45rem] (Punto intermedio equilibrado, ~40% más grande que el minimalista anterior) */}
+            {/* Logo: h-[2.3rem] - Escalado un 60% más para mayor legibilidad y peso visual */}
             <motion.img 
               whileHover={{ scale: 1.05 }}
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
               alt="Distribuidora Gamma" 
-              className="h-[1.45rem] w-auto object-contain opacity-80 group-hover:opacity-100 transition-all drop-shadow-md"
+              className="h-[2.3rem] w-auto object-contain opacity-80 group-hover:opacity-100 transition-all drop-shadow-lg"
             />
           </a>
         </div>
