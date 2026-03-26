@@ -8,11 +8,12 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Nuevo orden: Nosotros primero
   const menuItems = [
+    { name: 'Nosotros', href: '#nosotros' },
     { name: 'Tecnología', href: '#tecnología' },
     { name: 'Portafolio', href: '#portafolio' },
     { name: 'Alianza', href: '#alianza' },
-    { name: 'Nosotros', href: '#nosotros' },
   ];
 
   return (
@@ -23,17 +24,10 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           : 'py-6 bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <motion.a href="#" className="relative z-[110]">
-          <img 
-            src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png" 
-            alt="Newtec Logo" 
-            className={`transition-all duration-500 object-contain ${scrolled ? 'h-7' : 'h-8'}`}
-          />
-        </motion.a>
-
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-10">
+      <div className="max-w-7xl mx-auto px-6 flex justify-center items-center relative">
+        
+        {/* Desktop Menu - Ahora centrado al no tener el logo a la izquierda */}
+        <nav className="hidden md:flex items-center gap-12">
           {menuItems.map((item) => (
             <a
               key={item.name}
@@ -46,19 +40,21 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           ))}
         </nav>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden relative z-[110] text-white p-2"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <div className="w-6 h-5 flex flex-col justify-between items-end">
-            <span className={`h-0.5 bg-white transition-all ${isOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`}></span>
-            <span className={`h-0.5 bg-white transition-all ${isOpen ? 'opacity-0' : 'w-4'}`}></span>
-            <span className={`h-0.5 bg-white transition-all ${isOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'}`}></span>
-          </div>
-        </button>
+        {/* Mobile Toggle - Posicionado a la derecha en móvil */}
+        <div className="flex md:hidden w-full justify-end">
+          <button 
+            className="relative z-[110] text-white p-2"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <div className="w-6 h-5 flex flex-col justify-between items-end">
+              <span className={`h-0.5 bg-white transition-all ${isOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`}></span>
+              <span className={`h-0.5 bg-white transition-all ${isOpen ? 'opacity-0' : 'w-4'}`}></span>
+              <span className={`h-0.5 bg-white transition-all ${isOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'}`}></span>
+            </div>
+          </button>
+        </div>
 
-        {/* Mobile Menu Overlay Corregido */}
+        {/* Mobile Menu Overlay */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -75,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   onClick={() => setIsOpen(false)}
-                  className="text-4xl font-brand font-black uppercase tracking-widest text-white active:text-purple-300"
+                  className="text-4xl font-brand font-black uppercase tracking-widest text-white active:text-purple-300 text-center"
                 >
                   {item.name}
                 </motion.a>
