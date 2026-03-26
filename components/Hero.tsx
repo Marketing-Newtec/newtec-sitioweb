@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
           </motion.span>
         </h1>
 
-        {/* ESTRUCTURA ACTUALIZADA: Listado Vertical de Marca */}
+        {/* ESTRUCTURA: Listado Vertical de Marca */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -52,9 +52,9 @@ export const Hero: React.FC = () => {
             </div>
           </div>
           
-          {/* Fila 2: Tecnología & calidad (Debajo, sin el guion largo) */}
+          {/* Fila 2: Tecnología & calidad (Debajo, en Italic) */}
           <div className="flex flex-row items-center justify-center">
-            <span className="text-[3vw] md:text-xl font-light tracking-tighter text-purple-200/80">
+            <span className="text-[3vw] md:text-xl font-light italic tracking-tighter text-purple-200/80">
               Tecnología & calidad
             </span>
           </div>
