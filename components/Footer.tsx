@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
         {/* Columna 1: Identidad Institucional (20px) */}
         <div>
           <div className="mb-10">
-            {/* text-[20px] para un acabado sutil y elegante en todas las versiones */}
+            {/* text-[20px] para un acabado sutil y elegante */}
             <h3 className="font-brand font-black text-[20px] leading-[1.2] tracking-tighter text-white uppercase">
               Laboratorio <br className="hidden md:block" />
               <span className="whitespace-nowrap">Ibero Americano</span>
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Columna 2: Nuestro Partner (Logo reducido 25%) */}
+        {/* Columna 2: Nuestro Partner (Logo Sutil -30%) */}
         <div>
           <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Nuestro Partner</h4>
           <a 
@@ -37,11 +37,12 @@ export const Footer: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-block group"
           >
+            {/* Logo: h-[1.05rem] (reducción drástica de 30% respecto al h-14 original) */}
             <motion.img 
               whileHover={{ scale: 1.05 }}
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
-              alt="Distribuidora Gamma - Partner de Laboratorio Ibero Americano" 
-              className="h-10.5 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all drop-shadow-md" // h-10.5 (~2.6rem) para reducción del 25%
+              alt="Distribuidora Gamma" 
+              className="h-[1.05rem] w-auto object-contain opacity-80 group-hover:opacity-100 transition-all drop-shadow-md"
             />
           </a>
         </div>
