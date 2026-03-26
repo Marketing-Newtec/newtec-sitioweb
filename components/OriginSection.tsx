@@ -10,7 +10,7 @@ export const OriginSection: React.FC = () => {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative z-10">
         <div className="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
           
-          {/* Contenedor de Banderas - Centrado en móvil */}
+          {/* Contenedor de Banderas */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ export const OriginSection: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Título: SEO Optimized H2 */}
+          {/* Título SEO Optimized */}
           <motion.h2 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,30 +61,24 @@ export const OriginSection: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="space-y-6 md:space-y-8 flex flex-col items-center lg:items-start"
           >
-            {/* Bajada */}
+            {/* Bajada con estilo Italic */}
             <p className="text-xl md:text-2xl lg:text-xl xl:text-2xl text-purple-100/90 font-light leading-relaxed italic max-w-2xl">
               Orgullosamente impulsados por capitales argentinos y españoles.
             </p>
 
-            {/* Texto Nuevo con Logo Integrado */}
+            {/* Texto Nuevo Puramente Tipográfico */}
             <div className="text-base md:text-lg text-purple-100/60 font-normal leading-relaxed max-w-xl">
               <p className="mb-6">
                 Esta sinergia nos permite integrar visión estratégica, capacidad industrial y experiencia técnica.
               </p>
-              <p className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-3">
-                Con los productos 
-                <img 
-                  src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png" 
-                  alt="Logo Newtec Laboratorio" 
-                  className="h-5 md:h-6 inline-block object-contain translate-y-[-1px]"
-                /> 
-                materializamos un compromiso orientado a elevar los estándares de calidad farmacéutica en la región.
+              <p>
+                Con los productos <span className="text-white font-bold">Newtec</span> materializamos un compromiso orientado a elevar los estándares de calidad farmacéutica en la región.
               </p>
             </div>
           </motion.div>
         </div>
 
-        {/* Bloque de Imagen */}
+        {/* Bloque de Imagen y Decoración */}
         <div className="lg:w-1/2 w-full relative group">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9, rotate: -1 }}
