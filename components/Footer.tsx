@@ -8,10 +8,11 @@ export const Footer: React.FC = () => {
     <footer className="pt-24 pb-12 px-6 relative overflow-hidden bg-transparent">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-32 relative z-10">
         
-        {/* Columna 1: Identidad Institucional Ajustada */}
+        {/* Columna 1: Identidad Institucional Sutil */}
         <div>
           <div className="mb-10">
-            <h3 className="font-brand font-black text-2xl md:text-xl lg:text-[1.25rem] xl:text-[1.75rem] leading-[1.1] tracking-tight text-white uppercase">
+            {/* text-[20px] para un acabado sutil y elegante en todas las versiones */}
+            <h3 className="font-brand font-black text-[20px] leading-[1.2] tracking-tighter text-white uppercase">
               Laboratorio <br className="hidden md:block" />
               <span className="whitespace-nowrap">Ibero Americano</span>
             </h3>
@@ -78,6 +79,7 @@ export const Footer: React.FC = () => {
         </div>
       </div>
 
+      {/* Línea de Copyright */}
       <div className="max-w-7xl mx-auto pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black tracking-[0.5em] uppercase opacity-30">
         <p>&copy; {currentYear} LABORATORIO IBERO AMERICANO S.A. - TODOS LOS DERECHOS RESERVADOS.</p>
         <p className="text-center md:text-right">DISEÑADO POR IT - LABORATORIO IBERO AMERICANO S.A.</p>
