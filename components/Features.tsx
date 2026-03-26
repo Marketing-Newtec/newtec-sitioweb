@@ -58,7 +58,7 @@ export const Features: React.FC = () => {
             viewport={{ once: true }}
             className="text-lg md:text-xl text-purple-100/70 max-w-md font-light lg:border-l-2 lg:border-purple-400/30 lg:pl-8 leading-relaxed"
           >
-            Nuestra fortaleza reside en la inversión continua en infraestructura de vanguardia, posicionándonos como el laboratorio más moderno de Argentina.
+            Nuestra fortaleza reside en la inversión continua en infraestructura de vanguardia, posicionándonos como uno de los laboratorios más modernos de Argentina.
           </motion.p>
         </div>
 
