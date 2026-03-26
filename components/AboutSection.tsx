@@ -20,23 +20,18 @@ export const AboutSection: React.FC = () => {
     },
     { 
       id: 4, 
-      title: "INSTALACIONES Y\nTECNOLOGÍA MODERNA", 
+      title: "INSTALACIONES Y\nTECNOLOGÍA", 
       desc: "Contamos con instalaciones modernas y eficientes, equipadas con tecnologías alineadas a los más altos estándares vigentes de la industria farmacéutica a nivel mundial." 
     },
     { 
       id: 5, 
-      title: "INTEGRIDAD Y\nCONFIABILIDAD ABSOLUTA", 
+      title: "INTEGRIDAD Y\nCONFIABILIDAD", 
       desc: "Actuamos con integridad, responsabilidad y transparencia, sosteniendo la calidad como fundamento de la confiabilidad de nuestros medicamentos." 
     },
     { 
       id: 6, 
       title: "INNOVACIÓN CON\nPROPÓSITO CLÍNICO", 
       desc: "Impulsamos una innovación responsable y aplicada, orientada a generar mejoras clínicas reales y a aportar valor concreto al sistema de salud." 
-    },
-    { 
-      id: 7, 
-      title: "SUSTENTABILIDAD\nEMPRESARIAL", 
-      desc: "La búsqueda de rentabilidad como factor necesario para impulsar el crecimiento tecnológico, innovativo y de bienestar de los colaboradores y el entorno social." 
     }
   ];
 
@@ -73,9 +68,9 @@ export const AboutSection: React.FC = () => {
         </div>
       </div>
 
-      {/* SECCIÓN INFERIOR: VALORES CON PARALLAX MEJORADO */}
+      {/* SECCIÓN INFERIOR: VALORES */}
       <div className="relative py-24 md:py-40 px-6">
-        {/* Nueva Imagen de Fondo con mayor visibilidad y Parallax */}
+        {/* Fondo con Parallax */}
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-fixed opacity-20"
           style={{ 
@@ -83,7 +78,6 @@ export const AboutSection: React.FC = () => {
           }}
         ></div>
         
-        {/* Overlays para suavizar la imagen y unificar el fondo */}
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-[#411e63]/20 to-transparent"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -94,11 +88,12 @@ export const AboutSection: React.FC = () => {
             className="mb-20 text-center"
           >
             <h3 className="text-3xl md:text-5xl font-brand font-black uppercase text-white tracking-tighter">
-              Valores <span style={{ color: 'rgb(216 180 254 / 0.8)' }}>Fundamentales</span>
+              Valores <span className="text-purple-300/80">Fundamentales</span>
             </h3>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          {/* Grid de Valores: 3 columnas en LG, 2 en MD, 1 en Mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((val, i) => (
               <motion.div 
                 key={val.id}
@@ -106,12 +101,12 @@ export const AboutSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px] p-8 rounded-[2.5rem] bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-purple-500/20 hover:border-white/20 transition-all duration-300 group"
+                className="p-8 rounded-[2.5rem] bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-purple-500/20 hover:border-white/20 transition-all duration-300 group flex flex-col h-full"
               >
-                <div className="text-white font-brand font-black text-3xl mb-4 opacity-100 group-hover:text-purple-400 transition-colors">
+                <div className="text-white font-brand font-black text-3xl mb-4 group-hover:text-purple-400 transition-colors">
                   {val.id}
                 </div>
-                <h4 className="text-white font-brand font-black text-[13px] md:text-[14px] mb-4 leading-tight uppercase tracking-wider group-hover:text-purple-200 transition-colors whitespace-pre-line">
+                <h4 className="text-white font-brand font-black text-[14px] mb-4 leading-tight uppercase tracking-wider group-hover:text-purple-200 transition-colors whitespace-pre-line">
                   {val.title}
                 </h4>
                 <p className="text-purple-100/60 text-[16px] font-light leading-relaxed group-hover:text-purple-100/90 transition-colors">
