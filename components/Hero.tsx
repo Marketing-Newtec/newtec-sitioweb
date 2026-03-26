@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
           </motion.span>
         </h1>
 
-        {/* Línea de Marca: Logo +10% en Desktop */}
+        {/* Línea de Marca: Logo con +10% de escala adicional */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -41,11 +41,11 @@ export const Hero: React.FC = () => {
           </span>
           <div className="relative group">
             <div className="absolute inset-0 bg-white/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            {/* Logo: md:h-6.5 (~10% más que el h-5/6 anterior) para equilibrar con Productos */}
+            {/* Logo: md:h-8 / lg:h-9 para un balance total con la tipografía de 24px/semi-bold */}
             <img 
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png" 
               alt="Newtec Logo" 
-              className="h-5 xs:h-6 md:h-6 lg:h-7 object-contain relative z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+              className="h-6 xs:h-7 md:h-8 lg:h-9 object-contain relative z-10 drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
             />
           </div>
           <span className="text-[3.5vw] md:text-2xl font-light tracking-tighter text-purple-200/80">
@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
           </span>
         </motion.div>
 
-        {/* Bajada: 18px en móvil (text-[18px]) */}
+        {/* Bajada: 18px en móvil */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
