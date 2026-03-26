@@ -6,9 +6,10 @@ export const Footer: React.FC = () => {
   
   return (
     <footer className="pt-24 pb-12 px-6 relative overflow-hidden bg-transparent">
+      {/* Grid configurado para 4 columnas */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-32 relative z-10">
         
-        {/* Columna 1: Identidad Institucional Sutil */}
+        {/* Columna 1: Identidad Institucional (20px) */}
         <div>
           <div className="mb-10">
             {/* text-[20px] para un acabado sutil y elegante en todas las versiones */}
@@ -27,7 +28,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Columna 2: Nuestro Partner (Gamma) */}
+        {/* Columna 2: Nuestro Partner (Logo reducido 25%) */}
         <div>
           <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Nuestro Partner</h4>
           <a 
@@ -39,8 +40,8 @@ export const Footer: React.FC = () => {
             <motion.img 
               whileHover={{ scale: 1.05 }}
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
-              alt="Distribuidora Gamma" 
-              className="h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all"
+              alt="Distribuidora Gamma - Partner de Laboratorio Ibero Americano" 
+              className="h-10.5 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all drop-shadow-md" // h-10.5 (~2.6rem) para reducción del 25%
             />
           </a>
         </div>
@@ -79,7 +80,7 @@ export const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* Línea de Copyright */}
+      {/* Copyright Line */}
       <div className="max-w-7xl mx-auto pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black tracking-[0.5em] uppercase opacity-30">
         <p>&copy; {currentYear} LABORATORIO IBERO AMERICANO S.A. - TODOS LOS DERECHOS RESERVADOS.</p>
         <p className="text-center md:text-right">DISEÑADO POR IT - LABORATORIO IBERO AMERICANO S.A.</p>
