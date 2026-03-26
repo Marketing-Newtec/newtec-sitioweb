@@ -6,23 +6,16 @@ export const Footer: React.FC = () => {
   
   return (
     <footer className="pt-24 pb-12 px-6 relative overflow-hidden bg-transparent">
-      {/* Grid configurado para 4 columnas en Desktop, 2 en tablets y 1 en móvil */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-32 relative z-10">
         
         {/* Columna 1: Identidad Institucional */}
         <div>
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mb-10"
-          >
-            {/* Ajuste de escala: text-xl a 2xl para asegurar las dos líneas en 15" */}
-            <h3 className="font-brand font-black text-2xl md:text-xl lg:text-[1.4rem] xl:text-3xl leading-[1.1] tracking-tighter text-white uppercase">
+          <div className="mb-10">
+            <h3 className="font-brand font-black text-2xl md:text-xl lg:text-[1.35rem] xl:text-3xl leading-[1.1] tracking-tighter text-white uppercase">
               Laboratorio <br className="hidden md:block" />
               Ibero Americano
             </h3>
-          </motion.div>
+          </div>
           <p className="text-purple-100/60 text-base leading-relaxed italic font-light">
             "Tecnología y Calidad: El ADN de un laboratorio que llegó para transformar la salud hospitalaria argentina."
           </p>
@@ -44,9 +37,8 @@ export const Footer: React.FC = () => {
           >
             <motion.img 
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
-              alt="Distribuidora Gamma - Partner de Laboratorio Ibero Americano" 
+              alt="Distribuidora Gamma" 
               className="h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all"
             />
           </a>
@@ -86,7 +78,6 @@ export const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* Copyright Line */}
       <div className="max-w-7xl mx-auto pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black tracking-[0.5em] uppercase opacity-30">
         <p>&copy; {currentYear} LABORATORIO IBERO AMERICANO S.A. - TODOS LOS DERECHOS RESERVADOS.</p>
         <p className="text-center md:text-right">DISEÑADO POR IT - LABORATORIO IBERO AMERICANO S.A.</p>
