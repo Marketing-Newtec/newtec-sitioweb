@@ -9,14 +9,18 @@ export const Footer: React.FC = () => {
       {/* Grid configurado para 4 columnas en Desktop, 2 en tablets y 1 en móvil */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-32 relative z-10">
         
-        {/* Columna 1: Newtec */}
+        {/* Columna 1: Identidad Institucional */}
         <div>
-          <motion.img 
-            whileHover={{ scale: 1.05 }}
-            src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png" 
-            alt="Newtec Logo" 
-            className="h-10 mb-10 object-contain" 
-          />
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="mb-10"
+          >
+            <h3 className="font-brand font-black text-2xl md:text-3xl leading-[1.1] tracking-tighter text-white uppercase">
+              Laboratorio <br />
+              Ibero Americano
+            </h3>
+          </motion.div>
           <p className="text-purple-100/60 text-base leading-relaxed italic font-light">
             "Tecnología y Calidad: El ADN de un laboratorio que llegó para transformar la salud hospitalaria argentina."
           </p>
@@ -40,7 +44,7 @@ export const Footer: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
-              alt="Distribuidora Gamma" 
+              alt="Distribuidora Gamma - Partner de Laboratorio Ibero Americano" 
               className="h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all"
             />
           </a>
@@ -50,7 +54,7 @@ export const Footer: React.FC = () => {
         <div>
           <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Navegación</h4>
           <ul className="space-y-6 text-purple-100/70 text-base font-semibold">
-            {['Tecnología', 'Portafolio', 'Alianza', 'Nosotros'].map(item => (
+            {['Nosotros', 'Tecnología', 'Portafolio', 'Alianza'].map(item => (
               <li key={item}>
                 <a href={`#${item.toLowerCase()}`} className="hover:text-white transition-all hover:translate-x-2 inline-block">
                   {item}
@@ -80,6 +84,7 @@ export const Footer: React.FC = () => {
         </div>
       </div>
 
+      {/* Copyright Line */}
       <div className="max-w-7xl mx-auto pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black tracking-[0.5em] uppercase opacity-30">
         <p>&copy; {currentYear} LABORATORIO IBERO AMERICANO S.A. - TODOS LOS DERECHOS RESERVADOS.</p>
         <p className="text-center md:text-right">DISEÑADO POR IT - LABORATORIO IBERO AMERICANO S.A.</p>
