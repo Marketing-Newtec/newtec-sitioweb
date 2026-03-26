@@ -10,7 +10,7 @@ export const OriginSection: React.FC = () => {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative z-10">
         <div className="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
           
-          {/* Contenedor de Banderas */}
+          {/* Contenedor de Banderas Listado Principal */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export const OriginSection: React.FC = () => {
               <div className="bg-[#FFC400] h-1/2 flex items-center justify-center">
                 <img 
                   src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/escudo-espana.png" 
-                  alt="Alianza estratégica España - Newtec" 
+                  alt="Escudo de España" 
                   className="h-full w-auto py-0.5 object-contain"
                 />
               </div>
@@ -44,7 +44,7 @@ export const OriginSection: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Título SEO Optimized */}
+          {/* Título */}
           <motion.h2 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,20 +61,15 @@ export const OriginSection: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="space-y-6 md:space-y-8 flex flex-col items-center lg:items-start"
           >
-            {/* Bajada con estilo Italic */}
+            {/* Bajada Italic */}
             <p className="text-xl md:text-2xl lg:text-xl xl:text-2xl text-purple-100/90 font-light leading-relaxed italic max-w-2xl">
               Orgullosamente impulsados por capitales argentinos y españoles.
             </p>
 
-            {/* Texto Nuevo Puramente Tipográfico */}
-            <div className="text-base md:text-lg text-purple-100/60 font-normal leading-relaxed max-w-xl">
-              <p className="mb-6">
-                Esta sinergia nos permite integrar visión estratégica, capacidad industrial y experiencia técnica.
-              </p>
-              <p>
-                Con los productos <span className="text-white font-bold">Newtec</span> materializamos un compromiso orientado a elevar los estándares de calidad farmacéutica en la región.
-              </p>
-            </div>
+            {/* Párrafo Unificado */}
+            <p className="text-base md:text-lg text-purple-100/60 font-normal leading-relaxed max-w-xl">
+              Esta sinergia nos permite integrar visión estratégica, capacidad industrial y experiencia técnica. Con los productos Newtec materializamos un compromiso orientado a elevar los estándares de calidad farmacéutica en la región.
+            </p>
           </motion.div>
         </div>
 
@@ -93,14 +88,39 @@ export const OriginSection: React.FC = () => {
               alt="Instalaciones industriales farmacéuticas Laboratorio Ibero Americano Newtec" 
               className="w-full h-[350px] md:h-[600px] object-cover transition-transform duration-[3s] group-hover:scale-110" 
             />
-            <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-black/40 backdrop-blur-sm">
-               <div className="text-center">
-                  <div className="text-4xl md:text-6xl mb-4">🇦🇷 🇪🇸</div>
+            {/* Overlay en Hover con Banderas Visuales */}
+            <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-black/50 backdrop-blur-sm">
+               <div className="text-center flex flex-col items-center">
+                  
+                  {/* Contenedor de Banderas Visuales en el Hover (w-12 h-7) */}
+                  <div className="flex gap-3 mb-6">
+                    {/* Argentina Visual Flag */}
+                    <div className="flex flex-col w-12 h-7 rounded h-7 overflow-hidden shadow-xl border border-white/20 bg-white/5">
+                      <div className="bg-[#74ACDF] h-1/3"></div>
+                      <div className="bg-white h-1/3 flex items-center justify-center text-[6px]">☀️</div>
+                      <div className="bg-[#74ACDF] h-1/3"></div>
+                    </div>
+
+                    {/* Spain Visual Flag */}
+                    <div className="flex flex-col w-12 h-7 rounded h-7 overflow-hidden shadow-xl border border-white/20 bg-white/5">
+                      <div className="bg-[#C60B1E] h-1/4"></div>
+                      <div className="bg-[#FFC400] h-1/2 flex items-center justify-center">
+                        <img 
+                          src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/escudo-espana.png" 
+                          alt="Alianza estratégica España - Newtec" 
+                          className="h-full w-auto py-0.5 object-contain"
+                        />
+                      </div>
+                      <div className="bg-[#C60B1E] h-1/4"></div>
+                    </div>
+                  </div>
+
                   <p className="text-white text-xs md:text-sm font-brand font-black tracking-widest uppercase">Calidad Farmacéutica Global</p>
                </div>
             </div>
           </motion.div>
           
+          {/* Sello Flotante */}
           <motion.div 
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 4 }}
