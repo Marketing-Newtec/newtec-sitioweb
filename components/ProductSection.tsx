@@ -6,7 +6,6 @@ export const ProductSection: React.FC = () => {
   const [hoveredProduct, setHoveredProduct] = useState<any>(null);
   const [isMobile, setIsMobile] = useState(false);
   
-  // Referencias para el scroll automático de los botones
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -17,18 +16,13 @@ export const ProductSection: React.FC = () => {
     { id: 4, name: "Cefazolina Newtec", line: "Antibiótico Betalactámico", type: "Cefazolina como sal sódica 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/cefazolina.png" },
     { id: 5, name: "Ceftazidima Newtec", line: "Antibiótico Betalactámico", type: "Ceftazidima como pentahidrato 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ceftazidima.png" },
     { id: 6, name: "Cefalotina Newtec", line: "Antibiótico Betalactámico", type: "Cefatolina como sal sódica 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/cefalotina.png" },
-    { id: 7, name: "Bolsa de sangre", line: "Línea para hemoterapia", type: "Recolección de sangre y componentes sanguíneos. Cinco modelos disponibles", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-de-sangre-newtec.png" },
-    { id: 8, name: "Bolsa de transferencia", line: "Línea para hemoterapia", type: "Almacenamiento de glóbulos rojos (300/600 ml) y plaquetas (300 ml)", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-transferencia-newtec.png" }
+    { id: 7, name: "Bolsa de sangre | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Recolección de sangre y componentes sanguíneos. Cinco modelos disponibles", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-de-sangre-newtec.png", hasLogos: true },
+    { id: 8, name: "Bolsa de transferencia | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Almacenamiento de glóbulos rojos (300/600 ml) y plaquetas (300 ml)", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-transferencia-newtec.png", hasLogos: true }
   ];
 
-  // Efecto para centrar el botón activo en móvil
   useEffect(() => {
     if (isMobile && index !== -1 && buttonRefs.current[index]) {
-      buttonRefs.current[index]?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center'
-      });
+      buttonRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
   }, [index, isMobile]);
 
@@ -68,11 +62,7 @@ export const ProductSection: React.FC = () => {
 
         <div className="flex flex-col lg:grid lg:grid-cols-[1fr,1fr] gap-10 lg:gap-16 items-start">
           
-          {/* PANEL IZQUIERDO: Listado con Scroll Automático */}
-          <div 
-            ref={scrollContainerRef}
-            className="w-full overflow-x-auto lg:overflow-visible pb-8 lg:pb-0 scrollbar-hide snap-x"
-          >
+          <div ref={scrollContainerRef} className="w-full overflow-x-auto lg:overflow-visible pb-8 lg:pb-0 scrollbar-hide snap-x">
             <div className="flex lg:flex-col gap-3 lg:gap-4 min-w-max lg:min-w-0 px-[10vw] lg:px-0">
               {products.map((prod, i) => (
                 <motion.button
@@ -88,7 +78,7 @@ export const ProductSection: React.FC = () => {
                   }`}
                 >
                   <div className={`w-2 h-2 rounded-full shrink-0 ${prod.line === "Antibiótico Betalactámico" ? 'bg-purple-400' : 'bg-red-500'}`} />
-                  <h3 className={`text-xs md:text-sm font-brand font-black uppercase tracking-[0.1em] whitespace-nowrap ${activeProduct?.id === prod.id ? 'text-purple-900' : 'text-white'}`}>
+                  <h3 className={`text-[10px] md:text-sm font-brand font-black uppercase tracking-[0.1em] whitespace-nowrap ${activeProduct?.id === prod.id ? 'text-purple-900' : 'text-white'}`}>
                     {prod.name}
                   </h3>
                 </motion.button>
@@ -96,7 +86,6 @@ export const ProductSection: React.FC = () => {
             </div>
           </div>
 
-          {/* PANEL DERECHO: Card / Placeholder */}
           <div className="w-full flex flex-col items-center lg:sticky lg:top-40 min-h-[450px] md:min-h-[550px]">
             <AnimatePresence mode="wait">
               {activeProduct ? (
@@ -117,7 +106,18 @@ export const ProductSection: React.FC = () => {
                       className={`object-contain drop-shadow-xl transition-transform duration-500 ${activeProduct.line === "Línea para hemoterapia" ? 'scale-[1.35] w-full h-full' : 'scale-100 p-4 w-full h-full'}`} 
                     />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-brand font-black mb-2 uppercase leading-tight">{activeProduct.name}</h3>
+                  
+                  <h3 className="text-xl md:text-2xl font-brand font-black mb-2 uppercase leading-tight">{activeProduct.name.split('|')[0]}</h3>
+                  
+                  {/* Logos de marcas para Hemoterapia */}
+                  {activeProduct.hasLogos && (
+                    <div className="flex items-center justify-center gap-6 mb-4 mt-2 bg-purple-50/50 py-2 px-6 rounded-full">
+                      <img src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/TIANHE.png" alt="Tianhe" className="h-4 md:h-5 object-contain opacity-80" />
+                      <div className="w-[1px] h-4 bg-purple-200" />
+                      <img src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/hemobag.png" alt="Hemobag" className="h-4 md:h-5 object-contain opacity-80" />
+                    </div>
+                  )}
+
                   <p className="text-[10px] font-black text-purple-400 mb-6 tracking-widest uppercase">{activeProduct.line}</p>
                   <p className="text-sm md:text-base leading-relaxed text-purple-900/60 font-medium px-2">
                     {activeProduct.type}. {activeProduct.line === "Antibiótico Betalactámico" ? "Polvo estéril de máxima pureza." : "Libre de látex."}
