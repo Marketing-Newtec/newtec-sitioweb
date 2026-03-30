@@ -8,8 +8,9 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Nuevo orden: Nosotros primero
+  // Orden actualizado: Inicio en primer lugar
   const menuItems = [
+    { name: 'Inicio', href: '#' },
     { name: 'Nosotros', href: '#nosotros' },
     { name: 'Tecnología', href: '#tecnología' },
     { name: 'Portafolio', href: '#portafolio' },
@@ -26,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-center items-center relative">
         
-        {/* Desktop Menu - Ahora centrado al no tener el logo a la izquierda */}
+        {/* Desktop Menu - Centrado con Inicio incluido */}
         <nav className="hidden md:flex items-center gap-12">
           {menuItems.map((item) => (
             <a
@@ -40,7 +41,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           ))}
         </nav>
 
-        {/* Mobile Toggle - Posicionado a la derecha en móvil */}
+        {/* Mobile Toggle */}
         <div className="flex md:hidden w-full justify-end">
           <button 
             className="relative z-[110] text-white p-2"
@@ -61,7 +62,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-[#411e63] z-[105] flex flex-col items-center justify-center gap-12"
+              className="fixed inset-0 bg-[#411e63] z-[105] flex flex-col items-center justify-center gap-10"
             >
               {menuItems.map((item, i) => (
                 <motion.a
@@ -71,7 +72,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   onClick={() => setIsOpen(false)}
-                  className="text-4xl font-brand font-black uppercase tracking-widest text-white active:text-purple-300 text-center"
+                  className="text-3xl font-brand font-black uppercase tracking-widest text-white active:text-purple-300 text-center"
                 >
                   {item.name}
                 </motion.a>
