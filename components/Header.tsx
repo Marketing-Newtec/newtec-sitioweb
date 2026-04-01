@@ -8,7 +8,6 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Orden actualizado: Inicio en primer lugar
   const menuItems = [
     { name: 'Inicio', href: '#' },
     { name: 'Nosotros', href: '#nosotros' },
@@ -17,23 +16,40 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
     { name: 'Alianza', href: '#alianza' },
   ];
 
+  const logoUrl = "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png";
+
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
         scrolled 
-          ? 'py-3 bg-[#411e63] shadow-2xl' 
+          ? 'py-3 bg-[#411e63]/95 backdrop-blur-md shadow-2xl' 
           : 'py-6 bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-center items-center relative">
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
         
-        {/* Desktop Menu - Centrado con Inicio incluido */}
-        <nav className="hidden md:flex items-center gap-12">
+        {/* Logo Newtec - Alineado a la izquierda */}
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="relative z-[110]"
+        >
+          <a href="#">
+            <img 
+              src={logoUrl} 
+              alt="Newtec Logo" 
+              className={`h-8 md:h-12 w-auto transition-all duration-500 ${scrolled ? 'scale-90' : 'scale-100'}`}
+            />
+          </a>
+        </motion.div>
+
+        {/* Desktop Menu - Absoluto y Centrado */}
+        <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
           {menuItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-[10px] font-black uppercase tracking-[0.3em] text-white/70 hover:text-white transition-all relative group"
+              className="text-[10px] font-black uppercase tracking-[0.25em] text-white/70 hover:text-white transition-all relative group"
             >
               {item.name}
               <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-purple-400 transition-all group-hover:w-full"></span>
@@ -41,8 +57,11 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           ))}
         </nav>
 
+        {/* Placeholder para balancear el logo en Desktop (derecha) */}
+        <div className="hidden md:block w-32"></div>
+
         {/* Mobile Toggle */}
-        <div className="flex md:hidden w-full justify-end">
+        <div className="flex md:hidden items-center">
           <button 
             className="relative z-[110] text-white p-2"
             onClick={() => setIsOpen(!isOpen)}
@@ -59,11 +78,12 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
               className="fixed inset-0 bg-[#411e63] z-[105] flex flex-col items-center justify-center gap-10"
             >
+              <img src={logoUrl} alt="Logo" className="h-16 w-auto mb-4 opacity-30" />
               {menuItems.map((item, i) => (
                 <motion.a
                   key={item.name}
@@ -72,7 +92,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   onClick={() => setIsOpen(false)}
-                  className="text-3xl font-brand font-black uppercase tracking-widest text-white active:text-purple-300 text-center"
+                  className="text-2xl font-black uppercase tracking-widest text-white active:text-purple-300 text-center"
                 >
                   {item.name}
                 </motion.a>
