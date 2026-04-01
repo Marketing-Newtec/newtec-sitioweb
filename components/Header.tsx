@@ -28,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
         
-        {/* Logo Newtec - Alineado a la izquierda */}
+        {/* Logo Newtec - Reducido un 15% */}
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -38,12 +38,12 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             <img 
               src={logoUrl} 
               alt="Newtec Logo" 
-              className={`h-8 md:h-12 w-auto transition-all duration-500 ${scrolled ? 'scale-90' : 'scale-100'}`}
+              className={`h-7 md:h-10 w-auto transition-all duration-500 ${scrolled ? 'scale-90' : 'scale-100'}`}
             />
           </a>
         </motion.div>
 
-        {/* Desktop Menu - Absoluto y Centrado */}
+        {/* Desktop Menu - Centrado */}
         <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
           {menuItems.map((item) => (
             <a
@@ -57,8 +57,8 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           ))}
         </nav>
 
-        {/* Placeholder para balancear el logo en Desktop (derecha) */}
-        <div className="hidden md:block w-32"></div>
+        {/* Placeholder para balance simétrico */}
+        <div className="hidden md:block w-24"></div>
 
         {/* Mobile Toggle */}
         <div className="flex md:hidden items-center">
@@ -83,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
               exit={{ opacity: 0, y: -20 }}
               className="fixed inset-0 bg-[#411e63] z-[105] flex flex-col items-center justify-center gap-10"
             >
-              <img src={logoUrl} alt="Logo" className="h-16 w-auto mb-4 opacity-30" />
+              <img src={logoUrl} alt="Logo" className="h-12 w-auto mb-4 opacity-30" />
               {menuItems.map((item, i) => (
                 <motion.a
                   key={item.name}
