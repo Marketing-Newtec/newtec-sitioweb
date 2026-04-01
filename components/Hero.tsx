@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative z-10 text-center max-w-7xl"
       >
-        {/* BLOQUE DE MARCA: Aumentado para mayor impacto en Desktop */}
+        {/* BLOQUE DE MARCA */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mb-16 lg:mb-20">
           
           {/* Nombre Institucional */}
@@ -30,11 +30,11 @@ export const Hero: React.FC = () => {
             <span className="text-white/95">Ibero Americano</span>
           </h1>
           
-          {/* Línea Divisoria Fina - Más alta en desktop */}
+          {/* Línea Divisoria Fina */}
           <div className="hidden md:block w-[1.5px] h-24 lg:h-32 bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
           <div className="block md:hidden w-24 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
 
-          {/* Logo Newtec - Aumentado un 15% para balancear */}
+          {/* Logo Newtec */}
           <div className="relative">
             <img 
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/04/blanco-newtec-logo-completo.png" 
@@ -44,17 +44,17 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* BAJADA: Aumentada un 10% y con estilo de fortaleza */}
+        {/* BAJADA: Fijada en 22px para todas las resoluciones de escritorio */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] font-light tracking-wide text-white/70 max-w-5xl mx-auto mb-16 lg:mb-20 leading-relaxed px-4"
+          className="text-[18px] md:text-[22px] font-light tracking-wide text-white/70 max-w-5xl mx-auto mb-16 lg:mb-20 leading-relaxed px-4"
         >
           Llegamos para redefinir los estándares de la industria farmacéutica hospitalaria con la tecnología más moderna de la región.
         </motion.p>
 
-        {/* BOTÓN CTA: Puntas menos redondeadas (rounded-lg) */}
+        {/* BOTÓN CTA: Bordes redondeados con 2.5rem */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,8 @@ export const Hero: React.FC = () => {
         >
           <a 
             href="#portafolio" 
-            className="group relative px-10 py-5 md:px-16 md:py-7 bg-white text-[#411e63] font-black text-sm md:text-base lg:text-lg rounded-lg overflow-hidden shadow-2xl transition-all hover:shadow-white/20 hover:scale-105 active:scale-95 tracking-[0.2em] uppercase"
+            style={{ borderRadius: '2.5rem' }}
+            className="group relative px-10 py-5 md:px-16 md:py-7 bg-white text-[#411e63] font-black text-sm md:text-base lg:text-lg overflow-hidden shadow-2xl transition-all hover:shadow-white/20 hover:scale-105 active:scale-95 tracking-[0.2em] uppercase"
           >
             <span className="relative z-10">Descubrí nuestro portfolio</span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
