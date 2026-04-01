@@ -43,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           </a>
         </motion.div>
 
-        {/* Desktop Menu - Distribuido hacia la derecha */}
+        {/* Desktop Menu - Distribuido hacia la derecha y tipografía +8% */}
         <nav className="hidden md:flex items-center gap-10 ml-auto">
           {menuItems.map((item) => (
             <a
@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           ))}
         </nav>
 
-        {/* Mobile Toggle - Z-index superior */}
+        {/* Mobile Toggle */}
         <div className="flex md:hidden items-center relative z-[120]">
           <button 
             className="text-white p-2 outline-none"
@@ -71,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           </button>
         </div>
 
-        {/* Mobile Menu Overlay - Fondo sólido y corregido */}
+        {/* Mobile Menu Overlay - Fondo sólido y limpio */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -80,11 +80,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-[#411e63] z-[110] flex flex-col items-center justify-center overflow-hidden"
             >
-              {/* Decoración de fondo sutil */}
-              <div className="absolute top-20 left-1/2 -translate-x-1/2 opacity-5 pointer-events-none">
-                <img src={logoUrl} alt="" className="w-64 h-auto" />
-              </div>
-
+              {/* Navegación móvil sin logo de fondo */}
               <nav className="flex flex-col gap-10 text-center relative z-[115]">
                 {menuItems.map((item, i) => (
                   <motion.a
