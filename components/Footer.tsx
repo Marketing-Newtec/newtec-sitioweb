@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
           <div className="mb-10">
             <h3 className="font-brand font-black text-[20px] leading-[1.2] tracking-tighter text-white uppercase">
               Laboratorio <br className="hidden md:block" />
-              <span className="whitespace-nowrap">Ibero Americano</span>
+              <span className="whitespace-nowrap">Ibero Americano S.A.</span>
             </h3>
           </div>
           <p className="text-purple-100/60 text-base leading-relaxed italic font-light">
