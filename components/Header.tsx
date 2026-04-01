@@ -28,11 +28,11 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
         
-        {/* Logo Newtec */}
+        {/* Logo Newtec - Alineado a la izquierda */}
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="relative z-[120]"
+          className="relative z-[120] flex-shrink-0"
         >
           <a href="#">
             <img 
@@ -43,8 +43,8 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           </a>
         </motion.div>
 
-        {/* Desktop Menu - Tipografía aumentada un 8% */}
-        <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+        {/* Desktop Menu - Distribuido hacia la derecha */}
+        <nav className="hidden md:flex items-center gap-10 ml-auto">
           {menuItems.map((item) => (
             <a
               key={item.name}
@@ -57,10 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           ))}
         </nav>
 
-        {/* Espaciador para simetría en desktop */}
-        <div className="hidden md:block w-24"></div>
-
-        {/* Mobile Toggle - Z-index superior para estar sobre el overlay */}
+        {/* Mobile Toggle - Z-index superior */}
         <div className="flex md:hidden items-center relative z-[120]">
           <button 
             className="text-white p-2 outline-none"
@@ -74,21 +71,21 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           </button>
         </div>
 
-        {/* Mobile Menu Overlay - Corregido para evitar que se vea el fondo al hacer scroll */}
+        {/* Mobile Menu Overlay - Fondo sólido y corregido */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-[#411e63] z-[110] flex flex-col items-center justify-center"
+              className="fixed inset-0 bg-[#411e63] z-[110] flex flex-col items-center justify-center overflow-hidden"
             >
-              {/* Logo de fondo sutil en el menú móvil */}
-              <div className="absolute top-20 left-1/2 -translate-x-1/2 opacity-10 pointer-events-none">
-                <img src={logoUrl} alt="" className="w-40 h-auto" />
+              {/* Decoración de fondo sutil */}
+              <div className="absolute top-20 left-1/2 -translate-x-1/2 opacity-5 pointer-events-none">
+                <img src={logoUrl} alt="" className="w-64 h-auto" />
               </div>
 
-              <nav className="flex flex-col gap-8 text-center relative z-[115]">
+              <nav className="flex flex-col gap-10 text-center relative z-[115]">
                 {menuItems.map((item, i) => (
                   <motion.a
                     key={item.name}
