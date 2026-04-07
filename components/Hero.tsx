@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-[100vh] md:min-h-[110vh] flex flex-col justify-center items-center px-4 overflow-hidden bg-transparent">
-      {/* Background Dinámico: Luces de fondo sutiles */}
+      {/* Background Dinámico */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-purple-500 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse"></div>
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-indigo-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse delay-1000"></div>
@@ -16,43 +16,43 @@ export const Hero: React.FC = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative z-10 text-center max-w-7xl pt-10 md:pt-20"
       >
-        {/* BLOQUE CENTRAL: LOGO + LEYENDA INSTITUCIONAL */}
+        {/* BLOQUE CENTRAL: LOGO + LEYENDA SUTIL */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="flex flex-col items-center justify-center mb-16 md:mb-24 px-4"
+          className="flex flex-col items-center justify-center mb-16 md:mb-20 px-4"
         >
-          {/* Logo Newtec Centrado y a gran tamaño */}
+          {/* Logo Newtec */}
           <div className="relative group mb-8 md:mb-10">
             <div className="absolute inset-0 bg-white/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <img 
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/04/blanco-newtec-logo-completo.png" 
-              alt="Newtec - Tecnología y Calidad Farmacéutica" 
+              alt="Newtec" 
               className="h-14 xs:h-16 md:h-24 lg:h-32 xl:h-40 w-auto object-contain relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-transform duration-500 group-hover:scale-105"
             />
           </div>
 
-          {/* Leyenda Institucional en Montserrat: "una marca de Laboratorio..." */}
+          {/* Leyenda Institucional Refinada */}
           <motion.h1 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="font-brand text-[3.5vw] xs:text-[14px] md:text-[18px] lg:text-[20px] font-black uppercase tracking-[0.3em] text-white leading-normal text-center whitespace-pre-line xs:whitespace-normal"
+            className="font-brand text-[14px] md:text-[18px] lg:text-[20px] text-white tracking-normal leading-normal text-center"
           >
-            Una marca de <br className="hidden xs:block md:hidden" />
-            Laboratorio Ibero Americano S.A.
+            <span className="font-light opacity-60 italic">Una marca de</span> <br className="md:hidden" />
+            <span className="font-black uppercase ml-1">Laboratorio Ibero Americano S.A.</span>
           </motion.h1>
         </motion.div>
 
-        {/* Bajada: Inter 20px - Texto actualizado */}
+        {/* Bajada con CSS de "Nuestra fortaleza..." */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="font-sans text-[18px] md:text-[20px] font-light text-purple-100/80 max-w-4xl mx-auto mb-12 md:mb-20 leading-relaxed px-6 md:px-0"
+          className="text-[18px] md:text-xl lg:text-lg xl:text-xl font-light text-purple-100/70 max-w-3xl mx-auto mb-12 md:mb-20 leading-relaxed px-4 md:px-0 italic"
         >
-          Llegamos para redefinir los estándares de la industria farmacéutica hospitalaria con la tecnología más moderna de la región.
+          "Llegamos para redefinir los estándares de la industria farmacéutica hospitalaria con la tecnología más moderna de la región."
         </motion.p>
 
         {/* Botón: Descubrí nuestro portfolio */}
