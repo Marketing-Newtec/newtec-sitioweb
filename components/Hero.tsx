@@ -16,52 +16,53 @@ export const Hero: React.FC = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative z-10 text-center max-w-7xl pt-10 md:pt-20"
       >
-        {/* BLOQUE PRINCIPAL: TÍTULO | LOGO */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-10 md:mb-14 px-4">
-          {/* Nombre Institucional */}
-          <h1 className="font-brand text-[8vw] xs:text-[2.5rem] md:text-5xl lg:text-[4rem] xl:text-[5rem] font-black leading-[1.1] tracking-tighter uppercase text-white text-center md:text-right">
-            Laboratorio <br className="hidden md:block" />
-            Ibero Americano
+        {/* BLOQUE PRINCIPAL: TÍTULO | LÍNEA | LOGO */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 lg:gap-14 mb-12 md:mb-16 px-4">
+          
+          {/* Nombre Institucional: "Ibero Americano" en una sola línea */}
+          <h1 className="font-brand text-[8.5vw] xs:text-[2.2rem] md:text-5xl lg:text-[3.8rem] xl:text-[4.8rem] font-black leading-[1.05] tracking-tighter uppercase text-white text-center md:text-right">
+            Laboratorio <br />
+            <span className="whitespace-nowrap">Ibero Americano</span>
           </h1>
 
-          {/* Línea Divisoria Vertical (Solo en Desktop) */}
+          {/* Línea Divisoria Vertical (Desktop) */}
           <motion.div 
             initial={{ height: 0 }}
-            animate={{ height: "120px" }}
+            animate={{ height: "140px" }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="hidden md:block w-[1.5px] bg-white/20 self-center"
+            className="hidden md:block w-[1px] bg-white/20 self-center"
           />
 
-          {/* Línea Divisoria Horizontal (Solo en Móvil) */}
-          <div className="md:hidden w-20 h-[1.5px] bg-white/20" />
+          {/* Línea Divisoria Horizontal (Móvil) */}
+          <div className="md:hidden w-16 h-[1px] bg-white/20 my-2" />
 
           {/* Logo Newtec Nivelado */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
-            className="relative group"
+            className="relative group flex items-center"
           >
-            <div className="absolute inset-0 bg-white/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="absolute inset-0 bg-white/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <img 
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/04/blanco-newtec-logo-completo.png" 
-              alt="Newtec Logo Institucional" 
-              className="h-10 xs:h-12 md:h-16 lg:h-20 xl:h-24 w-auto object-contain relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-transform duration-500 group-hover:scale-105"
+              alt="Newtec Logo" 
+              className="h-12 xs:h-14 md:h-20 lg:h-28 xl:h-32 w-auto object-contain relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-transform duration-500 group-hover:scale-105"
             />
           </motion.div>
         </div>
 
-        {/* Bajada: Inter 20px - Texto actualizado */}
+        {/* Bajada con CSS de "Nuestra fortaleza..." */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="font-sans text-[18px] md:text-[20px] font-light text-purple-100/80 max-w-4xl mx-auto mb-12 md:mb-20 leading-relaxed px-6 md:px-0"
+          className="text-[18px] md:text-xl lg:text-lg xl:text-xl font-light text-purple-100/70 max-w-3xl mx-auto mb-12 md:mb-20 leading-relaxed px-4 md:px-0"
         >
           Llegamos para redefinir los estándares de la industria farmacéutica hospitalaria con la tecnología más moderna de la región.
         </motion.p>
 
-        {/* Botón de Acción */}
+        {/* Botón: Descubrí nuestro portfolio */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,9 +71,9 @@ export const Hero: React.FC = () => {
         >
           <a 
             href="#portafolio" 
-            className="group relative px-8 py-4 md:px-14 md:py-6 bg-white text-[#592B82] font-black text-sm md:text-base rounded-2xl overflow-hidden shadow-2xl transition-all hover:shadow-white/20 hover:scale-105 active:scale-95 tracking-[0.15em] uppercase"
+            className="group relative px-6 py-4 md:px-12 md:py-6 bg-white text-[#592B82] font-black text-[13px] xs:text-sm md:text-base rounded-2xl overflow-hidden shadow-2xl transition-all hover:shadow-white/20 hover:scale-105 active:scale-95 tracking-[0.15em] uppercase whitespace-nowrap"
           >
-            <span className="relative z-10">Explorar Portfolio</span>
+            <span className="relative z-10">Descubrí nuestro portfolio</span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </a>
         </motion.div>
