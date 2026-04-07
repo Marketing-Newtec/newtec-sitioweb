@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-[100vh] md:min-h-[110vh] flex flex-col justify-center items-center px-4 overflow-hidden bg-transparent">
-      {/* Background Dinámico */}
+      {/* Background Dinámico: Luces de fondo sutiles */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-purple-500 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse"></div>
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-indigo-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse delay-1000"></div>
@@ -16,55 +16,41 @@ export const Hero: React.FC = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative z-10 text-center max-w-7xl pt-10 md:pt-20"
       >
-        {/* BLOQUE PRINCIPAL: TÍTULO | LÍNEA | LOGO CON ETIQUETA */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 lg:gap-14 mb-12 md:mb-16 px-4">
-          
-          {/* Nombre Institucional */}
-          <h1 className="font-brand text-[8.5vw] xs:text-[2.2rem] md:text-5xl lg:text-[3.8rem] xl:text-[4.8rem] font-black leading-[1.05] tracking-tighter uppercase text-white text-center md:text-right">
-            Laboratorio <br />
-            <span className="whitespace-nowrap">Ibero Americano</span>
-          </h1>
+        {/* BLOQUE CENTRAL: LOGO + LEYENDA INSTITUCIONAL */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="flex flex-col items-center justify-center mb-16 md:mb-24 px-4"
+        >
+          {/* Logo Newtec Centrado y a gran tamaño */}
+          <div className="relative group mb-8 md:mb-10">
+            <div className="absolute inset-0 bg-white/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <img 
+              src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/04/blanco-newtec-logo-completo.png" 
+              alt="Newtec - Tecnología y Calidad Farmacéutica" 
+              className="h-14 xs:h-16 md:h-24 lg:h-32 xl:h-40 w-auto object-contain relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
 
-          {/* Línea Divisoria Vertical (Desktop) */}
-          <motion.div 
-            initial={{ height: 0 }}
-            animate={{ height: "140px" }}
+          {/* Leyenda Institucional en Montserrat: "una marca de Laboratorio..." */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="hidden md:block w-[1px] bg-white/20 self-center"
-          />
-
-          {/* Línea Divisoria Horizontal (Móvil) */}
-          <div className="md:hidden w-16 h-[1px] bg-white/20 my-2" />
-
-          {/* Bloque de Marca: Palabra "Productos" + Logo Newtec */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8, duration: 1 }}
-            className="relative group flex flex-col items-center md:items-start"
+            className="font-brand text-[3.5vw] xs:text-[14px] md:text-[18px] lg:text-[20px] font-black uppercase tracking-[0.3em] text-white leading-normal text-center whitespace-pre-line xs:whitespace-normal"
           >
-            {/* Palabra "Productos" arriba a la izquierda del logo */}
-            <span className="text-[10px] md:text-[12px] font-brand font-black uppercase tracking-[0.4em] text-purple-300 mb-2 ml-1 opacity-80">
-              Productos
-            </span>
-            
-            <div className="relative">
-              <div className="absolute inset-0 bg-white/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <img 
-                src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/04/blanco-newtec-logo-completo.png" 
-                alt="Newtec Logo" 
-                className="h-10 xs:h-12 md:h-16 lg:h-24 xl:h-28 w-auto object-contain relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-          </motion.div>
-        </div>
+            Una marca de <br className="hidden xs:block md:hidden" />
+            Laboratorio Ibero Americano S.A.
+          </motion.h1>
+        </motion.div>
 
-        {/* Bajada con CSS de alta gama */}
+        {/* Bajada: Inter 20px - Texto actualizado */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="text-[18px] md:text-xl lg:text-lg xl:text-xl font-light text-purple-100/70 max-w-3xl mx-auto mb-12 md:mb-20 leading-relaxed px-4 md:px-0"
+          className="font-sans text-[18px] md:text-[20px] font-light text-purple-100/80 max-w-4xl mx-auto mb-12 md:mb-20 leading-relaxed px-6 md:px-0"
         >
           Llegamos para redefinir los estándares de la industria farmacéutica hospitalaria con la tecnología más moderna de la región.
         </motion.p>
