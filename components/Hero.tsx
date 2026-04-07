@@ -16,10 +16,10 @@ export const Hero: React.FC = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative z-10 text-center max-w-7xl pt-10 md:pt-20"
       >
-        {/* BLOQUE PRINCIPAL: TÍTULO | LÍNEA | LOGO */}
+        {/* BLOQUE PRINCIPAL: TÍTULO | LÍNEA | LOGO CON ETIQUETA */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 lg:gap-14 mb-12 md:mb-16 px-4">
           
-          {/* Nombre Institucional: "Ibero Americano" en una sola línea */}
+          {/* Nombre Institucional */}
           <h1 className="font-brand text-[8.5vw] xs:text-[2.2rem] md:text-5xl lg:text-[3.8rem] xl:text-[4.8rem] font-black leading-[1.05] tracking-tighter uppercase text-white text-center md:text-right">
             Laboratorio <br />
             <span className="whitespace-nowrap">Ibero Americano</span>
@@ -36,23 +36,30 @@ export const Hero: React.FC = () => {
           {/* Línea Divisoria Horizontal (Móvil) */}
           <div className="md:hidden w-16 h-[1px] bg-white/20 my-2" />
 
-          {/* Logo Newtec Nivelado */}
+          {/* Bloque de Marca: Palabra "Productos" + Logo Newtec */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
-            className="relative group flex items-center"
+            className="relative group flex flex-col items-center md:items-start"
           >
-            <div className="absolute inset-0 bg-white/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <img 
-              src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/04/blanco-newtec-logo-completo.png" 
-              alt="Newtec Logo" 
-              className="h-12 xs:h-14 md:h-20 lg:h-28 xl:h-32 w-auto object-contain relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-transform duration-500 group-hover:scale-105"
-            />
+            {/* Palabra "Productos" arriba a la izquierda del logo */}
+            <span className="text-[10px] md:text-[12px] font-brand font-black uppercase tracking-[0.4em] text-purple-300 mb-2 ml-1 opacity-80">
+              Productos
+            </span>
+            
+            <div className="relative">
+              <div className="absolute inset-0 bg-white/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <img 
+                src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/04/blanco-newtec-logo-completo.png" 
+                alt="Newtec Logo" 
+                className="h-10 xs:h-12 md:h-16 lg:h-24 xl:h-28 w-auto object-contain relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
           </motion.div>
         </div>
 
-        {/* Bajada con CSS de "Nuestra fortaleza..." */}
+        {/* Bajada con CSS de alta gama */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
