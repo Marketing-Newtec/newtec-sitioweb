@@ -40,19 +40,19 @@ export const Hero: React.FC = () => {
             transition={{ delay: 0.5, duration: 1 }}
             className="font-brand text-[14px] md:text-[18px] lg:text-[20px] text-white tracking-normal leading-normal text-center"
           >
-            <span className="font-light opacity-60 italic">Una marca de</span> <br className="md:hidden" />
-            <span className="font-black uppercase ml-1">Laboratorio Ibero Americano S.A.</span>
+            <span className="opacity-60">Una marca de</span> <br className="md:hidden" />
+            <span className="uppercase ml-1">Laboratorio Ibero Americano S.A.</span>
           </motion.h1>
         </motion.div>
 
-        {/* Bajada con CSS de "Nuestra fortaleza..." */}
+        {/* Bajada con CSS de "Nuestra fortaleza..." (Sin Italic ni Comillas) */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="text-[18px] md:text-xl lg:text-lg xl:text-xl font-light text-purple-100/70 max-w-3xl mx-auto mb-12 md:mb-20 leading-relaxed px-4 md:px-0 italic"
+          className="text-[18px] md:text-xl lg:text-lg xl:text-xl font-light text-purple-100/70 max-w-3xl mx-auto mb-12 md:mb-20 leading-relaxed px-4 md:px-0"
         >
-          "Llegamos para redefinir los estándares de la industria farmacéutica hospitalaria con la tecnología más moderna de la región."
+          Llegamos para redefinir los estándares de la industria farmacéutica hospitalaria con la tecnología más moderna de la región.
         </motion.p>
 
         {/* Botón: Descubrí nuestro portfolio */}
