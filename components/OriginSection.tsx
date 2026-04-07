@@ -63,7 +63,7 @@ export const OriginSection: React.FC = () => {
           >
             {/* Bajada Italic */}
             <p className="text-xl md:text-2xl lg:text-xl xl:text-2xl text-purple-100/90 font-light leading-relaxed italic max-w-2xl">
-              Orgullosamente impulsados por capitales argentinos y españoles.
+              Impulsados por capital, experiencia y conocimiento de origen argentino-español.
             </p>
 
             {/* Párrafo Unificado con font-size de 20px */}
