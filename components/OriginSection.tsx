@@ -61,14 +61,14 @@ export const OriginSection: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="space-y-6 md:space-y-8 flex flex-col items-center lg:items-start"
           >
-            {/* Bajada Italic */}
+            {/* Bajada Italic
             <p className="text-xl md:text-2xl lg:text-xl xl:text-2xl text-purple-100/90 font-light leading-relaxed italic max-w-2xl">
               Impulsados por capital, experiencia y conocimiento de origen argentino-español.
-            </p>
+            </p> */}
 
             {/* Párrafo Unificado con font-size de 20px */}
             <p className="text-[20px] text-purple-100/60 font-normal leading-relaxed max-w-xl">
-              Esta sinergia nos permite integrar visión estratégica, capacidad industrial y experiencia técnica. Con los productos Newtec materializamos un compromiso orientado a elevar los estándares de calidad farmacéutica en la región.
+              La sinergia argentino-española nos permite integrar visión estratégica, capacidad industrial, experiencia técnica y conocimiento del mercado local. Con los productos Newtec materializamos un compromiso orientado a elevar los estándares de calidad farmacéutica en la región.
             </p>
           </motion.div>
         </div>
