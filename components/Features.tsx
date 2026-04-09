@@ -75,7 +75,7 @@ export const Features: React.FC = () => {
           />
           <FeatureCard 
             delay={0.4}
-            title="Alta Tecnología"
+            title="Sistemas automatizados"
             desc="Contamos con tecnología de última generación y sistemas automatizados que minimizan la intervención manual, garantizando precisión, reproducibilidad y estabilidad en cada proceso productivo."
             icon={
               <IconWrapper>
