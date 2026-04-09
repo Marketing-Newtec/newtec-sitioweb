@@ -86,7 +86,7 @@ export const Features: React.FC = () => {
           <FeatureCard 
             delay={0.6}
             title="Calidad Certificada"
-            desc="Nuestro sistema de calidad asegura trazabilidad completa, control analítico riguroso y cumplimiento normativo, respaldando la liberación de cada lote con los más altos estándares de la industria farmacéutica."
+            desc="Nuestro robusto sistema de calidad asegura trazabilidad completa, control analítico riguroso y cumplimiento normativo, respaldando la liberación de cada lote con los más altos estándares de la industria farmacéutica."
             icon={
               <IconWrapper>
                 <circle cx="12" cy="12" r="10" />
