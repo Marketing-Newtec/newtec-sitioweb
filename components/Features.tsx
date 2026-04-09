@@ -28,7 +28,10 @@ const FeatureCard: React.FC<{ title: string; desc: string; icon: React.ReactNode
     className="glass-card p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] transition-all hover:-translate-y-4 group hover:border-white/30 hover:bg-white/5 relative overflow-hidden flex flex-col items-center text-center md:items-start md:text-left h-full"
   >
     {icon}
-    <h3 className="text-xl md:text-2xl font-brand font-black mb-4 md:mb-6 tracking-tight uppercase leading-tight">{title}</h3>
+    {/* Ajuste de tamaño para asegurar una sola línea en títulos largos */}
+    <h3 className="text-lg md:text-xl lg:text-[22px] font-brand font-black mb-4 md:mb-6 tracking-tight uppercase leading-tight whitespace-nowrap">
+      {title}
+    </h3>
     <p className="text-purple-100/60 leading-relaxed font-normal text-base md:text-lg">{desc}</p>
   </motion.div>
 );
