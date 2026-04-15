@@ -6,10 +6,10 @@ export const Footer: React.FC = () => {
   
   return (
     <footer className="pt-24 pb-12 px-6 relative overflow-hidden bg-transparent">
-      {/* Grid configurado para 4 columnas */}
+      {/* Grid configured for 4 columns */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-32 relative z-10">
         
-        {/* Columna 1: Identidad Institucional (20px) */}
+        {/* Column 1: Institutional Identity */}
         <div>
           <div className="mb-10">
             <h3 className="font-brand font-black text-[20px] leading-[1.2] tracking-tighter text-white uppercase">
@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
             </h3>
           </div>
           <p className="text-purple-100/60 text-base leading-relaxed italic font-light">
-            "Tecnología y Calidad: El ADN de un laboratorio que llegó para transformar la salud hospitalaria argentina."
+            "Technology and Quality: The DNA of a laboratory established to transform Argentine hospital healthcare."
           </p>
           <div className="mt-8">
             <span className="text-[10px] font-black tracking-[0.3em] uppercase px-5 py-2.5 bg-white/5 border border-white/10 rounded-full text-purple-200">
@@ -27,16 +27,15 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Columna 2: Nuestro Partner (Logo con +60% de tamaño) */}
+        {/* Column 2: Our Partner */}
         <div>
-          <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Nuestro Partner</h4>
+          <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Our Partner</h4>
           <a 
             href="https://www.distribuidoragamma.com.ar/web/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block group"
           >
-            {/* Logo: h-[2.3rem] - Escalado un 60% más para mayor legibilidad y peso visual */}
             <motion.img 
               whileHover={{ scale: 1.05 }}
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
@@ -46,23 +45,28 @@ export const Footer: React.FC = () => {
           </a>
         </div>
 
-        {/* Columna 3: Navegación */}
+        {/* Column 3: Navigation */}
         <div>
-          <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Navegación</h4>
+          <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Navigation</h4>
           <ul className="space-y-6 text-purple-100/70 text-base font-semibold">
-            {['Nosotros', 'Tecnología', 'Portafolio', 'Alianza'].map(item => (
-              <li key={item}>
-                <a href={`#${item.toLowerCase()}`} className="hover:text-white transition-all hover:translate-x-2 inline-block">
-                  {item}
+            {[
+              { name: 'About Us', id: 'nosotros' },
+              { name: 'Technology', id: 'tecnología' },
+              { name: 'Portfolio', id: 'portafolio' },
+              { name: 'Alliance', id: 'alianza' }
+            ].map(item => (
+              <li key={item.id}>
+                <a href={`#${item.id}`} className="hover:text-white transition-all hover:translate-x-2 inline-block">
+                  {item.name}
                 </a>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Columna 4: Legal y contacto */}
+        {/* Column 4: Legal and contact */}
         <div>
-          <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Legal y contacto</h4>
+          <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Legal & Contact</h4>
           <ul className="space-y-6 text-purple-100/70 text-base font-semibold">
             <li>
               <a 
@@ -82,8 +86,8 @@ export const Footer: React.FC = () => {
 
       {/* Copyright Line */}
       <div className="max-w-7xl mx-auto pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black tracking-[0.5em] uppercase opacity-30">
-        <p>&copy; {currentYear} LABORATORIO IBERO AMERICANO S.A. - TODOS LOS DERECHOS RESERVADOS.</p>
-        <p className="text-center md:text-right">DISEÑADO POR IT - LABORATORIO IBERO AMERICANO S.A.</p>
+        <p>&copy; {currentYear} LABORATORIO IBERO AMERICANO S.A. - ALL RIGHTS RESERVED.</p>
+        <p className="text-center md:text-right">DESIGNED BY IT - LABORATORIO IBERO AMERICANO S.A.</p>
       </div>
     </footer>
   );
