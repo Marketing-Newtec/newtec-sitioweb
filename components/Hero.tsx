@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
           <div className="relative group mb-8 md:mb-10">
             <div className="absolute inset-0 bg-white/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <img 
-              src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/04/blanco-newtec-logo-completo.png" 
+              src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png" 
               alt="Newtec" 
               className="h-14 xs:h-16 md:h-24 lg:h-32 xl:h-40 w-auto object-contain relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-transform duration-500 group-hover:scale-105"
             />
