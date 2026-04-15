@@ -5,39 +5,39 @@ export const AboutSection: React.FC = () => {
   const values = [
     { 
       id: 1, 
-      title: "PERSONAS Y CLIMA\nDE TRABAJO", 
-      desc: "Ponemos a las personas en el centro, promoviendo un clima laboral respetuoso, colaborativo y profesional, que haga de nuestro laboratorio un excelente lugar para trabajar." 
+      title: "PEOPLE AND WORK\nENVIRONMENT", 
+      desc: "We put people at the center, promoting a respectful, collaborative, and professional work environment that makes our laboratory an excellent place to work." 
     },
     { 
       id: 2, 
-      title: "EQUIPO HUMANO\nY EXCELENCIA TÉCNICA", 
-      desc: "Creemos en la excelencia de los equipos, integrando talento técnico y calidad humana para construir un grupo profesional comprometido y confiable." 
+      title: "HUMAN TEAM\nAND TECHNICAL EXCELLENCE", 
+      desc: "We believe in the excellence of teams, integrating technical talent and human quality to build a committed and reliable professional group." 
     },
     { 
       id: 3, 
-      title: "CALIDAD Y\nPROCESOS RIGUROSOS", 
-      desc: "Trabajamos con procesos de calidad rigurosos y eficientes, asegurando altos estándares en cada etapa del desarrollo." 
+      title: "QUALITY AND\nRIGOROUS PROCESSES", 
+      desc: "We work with rigorous and efficient quality processes, ensuring high standards at every stage of development." 
     },
     { 
       id: 4, 
-      title: "INSTALACIONES Y\nTECNOLOGÍA", 
-      desc: "Contamos con instalaciones modernas y eficientes, equipadas con tecnologías alineadas a los más altos estándares vigentes de la industria farmacéutica a nivel mundial." 
+      title: "FACILITIES AND\nTECHNOLOGY", 
+      desc: "We have modern and efficient facilities, equipped with technologies aligned with the highest current global pharmaceutical industry standards." 
     },
     { 
       id: 5, 
-      title: "INTEGRIDAD Y\nCONFIABILIDAD", 
-      desc: "Actuamos con integridad, responsabilidad y transparencia, sosteniendo la calidad como fundamento de la confiabilidad de nuestros medicamentos." 
+      title: "INTEGRITY AND\nRELIABILITY", 
+      desc: "We act with integrity, responsibility, and transparency, maintaining quality as the foundation of our medicines' reliability." 
     },
     { 
       id: 6, 
-      title: "INNOVACIÓN CON\nPROPÓSITO CLÍNICO", 
-      desc: "Impulsamos una innovación responsable y aplicada, orientada a generar mejoras clínicas reales y a aportar valor concreto al sistema de salud." 
+      title: "INNOVATION WITH\nCLINICAL PURPOSE", 
+      desc: "We drive responsible and applied innovation, aimed at generating real clinical improvements and providing concrete value to the healthcare system." 
     }
   ];
 
   return (
     <section id="nosotros" className="relative overflow-hidden bg-white/5">
-      {/* SECCIÓN SUPERIOR: MISIÓN Y VISIÓN */}
+      {/* UPPER SECTION: MISSION & VISION */}
       <div className="py-24 md:py-32 px-6 relative z-10">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
           <motion.div 
@@ -46,10 +46,10 @@ export const AboutSection: React.FC = () => {
             viewport={{ once: true }}
             className="glass-card p-10 md:p-14 rounded-[3rem] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] group transition-all duration-500 hover:bg-white/10"
           >
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-purple-400 mb-6 block">Institucional</span>
-            <h3 className="text-4xl md:text-5xl font-brand font-black mb-8 uppercase text-white group-hover:text-purple-300 transition-colors">Misión</h3>
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-purple-400 mb-6 block">Institutional</span>
+            <h3 className="text-4xl md:text-5xl font-brand font-black mb-8 uppercase text-white group-hover:text-purple-300 transition-colors">Mission</h3>
             <p className="text-purple-100/70 text-lg font-light leading-relaxed">
-              Desarrollar, producir y comercializar medicamentos de alta calidad para el mercado hospitalario, a precios justos, con procesos rigurosos de control de calidad, un fuerte compromiso con las personas que integran nuestro equipo y una innovación enfocada en generar mejoras clínicas reales.
+              To develop, produce, and market high-quality medicines for the hospital market at fair prices, with rigorous quality control processes, a strong commitment to the people who make up our team, and innovation focused on generating real clinical improvements.
             </p>
           </motion.div>
 
@@ -59,18 +59,18 @@ export const AboutSection: React.FC = () => {
             viewport={{ once: true }}
             className="glass-card p-10 md:p-14 rounded-[3rem] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] group transition-all duration-500 hover:bg-white/10"
           >
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-purple-400 mb-6 block">Estrategia</span>
-            <h3 className="text-4xl md:text-5xl font-brand font-black mb-8 uppercase text-white group-hover:text-purple-300 transition-colors">Visión</h3>
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-purple-400 mb-6 block">Strategy</span>
+            <h3 className="text-4xl md:text-5xl font-brand font-black mb-8 uppercase text-white group-hover:text-purple-300 transition-colors">Vision</h3>
             <p className="text-purple-100/70 text-lg font-light leading-relaxed">
-              Ser un laboratorio farmacéutico de referencia en el mercado hospitalario, reconocido por la calidad de sus productos, la solidez de sus procesos y su capacidad de innovar, desarrollando soluciones que aporten mejoras concretas en la calidad y en el uso racional de los medicamentos, abrazando toda la Argentina y proyectando nuestra expansión al exterior.
+              To be a leading pharmaceutical laboratory in the hospital market, recognized for the quality of its products, the strength of its processes, and its capacity to innovate, developing solutions that provide concrete improvements in the quality and rational use of medicines, reaching all of Argentina and projecting our expansion abroad.
             </p>
           </motion.div>
         </div>
       </div>
 
-      {/* SECCIÓN INFERIOR: VALORES */}
+      {/* LOWER SECTION: VALUES */}
       <div className="relative py-24 md:py-40 px-6">
-        {/* Fondo con Parallax */}
+        {/* Parallax Background */}
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-fixed opacity-20"
           style={{ 
@@ -88,11 +88,11 @@ export const AboutSection: React.FC = () => {
             className="mb-20 text-center"
           >
             <h3 className="text-3xl md:text-5xl font-brand font-black uppercase text-white tracking-tighter">
-              Valores <span className="text-purple-300/80">Fundamentales</span>
+              Core <span className="text-purple-300/80">Values</span>
             </h3>
           </motion.div>
 
-          {/* Grid de Valores: 3 columnas en LG, 2 en MD, 1 en Mobile */}
+          {/* Values Grid: 3 columns LG, 2 MD, 1 Mobile */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((val, i) => (
               <motion.div 
