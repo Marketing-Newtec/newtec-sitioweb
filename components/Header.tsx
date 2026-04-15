@@ -21,6 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
   // Componente interno para el selector de idiomas (Reutilizable)
   const LanguageSelector = ({ mobile = false }: { mobile?: boolean }) => (
     <div className={`flex items-center gap-4 ${mobile ? 'mt-12 justify-center' : 'ml-8 border-l border-white/20 pl-8'}`}>
+      {/* ESPAÑOL */}
       <button className="flex items-center gap-2 group transition-all">
         <img 
           src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" 
@@ -29,11 +30,14 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
         />
         <span className={`${mobile ? 'text-lg' : 'text-[10px]'} font-black text-white/60 group-hover:text-white tracking-widest`}>ES</span>
       </button>
+      
       <span className="text-white/20 font-light">|</span>
+      
+      {/* INGLÉS (UK) */}
       <button className="flex items-center gap-2 group transition-all">
         <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" 
-          alt="English" 
+          src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" 
+          alt="English (UK)" 
           className="w-4 h-4 object-cover rounded-full border border-white/20 group-hover:scale-110 transition-transform" 
         />
         <span className={`${mobile ? 'text-lg' : 'text-[10px]'} font-black text-white/60 group-hover:text-white tracking-widest`}>EN</span>
@@ -122,7 +126,6 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
                   </motion.a>
                 ))}
                 
-                {/* Selector de idiomas para móvil con delay después del menú */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
