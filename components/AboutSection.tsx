@@ -62,7 +62,7 @@ export const AboutSection: React.FC = () => {
             <span className="text-[10px] font-black tracking-[0.4em] uppercase text-purple-400 mb-6 block">Estrategia</span>
             <h3 className="text-4xl md:text-5xl font-brand font-black mb-8 uppercase text-white group-hover:text-purple-300 transition-colors">Visión</h3>
             <p className="text-purple-100/70 text-lg font-light leading-relaxed">
-              Ser un laboratorio farmacéutico de referencia en el mercado hospitalario, reconocido por la calidad de sus productos, la solidez de sus procesos y su capacidad de innovar, desarrollando soluciones que aporten mejoras concretas en la calidad y en el uso racional de los medicamentos.
+              Ser un laboratorio farmacéutico de referencia en el mercado hospitalario, reconocido por la calidad de sus productos, la solidez de sus procesos y su capacidad de innovar, desarrollando soluciones que aporten mejoras concretas en la calidad y en el uso racional de los medicamentos, abrazando toda la Argentina y proyectando nuestra expansión al exterior.
             </p>
           </motion.div>
         </div>
