@@ -20,10 +20,9 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
 
   const LanguageSelector = ({ mobile = false }: { mobile?: boolean }) => (
     <div className={`flex items-center gap-4 ${mobile ? 'mt-12 justify-center' : 'ml-8 border-l border-white/20 pl-8'}`}>
-      
-      {/* ESPAÑOL - Se queda en la URL actual */}
+      {/* ESPAÑOL */}
       <button 
-        onClick={() => window.location.href = '/'}
+        onClick={() => window.location.href = 'https://laboratorionewtec.com.ar'}
         className="flex items-center gap-2 group transition-all"
       >
         <img 
@@ -36,9 +35,9 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
       
       <span className="text-white/20 font-light">|</span>
       
-      {/* INGLÉS - Salta a la página de WordPress que creaste para inglés */}
+      {/* INGLÉS - Redirección a Vercel */}
       <button 
-        onClick={() => window.location.href = '/en'}
+        onClick={() => window.location.href = 'https://en-newtec.vercel.app'}
         className="flex items-center gap-2 group transition-all"
       >
         <img 
@@ -54,13 +53,9 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
   return (
     <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${scrolled ? 'py-3 bg-[#411e63] shadow-2xl' : 'py-6 bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
-        
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="relative z-[120] flex-shrink-0">
-          <a href="#">
-            <img src={logoUrl} alt="Newtec Logo" className={`h-7 md:h-10 w-auto transition-all duration-500 ${scrolled ? 'scale-90' : 'scale-100'}`} />
-          </a>
+          <a href="#"><img src={logoUrl} alt="Newtec Logo" className={`h-7 md:h-10 w-auto transition-all duration-500 ${scrolled ? 'scale-90' : 'scale-100'}`} /></a>
         </motion.div>
-
         <nav className="hidden md:flex items-center ml-auto">
           <div className="flex items-center gap-10">
             {menuItems.map((item) => (
@@ -72,8 +67,6 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           </div>
           <LanguageSelector />
         </nav>
-
-        {/* ... (resto del componente igual que antes) ... */}
         <div className="flex md:hidden items-center relative z-[120]">
           <button className="text-white p-2 outline-none" onClick={() => setIsOpen(!isOpen)}>
             <div className="w-6 h-5 flex flex-col justify-between items-end">
@@ -83,7 +76,6 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             </div>
           </button>
         </div>
-
         <AnimatePresence>
           {isOpen && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-[#411e63] z-[110] flex flex-col items-center justify-center overflow-hidden">
