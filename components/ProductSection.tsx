@@ -10,14 +10,14 @@ export const ProductSection: React.FC = () => {
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const products = [
-    { id: 1, name: "Ampi Sulba Newtec", line: "Antibiótico Betalactámico", type: "Ampicilina 1 g + Sulbactam 500 mg", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ampisulba-newtec-laboratorio-iberoamericano.png" },
-    { id: 2, name: "Ceftriaxona Newtec", line: "Antibiótico Betalactámico", type: "Ceftriaxona como sal sódica 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ceftriaxona-newtec-laboratorio-ibero-americano.png" },
-    { id: 3, name: "Ampicilina Newtec", line: "Antibiótico Betalactámico", type: "Ampicilina como sal sódica 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ampicilina.png" },
-    { id: 4, name: "Cefazolina Newtec", line: "Antibiótico Betalactámico", type: "Cefazolina como sal sódica 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/cefazolina.png" },
-    { id: 5, name: "Ceftazidima Newtec", line: "Antibiótico Betalactámico", type: "Ceftazidima como pentahidrato 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ceftazidima.png" },
-    { id: 6, name: "Cefalotina Newtec", line: "Antibiótico Betalactámico", type: "Cefatolina como sal sódica 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/cefalotina.png" },
-    { id: 7, name: "Bolsa de sangre | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Recolección de sangre y componentes sanguíneos. Cinco modelos disponibles", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-de-sangre-newtec.png", hasLogos: true },
-    { id: 8, name: "Bolsa de transferencia | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Almacenamiento de glóbulos rojos (300/600 ml) y plaquetas (300 ml)", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-transferencia-newtec.png", hasLogos: true }
+    { id: 1, name: "Ampi Sulba Newtec", line: "Beta-lactam Antibiotic", type: "Ampicillin 1 g + Sulbactam 500 mg", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ampisulba-newtec-laboratorio-iberoamericano.png" },
+    { id: 2, name: "Ceftriaxone Newtec", line: "Beta-lactam Antibiotic", type: "Ceftriaxone as sodium salt 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ceftriaxona-newtec-laboratorio-ibero-americano.png" },
+    { id: 3, name: "Ampicillin Newtec", line: "Beta-lactam Antibiotic", type: "Ampicillin as sodium salt 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ampicilina.png" },
+    { id: 4, name: "Cefazolin Newtec", line: "Beta-lactam Antibiotic", type: "Cefazolin as sodium salt 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/cefazolina.png" },
+    { id: 5, name: "Ceftazidime Newtec", line: "Beta-lactam Antibiotic", type: "Ceftazidime as pentahydrate 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ceftazidima.png" },
+    { id: 6, name: "Cefalotin Newtec", line: "Beta-lactam Antibiotic", type: "Cefalotin as sodium salt 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/cefalotina.png" },
+    { id: 7, name: "Blood Bag | Tianhe/Hemobag", line: "Hemotherapy Line", type: "Collection of blood and blood components. Five models available", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-de-sangre-newtec.png", hasLogos: true },
+    { id: 8, name: "Transfer Bag | Tianhe/Hemobag", line: "Hemotherapy Line", type: "Storage of red blood cells (300/600 ml) and platelets (300 ml)", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-transferencia-newtec.png", hasLogos: true }
   ];
 
   useEffect(() => {
@@ -52,11 +52,11 @@ export const ProductSection: React.FC = () => {
         
         <motion.div className="text-center mb-16 md:mb-24">
           <h2 className="text-[9vw] md:text-5xl lg:text-7xl font-brand font-black mb-6 md:mb-8 uppercase tracking-tighter leading-[0.9]">
-            Los productos insignia <br className="hidden md:block" /> 
-            <span className="text-purple-400">de nuestro portfolio</span>
+            Flagship products <br className="hidden md:block" /> 
+            <span className="text-purple-400">from our portfolio</span>
           </h2>
           <p className="text-lg md:text-xl text-purple-100/60 font-light max-w-3xl mx-auto leading-relaxed px-4">
-            Comenzamos con la excelencia. Continuamos con la innovación.
+            We begin with excellence. We continue with innovation.
           </p>
         </motion.div>
 
@@ -77,7 +77,7 @@ export const ProductSection: React.FC = () => {
                       : 'bg-white/5 border-white/5 hover:border-white/10'
                   }`}
                 >
-                  <div className={`w-2 h-2 rounded-full shrink-0 ${prod.line === "Antibiótico Betalactámico" ? 'bg-purple-400' : 'bg-red-500'}`} />
+                  <div className={`w-2 h-2 rounded-full shrink-0 ${prod.line === "Beta-lactam Antibiotic" ? 'bg-purple-400' : 'bg-red-500'}`} />
                   <h3 className={`text-[10px] md:text-sm font-brand font-black uppercase tracking-[0.1em] whitespace-nowrap ${activeProduct?.id === prod.id ? 'text-purple-900' : 'text-white'}`}>
                     {prod.name}
                   </h3>
@@ -103,13 +103,12 @@ export const ProductSection: React.FC = () => {
                     <img 
                       src={activeProduct.icon} 
                       alt={activeProduct.name} 
-                      className={`object-contain drop-shadow-xl transition-transform duration-500 ${activeProduct.line === "Línea para hemoterapia" ? 'scale-[1.35] w-full h-full' : 'scale-100 p-4 w-full h-full'}`} 
+                      className={`object-contain drop-shadow-xl transition-transform duration-500 ${activeProduct.line === "Hemotherapy Line" ? 'scale-[1.35] w-full h-full' : 'scale-100 p-4 w-full h-full'}`} 
                     />
                   </div>
                   
                   <h3 className="text-xl md:text-2xl font-brand font-black mb-2 uppercase leading-tight">{activeProduct.name.split('|')[0]}</h3>
                   
-                  {/* Logos de marcas para Hemoterapia: Escalados para Desktop */}
                   {activeProduct.hasLogos && (
                     <div className="flex items-center justify-center gap-6 md:gap-10 mb-6 mt-3 bg-purple-50/70 py-3 px-6 md:px-10 rounded-full">
                       <img src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/TIANHE.png" alt="Tianhe" className="h-4 md:h-7 object-contain opacity-90" />
@@ -120,7 +119,7 @@ export const ProductSection: React.FC = () => {
 
                   <p className="text-[10px] font-black text-purple-400 mb-6 tracking-widest uppercase">{activeProduct.line}</p>
                   <p className="text-sm md:text-base leading-relaxed text-purple-900/60 font-medium px-2">
-                    {activeProduct.type}. {activeProduct.line === "Antibiótico Betalactámico" ? "Polvo estéril de máxima pureza." : "Libre de látex."}
+                    {activeProduct.type}. {activeProduct.line === "Beta-lactam Antibiotic" ? "Highest purity sterile powder." : "Latex-free."}
                   </p>
                 </motion.div>
               ) : (
@@ -129,8 +128,8 @@ export const ProductSection: React.FC = () => {
                     <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
                     <circle cx="12" cy="12" r="3" />
                   </svg>
-                  <h3 className="text-xl font-brand font-black uppercase text-white/30 tracking-tight">Visualización</h3>
-                  <p className="text-white/20 font-light text-sm mt-4 px-6">Selecciona un producto del listado para ver su presentación técnica.</p>
+                  <h3 className="text-xl font-brand font-black uppercase text-white/30 tracking-tight">Preview</h3>
+                  <p className="text-white/20 font-light text-sm mt-4 px-6">Select a product from the list to view its technical specifications.</p>
                 </motion.div>
               )}
             </AnimatePresence>
