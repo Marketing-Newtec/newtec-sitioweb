@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 
 export const OriginSection: React.FC = () => {
   return (
-    <section id="alianza" className="py-24 md:py-48 px-6 relative overflow-hidden bg-transparent">
+    <section id="alliance" className="py-24 md:py-48 px-6 relative overflow-hidden bg-transparent">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial from-purple-500/10 to-transparent pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative z-10">
         <div className="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
           
-          {/* Contenedor de Banderas Listado Principal */}
+          {/* Flag Container */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export const OriginSection: React.FC = () => {
               <div className="bg-[#FFC400] h-1/2 flex items-center justify-center">
                 <img 
                   src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/escudo-espana.png" 
-                  alt="Alianza estratégica España - Newtec" 
+                  alt="Strategic alliance Spain - Newtec" 
                   className="h-full w-auto py-0.5 object-contain"
                 />
               </div>
@@ -44,14 +44,14 @@ export const OriginSection: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Título */}
+          {/* Title */}
           <motion.h2 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="text-[10vw] xs:text-5xl md:text-7xl lg:text-6xl xl:text-8xl font-brand font-black mb-8 md:mb-10 leading-[0.9] tracking-tighter uppercase"
           >
-            Una alianza <br /><span className="text-purple-300/80 font-black">sin fronteras.</span>
+            An alliance <br /><span className="text-purple-300/80 font-black">without borders.</span>
           </motion.h2>
           
           <motion.div 
@@ -61,19 +61,14 @@ export const OriginSection: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="space-y-6 md:space-y-8 flex flex-col items-center lg:items-start"
           >
-            {/* Bajada Italic
-            <p className="text-xl md:text-2xl lg:text-xl xl:text-2xl text-purple-100/90 font-light leading-relaxed italic max-w-2xl">
-              Impulsados por capital, experiencia y conocimiento de origen argentino-español.
-            </p> */}
-
-            {/* Párrafo Unificado con font-size de 20px */}
+            {/* Paragraph with 20px font-size */}
             <p className="text-[20px] text-purple-100/60 font-normal leading-relaxed max-w-xl">
-              La sinergia de nuestro grupo Argentino-Español nos permite integrar visión estratégica, capacidad industrial, experiencia técnica y conocimiento del mercado local. Con los productos Newtec materializamos un compromiso orientado a elevar los estándares de calidad farmacéutica en la región.
+              The synergy of our Argentine-Spanish group allows us to integrate strategic vision, industrial capacity, technical expertise, and local market knowledge. With Newtec products, we materialize a commitment aimed at raising pharmaceutical quality standards in the region.
             </p>
           </motion.div>
         </div>
 
-        {/* Bloque de Imagen */}
+        {/* Image Block */}
         <div className="lg:w-1/2 w-full relative group">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9, rotate: -1 }}
@@ -85,14 +80,14 @@ export const OriginSection: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-[#592B82]/80 via-transparent to-transparent z-10"></div>
             <img 
               src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/laboratorio-ibero-americano-newtec.png" 
-              alt="Instalaciones industriales farmacéuticas Laboratorio Ibero Americano Newtec" 
+              alt="Industrial pharmaceutical facilities Laboratorio Ibero Americano Newtec" 
               className="w-full h-[350px] md:h-[600px] object-cover transition-transform duration-[3s] group-hover:scale-110" 
             />
-            {/* Overlay en Hover con Banderas Visuales */}
+            {/* Hover Overlay */}
             <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-black/50 backdrop-blur-sm px-6">
-               <div className="text-center flex flex-col items-center">
+                <div className="text-center flex flex-col items-center">
                   
-                  {/* Banderas Visuales en el Hover */}
+                  {/* Visual Flags in Hover */}
                   <div className="flex gap-3 mb-6">
                     <div className="flex flex-col w-12 h-7 rounded overflow-hidden shadow-xl border border-white/20 bg-white/5">
                       <div className="bg-[#74ACDF] h-1/3"></div>
@@ -105,7 +100,7 @@ export const OriginSection: React.FC = () => {
                       <div className="bg-[#FFC400] h-1/2 flex items-center justify-center">
                         <img 
                           src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/escudo-espana.png" 
-                          alt="Escudo España Newtec" 
+                          alt="Spain Coat of Arms Newtec" 
                           className="h-full w-auto py-0.5 object-contain"
                         />
                       </div>
@@ -113,19 +108,19 @@ export const OriginSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <p className="text-white text-xs md:text-sm font-brand font-black tracking-widest uppercase">Calidad Farmacéutica Global</p>
+                  <p className="text-white text-xs md:text-sm font-brand font-black tracking-widest uppercase">Global Pharmaceutical Quality</p>
                </div>
             </div>
           </motion.div>
           
-          {/* Sello Flotante */}
+          {/* Floating Seal */}
           <motion.div 
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 4 }}
             className="absolute -bottom-8 -right-2 md:-bottom-16 md:-right-10 bg-white p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] z-20 hidden xs:block"
           >
             <p className="text-[#592B82] font-brand font-black text-xl md:text-4xl italic leading-none uppercase">
-              Tecnología <br />y Calidad
+              Technology <br />and Quality
             </p>
           </motion.div>
           
