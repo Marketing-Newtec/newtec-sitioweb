@@ -18,43 +18,39 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
 
   const logoUrl = "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png";
 
-  const LanguageSelector = ({ mobile = false }: { mobile?: boolean }) => {
-    const navigateTo = (url: string) => {
-      window.location.replace(url);
-    };
-
-    return (
-      <div className={`flex items-center gap-4 ${mobile ? 'mt-12 justify-center' : 'ml-8 border-l border-white/20 pl-8'}`}>
-        {/* BOTÓN ES */}
-        <button 
-          onClick={() => navigateTo('https://laboratorionewtec.com.ar')} 
-          className="flex items-center gap-2 group transition-all cursor-pointer outline-none"
-        >
-          <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" 
-            alt="Spanish" 
-            className="w-4 h-4 object-cover rounded-full border border-white/20 group-hover:scale-110 transition-transform opacity-60 group-hover:opacity-100" 
-          />
-          <span className={`${mobile ? 'text-lg' : 'text-[10px]'} font-black text-white/40 group-hover:text-white tracking-widest`}>ES</span>
-        </button>
-        
-        <span className="text-white/20 font-light select-none">|</span>
-        
-        {/* BOTÓN EN */}
-        <button 
-          onClick={() => navigateTo('https://en-newtec.vercel.app')} 
-          className="flex items-center gap-2 group transition-all cursor-pointer outline-none"
-        >
-          <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" 
-            alt="English" 
-            className="w-4 h-4 object-cover rounded-full border border-white/20 group-hover:scale-110 transition-transform" 
-          />
-          <span className={`${mobile ? 'text-lg' : 'text-[10px]'} font-black text-white group-hover:text-white tracking-widest`}>EN</span>
-        </button>
-      </div>
-    );
-  };
+  const LanguageSelector = ({ mobile = false }: { mobile?: boolean }) => (
+    <div className={`flex items-center gap-4 ${mobile ? 'mt-12 justify-center' : 'ml-8 border-l border-white/20 pl-8'}`}>
+      {/* ESPAÑOL - Vuelve al dominio principal .ar forzando la ventana superior */}
+      <a 
+        href="https://laboratorionewtec.com.ar" 
+        target="_top"
+        className="flex items-center gap-2 group transition-all cursor-pointer no-underline"
+      >
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" 
+          alt="Spanish" 
+          className="w-4 h-4 object-cover rounded-full border border-white/20 group-hover:scale-110 transition-transform opacity-60 group-hover:opacity-100" 
+        />
+        <span className={`${mobile ? 'text-lg' : 'text-[10px]'} font-black text-white/40 group-hover:text-white tracking-widest`}>ES</span>
+      </a>
+      
+      <span className="text-white/20 font-light select-none">|</span>
+      
+      {/* INGLÉS - Se mantiene en la versión de Vercel */}
+      <a 
+        href="https://en-newtec.vercel.app" 
+        target="_top"
+        className="flex items-center gap-2 group transition-all cursor-pointer no-underline"
+      >
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" 
+          alt="English" 
+          className="w-4 h-4 object-cover rounded-full border border-white/20 group-hover:scale-110 transition-transform" 
+        />
+        <span className={`${mobile ? 'text-lg' : 'text-[10px]'} font-black text-white group-hover:text-white tracking-widest`}>EN</span>
+      </a>
+    </div>
+  );
 
   return (
     <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${scrolled ? 'py-3 bg-[#411e63] shadow-2xl' : 'py-6 bg-transparent'}`}>
