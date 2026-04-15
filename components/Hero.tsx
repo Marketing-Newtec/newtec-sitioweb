@@ -40,19 +40,19 @@ export const Hero: React.FC = () => {
             transition={{ delay: 0.5, duration: 1 }}
             className="font-brand text-[14px] md:text-[18px] lg:text-[20px] text-white tracking-normal leading-normal text-center"
           >
-            <span className="opacity-60">Una marca de</span> <br className="md:hidden" />
+            <span className="opacity-60">A brand of</span> <br className="md:hidden" />
             <span className="uppercase ml-1">Laboratorio Ibero Americano S.A.</span>
           </motion.h1>
         </motion.div>
 
-        {/* Bajada con CSS de "Nuestra fortaleza..." (Sin Italic ni Comillas) */}
+        {/* Bajada con CSS de "Nuestra fortaleza..." */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
           className="text-[18px] md:text-xl lg:text-lg xl:text-xl font-light text-purple-100/70 max-w-3xl mx-auto mb-12 md:mb-20 leading-relaxed px-4 md:px-0"
         >
-          Llegamos para redefinir los estándares de la industria farmacéutica hospitalaria con la tecnología más moderna de la región.
+          We have arrived to redefine the standards of the hospital pharmaceutical industry with the most state-of-the-art technology in the region.
         </motion.p>
 
         {/* Botón: Descubrí nuestro portfolio */}
@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
             href="#portafolio" 
             className="group relative px-6 py-4 md:px-12 md:py-6 bg-white text-[#592B82] font-black text-[13px] xs:text-sm md:text-base rounded-2xl overflow-hidden shadow-2xl transition-all hover:shadow-white/20 hover:scale-105 active:scale-95 tracking-[0.15em] uppercase whitespace-nowrap"
           >
-            <span className="relative z-10">Descubrí nuestro portfolio</span>
+            <span className="relative z-10">Discover our portfolio</span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </a>
         </motion.div>
