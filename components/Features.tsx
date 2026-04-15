@@ -47,9 +47,11 @@ export const Features: React.FC = () => {
             viewport={{ once: true }}
             className="max-w-4xl flex flex-col items-center lg:items-start"
           >
-            <h2 className="text-[10vw] xs:text-5xl md:text-7xl lg:text-6xl xl:text-8xl font-brand font-black mb-6 md:mb-8 leading-[0.9] tracking-tighter uppercase">
+            {/* AJUSTE SUTIL DE TAMAÑO E INTERLINEADO PARA LOGRAR EL SALTO DE LÍNEA */}
+            <h2 className="text-[10vw] xs:text-5xl md:text-7xl lg:text-[5.5rem] xl:text-[7.5rem] font-brand font-black mb-6 md:mb-8 leading-[0.9] lg:leading-[1] tracking-tighter uppercase">
               <span className="block text-white">Next-generation</span>
-              <span className="block md:inline text-purple-300"> State-of-the-art Equipment.</span>
+              <span className="block md:inline text-purple-300"> State-of-the&shy;-</span>
+              <span className="block md:inline text-purple-300">art Equipment.</span>
             </h2>
             <div className="h-1.5 md:h-2 w-32 md:w-48 bg-gradient-to-r from-transparent via-white to-transparent lg:from-white lg:to-transparent rounded-full"></div>
           </motion.div>
