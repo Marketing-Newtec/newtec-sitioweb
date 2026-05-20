@@ -121,7 +121,13 @@ export const ProductSection: React.FC = () => {
 
                   <p className="text-[10px] font-black text-purple-400 mb-6 tracking-widest uppercase">{activeProduct.line}</p>
                   <p className="text-sm md:text-base leading-relaxed text-purple-900/60 font-medium px-2">
-                    {activeProduct.type}. {activeProduct.line === "Antibiótico Betalactámico" ? "Polvo estéril de máxima pureza." : "Libre de látex."}
+                    {activeProduct.type}. {
+                      activeProduct.name === "Pipertazo Newtec"
+                        ? "Polvo para solución inyectable."
+                        : activeProduct.line === "Antibiótico Betalactámico"
+                        ? "Polvo estéril de máxima pureza."
+                        : "Libre de látex."
+                    }
                   </p>
                 </motion.div>
               ) : (
