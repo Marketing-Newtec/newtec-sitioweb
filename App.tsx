@@ -15,8 +15,8 @@ const BasesYCondiciones: React.FC = () => {
     <div className="max-w-4xl mx-auto w-full py-10 md:py-28 px-5 md:px-6 text-purple-100/90 font-light leading-relaxed">
       
       {/* ENCABEZADO 100% BLANCO CON NOMBRE SEPARADO */}
-      <div class="text-center md:text-left mb-8 md:mb-16 border-b border-white/5 pb-6 md:pb-8">
-        <p class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-purple-400 mb-2 md:mb-3">
+      <div className="text-center md:text-left mb-8 md:mb-16 border-b border-white/5 pb-6 md:pb-8">
+        <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-purple-400 mb-2 md:mb-3">
           <strong>Laboratorio Ibero Americano S.A.</strong>
         </p>
         <h1 className="text-2xl md:text-5xl font-black uppercase tracking-tight text-white leading-[1.1] font-brand">
@@ -147,23 +147,20 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen main-gradient flex flex-col selection:bg-purple-300 selection:text-purple-900">
       
-      {/* CONDICIONAL: SI ES LA PÁGINA DE BASES, TRAE EL LOGO LIMPIO SIN MENÚS DE NAVEGACIÓN */}
+      {/* CONDICIONAL: LOGO ACTUALIZADO CLICKABLE SIN MENÚ */}
       {isBasesPage ? (
         <header className="w-full border-b border-white/5 bg-[#0d0a14]/80 backdrop-blur-md sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-5 md:px-6 h-16 md:h-24 flex items-center">
             <a href="/" className="flex items-center gap-2 md:gap-3 transition-opacity hover:opacity-80" style={{ textDecoration: 'none' }}>
               <img 
-                src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ampisulba-newtec-laboratorio-iberoamericano.png" 
+                src="https://laboratorionewtec.com.ar/wp-content/uploads/2026/03/newtec-logo-blanco.png" 
                 alt="Newtec" 
-                className="h-7 md:h-10 w-auto object-contain"
-                style={{ filter: 'brightness(0) invert(1)' }}
+                className="h-6 md:h-8 w-auto object-contain"
               />
-              <span className="font-brand font-black text-base md:text-xl uppercase tracking-wider text-white">NEWTEC</span>
             </a>
           </div>
         </header>
       ) : (
-        /* SI ES LA HOME, RENDERIZA EL HEADER CON MÚNÚ ORIGINAL */
         <Header scrolled={scrolled} />
       )}
       
