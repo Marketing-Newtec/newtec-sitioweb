@@ -70,15 +70,15 @@ const BasesYCondiciones: React.FC = () => {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-              <span>Desayuno incluido.</span>
+              <span>Desayunos incluidos.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-              <span>Cena del viernes y cena del sábado.</span>
+              <span>Almuerzos del sábado y el domingo.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-              <span>Almuerzo del domingo.</span>
+              <span>Cenas del viernes y sábado.</span>
             </li>
           </ul>
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed">
