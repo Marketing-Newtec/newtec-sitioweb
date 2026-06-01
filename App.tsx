@@ -51,7 +51,7 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">04.</span> Mecánica de Participación
           </h2>
-          <p>Para participar, los interesados deberán ingresar al formulario mediante el código QR disponible en el stand u otros medios, o a través del link del mismo, y completarlo correctamente con los datos solicitados.</p>
+          <p>Para participar, los interesados deberán acceder al formulario de registro mediante el escaneo del código QR disponible en el stand y/o piezas comunicacionales, o bien a través del enlace directo provisto a tal fin, completándolo correctamente con la totalidad de los datos solicitados.</p>
         </section>
 
         <section>
