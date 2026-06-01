@@ -44,14 +44,14 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">03.</span> Participantes
           </h2>
-          <p>Podrán participar únicamente personas mayores de 18 años, asistentes al congreso, residentes en la República Argentina y profesionales o trabajadores vinculados al ámbito hospitalario público y/o privado.</p>
+          <p>Podrán participar únicamente personas mayores de 18 años, asistentes o no al congreso, residentes en la República Argentina y profesionales o trabajadores vinculados al ámbito hospitalario público y/o privado.</p>
         </section>
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">04.</span> Mecánica de Participación
           </h2>
-          <p>Para participar, los interesados deberán escanear el código QR disponible en el stand y completar correctamente el formulario con los datos solicitados.</p>
+          <p>Para participar, los interesados deberán escanear el código QR disponible en el stand u otros medios, y completar correctamente el formulario con los datos solicitados.</p>
         </section>
 
         <section>
@@ -82,7 +82,7 @@ const BasesYCondiciones: React.FC = () => {
             </li>
           </ul>
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed">
-            Las fechas disponibles para utilizar el premio serán desde el 15 de junio de 2026 hasta el 30 de noviembre de 2026 inclusive, sujeto a disponibilidad y coordinación con el organizador. El beneficio no podrá utilizarse durante fines de semana largos, feriados ni vacaciones de invierno.
+            Las fechas disponibles para utilizar el premio serán desde el 26 de junio de 2026 hasta el 30 de noviembre de 2026 inclusive, sujeto a disponibilidad y coordinación con el organizador. El beneficio no podrá utilizarse durante fines de semana largos, feriados ni vacaciones de invierno.
           </div>
           <p className="mt-3 text-xs text-purple-400/80 italic">* El premio no incluye traslados hacia la ciudad de Tandil.</p>
           <p className="mt-4">Además, se estarán sorteando agendas institucionales Newtec.</p>
