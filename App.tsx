@@ -37,7 +37,7 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">02.</span> Vigencia
           </h2>
-          <p>La participación en el sorteo será válida desde el día <strong>28 de mayo de 2026</strong> hasta el día <strong>30 de mayo de 2026</strong> inclusive.</p>
+          <p>La participación en el sorteo será válida desde el día <strong>28 de mayo de 2026</strong> hasta el día <strong>24 de junio de 2026</strong> inclusive.</p>
         </section>
 
         <section>
@@ -51,7 +51,7 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">04.</span> Mecánica de Participación
           </h2>
-          <p>Para participar, los interesados deberán escanear el código QR disponible en el stand u otros medios, y completar correctamente el formulario con los datos solicitados.</p>
+          <p>Para participar, los interesados deberán ingresar al formulario mediante el código QR disponible en el stand u otros medios, o a través del link del mismo, y completarlo correctamente con los datos solicitados.</p>
         </section>
 
         <section>
