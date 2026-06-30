@@ -9,30 +9,85 @@ import { HRSection } from './components/HRSection';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 
-// Componente para consumir y renderizar el Blog automatizado desde WordPress
+// Componente para el Blog y Lectura de Entradas con Estilo Visual Integrado
 const BlogSection: React.FC = () => {
   const [posts, setPosts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedPost, setSelectedPost] = useState<any | null>(null);
 
   useEffect(() => {
-    // LLAMADA AUTOMÁTICA A LA REST API DE WORDPRESS CON ELEMENTOS EMBEBIDOS (IMÁGENES)
     fetch('https://laboratorionewtec.com.ar/wp-json/wp/v2/posts?_embed')
       .then(response => response.json())
       .then(data => {
         if (Array.isArray(data)) {
           setPosts(data);
         }
+        
+        // Verificar si la URL viene directamente con la intención de leer un post específico (?page=blog&id=XX)
+        const params = new URLSearchParams(window.location.search);
+        const postId = params.get('id');
+        if (postId && Array.isArray(data)) {
+          const post = data.find(p => p.id === parseInt(postId));
+          if (post) setSelectedPost(post);
+        }
+        
         setLoading(false);
       })
       .catch(error => {
-        console.error("Error absorbiendo los artículos de WordPress:", error);
+        console.error("Error absorbiendo los artículos:", error);
         setLoading(false);
       });
   }, []);
 
+  // Si el usuario seleccionó un artículo, renderizamos la vista de lectura con la estética Newtec
+  if (selectedPost) {
+    const featuredImage = selectedPost._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+
+    return (
+      <div className="max-w-4xl mx-auto w-full py-20 md:py-32 px-6 text-white">
+        {/* Botón Volver con estilo de la marca */}
+        <button 
+          onClick={() => {
+            setSelectedPost(null);
+            window.history.pushState({}, '', '?page=blog');
+          }}
+          className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-purple-400 hover:text-white transition-colors mb-10"
+        >
+          ← Volver al Blog
+        </button>
+
+        <article className="space-y-8">
+          {/* Encabezado del artículo con tipografía brand */}
+          <div className="border-b border-white/10 pb-6">
+            <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-purple-400 mb-3">
+              {new Date(selectedPost.date).toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+            <h1 
+              className="text-2xl md:text-5xl font-black uppercase tracking-tight text-white leading-[1.1] font-brand"
+              dangerouslySetInnerHTML={{ __html: selectedPost.title.rendered }}
+            />
+          </div>
+
+          {/* Imagen destacada estilizada con bordes redondeados de la interfaz */}
+          {featuredImage && (
+            <div className="w-full h-64 md:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-purple-950/20">
+              <img src={featuredImage} alt={selectedPost.title.rendered} className="w-full h-full object-cover" />
+            </div>
+          )}
+
+          {/* Cuerpo del artículo con la misma lectura clara, ligera y espaciada que las bases y condiciones */}
+          <div 
+            className="text-sm md:text-lg text-purple-100/90 font-light leading-relaxed space-y-6 antialiased pt-4 post-body-content"
+            dangerouslySetInnerHTML={{ __html: selectedPost.content.rendered }}
+          />
+        </article>
+      </div>
+    );
+  }
+
+  // Grilla normal del Blog
   return (
     <div className="max-w-7xl mx-auto w-full py-20 md:py-32 px-6 text-white">
-      {/* Encabezado del Blog */}
       <div className="text-center md:text-left mb-16 border-b border-white/5 pb-8">
         <p className="text-xs font-bold uppercase tracking-[0.25em] text-purple-400 mb-3">Novedades y Ciencia</p>
         <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white font-brand">
@@ -41,7 +96,6 @@ const BlogSection: React.FC = () => {
       </div>
 
       {loading ? (
-        /* SKELETON ANIMADO DE CARGA PREMIUM */
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[1, 2, 3].map((n) => (
             <div key={n} className="bg-white/5 rounded-2xl h-96 animate-pulse border border-white/5"></div>
@@ -52,10 +106,8 @@ const BlogSection: React.FC = () => {
           <p className="text-lg font-light">No se encontraron artículos publicados actualmente.</p>
         </div>
       ) : (
-        /* GRILLA EFECTIVA DE ENTRADAS */
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {posts.map((post) => {
-            // Extracción segura de la imagen destacada de WordPress
             const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 
               "https://laboratorionewtec.com.ar/wp-content/uploads/2026/03/newtec-logo-blanco.png";
 
@@ -66,17 +118,11 @@ const BlogSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="bg-white/[0.03] backdrop-blur-sm rounded-2xl overflow-hidden border border-white/5 hover:border-purple-500/30 transition-all group flex flex-col h-full"
               >
-                {/* Contenedor de Imagen */}
                 <div className="h-48 overflow-hidden relative bg-purple-950/20">
-                  <img 
-                    src={featuredImage} 
-                    alt={post.title.rendered} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                  <img src={featuredImage} alt={post.title.rendered} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d0a14] to-transparent opacity-60"></div>
                 </div>
 
-                {/* Contenido de la Tarjeta */}
                 <div className="p-6 flex flex-col flex-grow">
                   <p className="text-[10px] uppercase font-bold tracking-widest text-purple-400 mb-2">
                     {new Date(post.date).toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -89,14 +135,18 @@ const BlogSection: React.FC = () => {
                     className="text-sm text-purple-100/70 font-light line-clamp-3 mb-6 flex-grow leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
                   />
-                  <a 
-                    href={post.link} 
-                    target="_top"
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-purple-400 group-hover:text-white transition-colors"
+                  {/* Evento onClick para abrir la nota dentro de React manteniendo el mismo estilo de la web */}
+                  <button 
+                    onClick={() => {
+                      setSelectedPost(post);
+                      window.history.pushState({}, '', `?page=blog&id=${post.id}`);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-purple-400 group-hover:text-white transition-colors text-left"
                   >
                     Leer Artículo 
                     <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                  </a>
+                  </button>
                 </div>
               </motion.article>
             );
@@ -126,30 +176,26 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">01.</span> Organizador
           </h2>
-          <p>El presente sorteo es organizado por <strong>Laboratorio Ibero Americano S.A.</strong></p>
+          <p>El presente sorteo es organized por <strong>Laboratorio Ibero Americano S.A.</strong></p>
         </section>
-
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">02.</span> Vigencia
           </h2>
           <p>La participación en el sorteo será válida desde el día <strong>28 de mayo de 2026</strong> hasta el día <strong>30 de mayo de 2026</strong> inclusive.</p>
         </section>
-
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">03.</span> Participantes
           </h2>
           <p>Podrán participar únicamente personas mayores de 18 años, asistentes al congreso, residentes en la República Argentina y profesionales o trabajadores vinculados al ámbito hospitalario público y/o privado.</p>
         </section>
-
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">04.</span> Mecánica de Participación
           </h2>
           <p>Para participar, los interesados deberán escanear el código QR disponible en el stand y completar correctamente el formulario con los datos solicitados.</p>
         </section>
-
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">05.</span> Premios
@@ -183,14 +229,12 @@ const BasesYCondiciones: React.FC = () => {
           <p className="mt-3 text-xs text-purple-400/80 italic">* El premio no incluye traslados hacia la ciudad de Tandil.</p>
           <p className="mt-4">Además, se estarán sorteando agendas institucionales Newtec.</p>
         </section>
-
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">06.</span> Selección de Ganadores
           </h2>
           <p>Los ganadores serán seleccionados de manera aleatoria mediante un sorteo automatizado que se realizará el día <strong>25 de junio de 2026</strong>.</p>
         </section>
-
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">07.</span> Notificación a los Ganadores
@@ -198,14 +242,12 @@ const BasesYCondiciones: React.FC = () => {
           <p>Los ganadores serán contactados vía correo electrónico y/o WhatsApp utilizando los datos proporcionados en el formulario de participación.</p>
           <p className="mt-2">Los ganadores tendrán un plazo de <strong>siete (7) días corridos</strong> para responder y confirmar la aceptación. En caso de no obtener respuesta dentro de dicho plazo, el premio quedará vacante y se procederá a realizar un nuevo sorteo.</p>
         </section>
-
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">08.</span> Aclaraciones
           </h2>
           <p>El premio es personal, no es transferible bajo ningún concepto ni canjeable por su equivalente en dinero en efectivo u otros bienes.</p>
         </section>
-
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">09.</span> Política de Privacidad
@@ -230,7 +272,6 @@ const App: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll);
 
-    // Enrutador inteligente para parámetros ?page=bases o ?page=blog
     const params = new URLSearchParams(window.location.search);
     const page = params.get('page');
     if (page === 'bases') {
@@ -247,7 +288,6 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen main-gradient flex flex-col selection:bg-purple-300 selection:text-purple-900">
       
-      {/* HEADER CONDICIONAL SEGÚN LA PÁGINA */}
       {currentPage === 'bases' ? (
         <header className="w-full border-b border-white/5 bg-[#7d55c7] sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-5 md:px-6 h-16 md:h-24 flex items-center">
@@ -261,7 +301,6 @@ const App: React.FC = () => {
           </div>
         </header>
       ) : (
-        /* LA HOME Y EL BLOG COMPARTEN EL NAV GENERAL CON ENLACE AUTOMÁTICO */
         <Header scrolled={scrolled} />
       )}
       
