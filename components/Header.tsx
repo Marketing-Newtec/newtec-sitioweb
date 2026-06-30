@@ -8,19 +8,20 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // SE INTEGRA EL BLOG EN EL MENÚ APUNTANDO A LA RUTA CONDICIONAL
   const menuItems = [
-    { name: 'Inicio', href: '#' },
-    { name: 'Nosotros', href: '#nosotros' },
-    { name: 'Tecnología', href: '#tecnología' },
-    { name: 'Portafolio', href: '#portafolio' },
-    { name: 'Alianza', href: '#alianza' },
+    { name: 'Inicio', href: '/' },
+    { name: 'Nosotros', href: '/#nosotros' },
+    { name: 'Tecnología', href: '/#tecnología' },
+    { name: 'Portafolio', href: '/#portafolio' },
+    { name: 'Alianza', href: '/#alianza' },
+    { name: 'Blog', href: '/?page=blog' },
   ];
 
   const logoUrl = "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png";
 
   const LanguageSelector = ({ mobile = false }: { mobile?: boolean }) => (
     <div className={`flex items-center gap-4 ${mobile ? 'mt-12 justify-center' : 'ml-8 border-l border-white/20 pl-8'}`}>
-      {/* ESPAÑOL - Enlace real al dominio .ar */}
       <a 
         href="https://laboratorionewtec.com.ar" 
         target="_top"
@@ -36,7 +37,6 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
       
       <span className="text-white/20 font-light select-none">|</span>
       
-      {/* INGLÉS - Enlace real al subdominio de Vercel */}
       <a 
         href="https://en-newtec.vercel.app" 
         target="_top"
@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
     <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${scrolled ? 'py-3 bg-[#411e63] shadow-2xl' : 'py-6 bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="relative z-[120] flex-shrink-0">
-          <a href="#"><img src={logoUrl} alt="Newtec Logo" className={`h-7 md:h-10 w-auto transition-all duration-500 ${scrolled ? 'scale-90' : 'scale-100'}`} /></a>
+          <a href="/"><img src={logoUrl} alt="Newtec Logo" className={`h-7 md:h-10 w-auto transition-all duration-500 ${scrolled ? 'scale-90' : 'scale-100'}`} /></a>
         </motion.div>
         <nav className="hidden md:flex items-center ml-auto">
           <div className="flex items-center gap-10">
