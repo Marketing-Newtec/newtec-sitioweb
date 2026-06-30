@@ -8,20 +8,21 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // SE INTEGRA EL BLOG EN EL MENÚ APUNTANDO A LA RUTA CONDICIONAL
+  // AJUSTE DE RUTAS ABSOLUTAS PARA MANTENER AL USUARIO SIEMPRE EN TU DOMINIO (.com.ar)
   const menuItems = [
-    { name: 'Inicio', href: '/' },
-    { name: 'Nosotros', href: '/#nosotros' },
-    { name: 'Tecnología', href: '/#tecnología' },
-    { name: 'Portafolio', href: '/#portafolio' },
-    { name: 'Alianza', href: '/#alianza' },
-    { name: 'Blog', href: '/?page=blog' },
+    { name: 'Inicio', href: 'https://laboratorionewtec.com.ar/' },
+    { name: 'Nosotros', href: 'https://laboratorionewtec.com.ar/#nosotros' },
+    { name: 'Tecnología', href: 'https://laboratorionewtec.com.ar/#tecnología' },
+    { name: 'Portafolio', href: 'https://laboratorionewtec.com.ar/#portafolio' },
+    { name: 'Alianza', href: 'https://laboratorionewtec.com.ar/#alianza' },
+    { name: 'Blog', href: 'https://laboratorionewtec.com.ar/blog/' },
   ];
 
   const logoUrl = "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/newtec-logo-blanco.png";
 
   const LanguageSelector = ({ mobile = false }: { mobile?: boolean }) => (
     <div className={`flex items-center gap-4 ${mobile ? 'mt-12 justify-center' : 'ml-8 border-l border-white/20 pl-8'}`}>
+      {/* ESPAÑOL - Enlace real al dominio .ar */}
       <a 
         href="https://laboratorionewtec.com.ar" 
         target="_top"
@@ -37,6 +38,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
       
       <span className="text-white/20 font-light select-none">|</span>
       
+      {/* INGLÉS - Enlace real al subdominio de Vercel */}
       <a 
         href="https://en-newtec.vercel.app" 
         target="_top"
@@ -56,12 +58,21 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
     <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${scrolled ? 'py-3 bg-[#411e63] shadow-2xl' : 'py-6 bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="relative z-[120] flex-shrink-0">
-          <a href="/"><img src={logoUrl} alt="Newtec Logo" className={`h-7 md:h-10 w-auto transition-all duration-500 ${scrolled ? 'scale-90' : 'scale-100'}`} /></a>
+          <a href="https://laboratorionewtec.com.ar/" target="_top">
+            <img src={logoUrl} alt="Newtec Logo" className={`h-7 md:h-10 w-auto transition-all duration-500 ${scrolled ? 'scale-90' : 'scale-100'}`} />
+          </a>
         </motion.div>
+        
+        {/* MENÚ DE ESCRITORIO (DESKTOP) */}
         <nav className="hidden md:flex items-center ml-auto">
           <div className="flex items-center gap-10">
             {menuItems.map((item) => (
-              <a key={item.name} href={item.href} className="text-[11px] font-black uppercase tracking-[0.22em] text-white/70 hover:text-white transition-all relative group">
+              <a 
+                key={item.name} 
+                href={item.href} 
+                target="_top" 
+                className="text-[11px] font-black uppercase tracking-[0.22em] text-white/70 hover:text-white transition-all relative group"
+              >
                 {item.name}
                 <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-purple-400 transition-all group-hover:w-full"></span>
               </a>
@@ -69,6 +80,8 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           </div>
           <LanguageSelector />
         </nav>
+
+        {/* BOTÓN MENÚ MÓVIL */}
         <div className="flex md:hidden items-center relative z-[120]">
           <button className="text-white p-2 outline-none" onClick={() => setIsOpen(!isOpen)}>
             <div className="w-6 h-5 flex flex-col justify-between items-end">
@@ -78,12 +91,23 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             </div>
           </button>
         </div>
+
+        {/* MENÚ DESPLEGABLE MÓVIL */}
         <AnimatePresence>
           {isOpen && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-[#411e63] z-[110] flex flex-col items-center justify-center overflow-hidden">
               <nav className="flex flex-col gap-8 text-center relative z-[115]">
                 {menuItems.map((item, i) => (
-                  <motion.a key={item.name} href={item.href} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} onClick={() => setIsOpen(false)} className="text-3xl font-black uppercase tracking-widest text-white active:text-purple-300">
+                  <motion.a 
+                    key={item.name} 
+                    href={item.href} 
+                    target="_top" 
+                    initial={{ opacity: 0, y: 20 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    transition={{ delay: i * 0.1 }} 
+                    onClick={() => setIsOpen(false)} 
+                    className="text-3xl font-black uppercase tracking-widest text-white active:text-purple-300"
+                  >
                     {item.name}
                   </motion.a>
                 ))}
