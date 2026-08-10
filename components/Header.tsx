@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface HeaderProps {
@@ -7,14 +7,22 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHome, setIsHome] = useState(true);
 
-  // AJUSTE DE RUTAS ABSOLUTAS PARA MANTENER AL USUARIO SIEMPRE EN TU DOMINIO (.com.ar)
+  useEffect(() => {
+    // Detecta si la URL actual es la Home o una página interna como ?page=blog
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get('page');
+    setIsHome(!page || page === 'home');
+  }, []);
+
+  // Construcción dinámica de URLs según el contexto de navegación
   const menuItems = [
-    { name: 'Inicio', href: 'https://laboratorionewtec.com.ar/' },
-    { name: 'Nosotros', href: 'https://laboratorionewtec.com.ar/#nosotros' },
-    { name: 'Tecnología', href: 'https://laboratorionewtec.com.ar/#tecnología' },
-    { name: 'Portafolio', href: 'https://laboratorionewtec.com.ar/#portafolio' },
-    { name: 'Alianza', href: 'https://laboratorionewtec.com.ar/#alianza' },
+    { name: 'Inicio', href: isHome ? '#' : 'https://laboratorionewtec.com.ar/' },
+    { name: 'Nosotros', href: isHome ? '#nosotros' : 'https://laboratorionewtec.com.ar/#nosotros' },
+    { name: 'Tecnología', href: isHome ? '#tecnología' : 'https://laboratorionewtec.com.ar/#tecnología' },
+    { name: 'Portafolio', href: isHome ? '#portafolio' : 'https://laboratorionewtec.com.ar/#portafolio' },
+    { name: 'Alianza', href: isHome ? '#alianza' : 'https://laboratorionewtec.com.ar/#alianza' },
     { name: 'Blog', href: 'https://laboratorionewtec.com.ar/blog/' },
   ];
 
@@ -22,7 +30,6 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
 
   const LanguageSelector = ({ mobile = false }: { mobile?: boolean }) => (
     <div className={`flex items-center gap-4 ${mobile ? 'mt-12 justify-center' : 'ml-8 border-l border-white/20 pl-8'}`}>
-      {/* ESPAÑOL - Enlace real al dominio .ar */}
       <a 
         href="https://laboratorionewtec.com.ar" 
         target="_top"
@@ -38,7 +45,6 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
       
       <span className="text-white/20 font-light select-none">|</span>
       
-      {/* INGLÉS - Enlace real al subdominio de Vercel */}
       <a 
         href="https://en-newtec.vercel.app" 
         target="_top"
@@ -70,7 +76,8 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
               <a 
                 key={item.name} 
                 href={item.href} 
-                target="_top" 
+                /* Solo aplica target="_top" para el Blog o links externos desde el Home */
+                target={!isHome || item.name === 'Blog' ? '_top' : undefined} 
                 className="text-[11px] font-black uppercase tracking-[0.22em] text-white/70 hover:text-white transition-all relative group"
               >
                 {item.name}
@@ -101,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
                   <motion.a 
                     key={item.name} 
                     href={item.href} 
-                    target="_top" 
+                    target={!isHome || item.name === 'Blog' ? '_top' : undefined} 
                     initial={{ opacity: 0, y: 20 }} 
                     animate={{ opacity: 1, y: 0 }} 
                     transition={{ delay: i * 0.1 }} 
