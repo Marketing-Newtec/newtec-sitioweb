@@ -17,8 +17,9 @@ export const ProductSection: React.FC = () => {
     { id: 5, name: "Ceftazidima Newtec", line: "Antibiótico Betalactámico", type: "Ceftazidima como pentahidrato 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ceftazidima.png" },
     { id: 6, name: "Cefalotina Newtec", line: "Antibiótico Betalactámico", type: "Cefatolina como sal sódica 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/cefalotina.png" },
     { id: 7, name: "Pipertazo Newtec", line: "Antibiótico Betalactámico", type: "Piperacilina 4 g + Tazobactam 500 mg", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/05/pipertazo.png" },
-    { id: 8, name: "Bolsa de sangre | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Recolección de sangre y componentes sanguíneos. Cinco modelos disponibles", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-de-sangre-newtec.png", hasLogos: true },
-    { id: 9, name: "Bolsa de transferencia | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Almacenamiento de glóbulos rojos (300/600 ml) y plaquetas (300 ml)", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-transferencia-newtec.png", hasLogos: true }
+    { id: 8, name: "Imi + Cilastatina Newtec", line: "Antibiótico Betalactámico", type: "Imipenem 500 mg + Cilastatina 500 mg", icon: "https://laboratorionewtec.com.ar/wp-content/uploads/2026/08/Imipenem-A-5.png" },
+    { id: 9, name: "Bolsa de sangre | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Recolección de sangre y componentes sanguíneos. Cinco modelos disponibles", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-de-sangre-newtec.png", hasLogos: true },
+    { id: 10, name: "Bolsa de transferencia | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Almacenamiento de glóbulos rojos (300/600 ml) y plaquetas (300 ml)", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-transferencia-newtec.png", hasLogos: true }
   ];
 
   useEffect(() => {
@@ -110,7 +111,6 @@ export const ProductSection: React.FC = () => {
                   
                   <h3 className="text-xl md:text-2xl font-brand font-black mb-2 uppercase leading-tight">{activeProduct.name.split('|')[0]}</h3>
                   
-                  {/* Logos de marcas para Hemoterapia: Escalados para Desktop */}
                   {activeProduct.hasLogos && (
                     <div className="flex items-center justify-center gap-6 md:gap-10 mb-6 mt-3 bg-purple-50/70 py-3 px-6 md:px-10 rounded-full">
                       <img src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/TIANHE.png" alt="Tianhe" className="h-4 md:h-7 object-contain opacity-90" />
@@ -122,7 +122,7 @@ export const ProductSection: React.FC = () => {
                   <p className="text-[10px] font-black text-purple-400 mb-6 tracking-widest uppercase">{activeProduct.line}</p>
                   <p className="text-sm md:text-base leading-relaxed text-purple-900/60 font-medium px-2">
                     {activeProduct.type}. {
-                      activeProduct.name === "Pipertazo Newtec"
+                      (activeProduct.name === "Pipertazo Newtec" || activeProduct.name === "Imi + Cilastatina Newtec")
                         ? "Polvo para solución inyectable."
                         : activeProduct.line === "Antibiótico Betalactámico"
                         ? "Polvo estéril de máxima pureza."
