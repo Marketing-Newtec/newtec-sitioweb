@@ -223,74 +223,88 @@ const BasesYCondiciones: React.FC = () => {
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
-            <span className="text-purple-400 font-mono">05.</span> Premio
+            <span className="text-purple-400 font-mono">05.</span> Premios
           </h2>
-          <p className="mb-3">Se sorteará un (1) premio consistente en una <strong>“Experiencia Tandil by Newtec”</strong> para un único ganador, que incluye:</p>
-          <ul className="list-none space-y-2 pl-2 border-l-2 border-purple-500/30 my-4 text-purple-200/90 text-sm md:text-base">
-            <li className="flex items-start gap-2">
-              <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-              <span>Tres (3) noches de estadía para dos (2) personas en la ciudad de Tandil, Provincia de Buenos Aires.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-              <span>Alojamiento en hotel o cabaña de categoría a designar por el Organizador.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-              <span>Desayunos incluidos.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-              <span>Almuerzos correspondientes a los días de estadía.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-              <span>Cenas correspondientes a las noches de estadía.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-              <span>Set exclusivo de productos Newtec.</span>
-            </li>
-          </ul>
+          <p className="mb-4">Se sortearán los siguientes premios entre los participantes:</p>
+          
+          <div className="space-y-6">
+            <div className="bg-white/5 p-5 rounded-2xl border border-purple-500/20">
+              <p className="font-bold text-white text-base mb-2 uppercase tracking-wide">
+                1° Premio: <span className="text-purple-300">“Experiencia Tandil”</span>
+              </p>
+              <ul className="list-none space-y-2 pl-2 border-l-2 border-purple-500/30 text-purple-200/90 text-sm md:text-base">
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                  <span>Tres (3) noches de estadía para dos (2) personas en la ciudad de Tandil, Provincia de Buenos Aires.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                  <span>Alojamiento en hotel o cabaña de categoría a designar por el Organizador.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                  <span>Desayunos incluidos.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                  <span>Almuerzos correspondientes a los días de estadía.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                  <span>Cenas correspondientes a las noches de estadía.</span>
+                </li>
+              </ul>
+            </div>
 
-          <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed space-y-2 my-4">
-            <p className="font-bold text-white uppercase tracking-wider text-xs">Traslados:</p>
+            <div className="bg-white/5 p-5 rounded-2xl border border-purple-500/20">
+              <p className="font-bold text-white text-base mb-2 uppercase tracking-wide">
+                2° Premio: <span className="text-purple-300">Productos Newtec</span>
+              </p>
+              <p className="text-sm md:text-base text-purple-200/90 pl-2 border-l-2 border-purple-500/30">
+                Set exclusivo de productos Newtec.
+              </p>
+            </div>
+          </div>
+
+          {/* Caja contenedor para la política de Traslados */}
+          <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed space-y-2 my-6">
+            <p className="font-bold text-white uppercase tracking-wider text-xs">Traslados (Experiencia Tandil):</p>
             <p>• Para el ganador cuyo domicilio residencial se encuentre <strong>fuera de la Provincia de Buenos Aires</strong>, el premio <strong>incluye los traslados</strong> ida y vuelta hacia la ciudad de Tandil (en el medio de transporte que el Organizador determine).</p>
             <p>• En caso de que el ganador sea residente dentro de la Provincia de Buenos Aires, el traslado hacia y desde Tandil correrá por su exclusiva cuenta.</p>
           </div>
 
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed">
-            <strong>Período de validez:</strong> El premio podrá ser utilizado a partir de la fecha a coordinar posterior al sorteo y hasta el <strong>XXXX</strong> inclusive, sujeto a disponibilidad y previa coordinación con el Organizador. Quedan expresamente excluidos los fines de semana largos, feriados y el período de vacaciones de invierno.
+            <strong>Período de validez:</strong> El premio de la Experiencia Tandil podrá ser utilizado a partir de la fecha a coordinar posterior al sorteo y hasta el <strong>XXXX</strong> inclusive, sujeto a disponibilidad y previa coordinación con el Organizador. Quedan expresamente excluidos los fines de semana largos, feriados y el período de vacaciones de invierno.
           </div>
         </section>
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
-            <span className="text-purple-400 font-mono">06.</span> Selección del Ganador
+            <span className="text-purple-400 font-mono">06.</span> Selección de Ganadores
           </h2>
-          <p>Habrá <strong>un único ganador</strong>, el cual será seleccionado de forma aleatoria mediante un sorteo digital automatizado que se realizará el día <strong>XXXX</strong>.</p>
+          <p>Los ganadores serán seleccionados de forma aleatoria mediante un sorteo digital automatizado que se realizará el día <strong>XXXX</strong>.</p>
         </section>
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">07.</span> Notificación y Adjudicación
           </h2>
-          <p>El ganador será contactado vía correo electrónico y/o WhatsApp, utilizando los datos de contacto proporcionados en el formulario.</p>
-          <p className="mt-2">El ganador tendrá un plazo improrrogable de <strong>siete (7) días corridos</strong> desde la notificación para responder y confirmar la aceptación del premio. Transcurrido dicho plazo sin obtener respuesta, el premio se considerará asignado al correspondiente suplente y el ganador original perderá todo derecho a reclamo.</p>
+          <p>Los ganadores serán contactados vía correo electrónico y/o WhatsApp, utilizando los datos de contacto proporcionados en el formulario.</p>
+          <p className="mt-2">Cada ganador tendrá un plazo improrrogable de <strong>siete (7) días corridos</strong> desde la notificación para responder y confirmar la aceptación de su premio. Transcurrido dicho plazo sin obtener respuesta, el premio se considerará asignado al correspondiente suplente y el ganador original perderá todo derecho a reclamo.</p>
         </section>
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">08.</span> Limitaciones
           </h2>
-          <p>El premio es personal e intransferible. Bajo ninguna circunstancia podrá ser canjeado por su equivalente en dinero en efectivo, servicios ni por otros bienes.</p>
+          <p>Los premios son personales e intransferibles. Bajo ninguna circunstancia podrán ser canjeados por su equivalente en dinero en efectivo, servicios ni por otros bienes.</p>
         </section>
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">09.</span> Privacidad y Datos Personales
           </h2>
-          <p>Los datos recopilados serán tratados conforme a la Ley de Protección de Datos Personales N° 25.326. Serán utilizados para la gestión del presente sorteo y para el envío de información institucional, comercial y/o promocional relacionada con Newtec y <strong>Laboratorio Ibero Americano S.A.</strong></p>
+          <p>Los datos recopilados serán tratados conforme a la Ley de Protección de Datos Personales N° 25.326. Serán utilizados para la gestión del presente sorteo y para el envío de información institucional, comercial y/o promocional relacionada con <strong>Newtec, Distribuidora Gamma y Max Continental</strong>.</p>
           
           <p className="mt-6 border-t border-white/5 pt-6 text-[10px] md:text-xs text-purple-400/60 font-medium uppercase tracking-wider">
             La participación en este sorteo implica el conocimiento y la total aceptación de las presentes Bases y Condiciones.
