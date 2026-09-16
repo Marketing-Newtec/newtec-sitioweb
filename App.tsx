@@ -75,7 +75,7 @@ const BlogSection: React.FC = () => {
             </div>
           )}
 
-          {/* Cuerpo del artículo con la misma lectura clara, ligera y espaciada que las bases y condiciones */}
+          {/* Cuerpo del artículo */}
           <div 
             className="text-sm md:text-lg text-purple-100/90 font-light leading-relaxed space-y-6 antialiased pt-4 post-body-content"
             dangerouslySetInnerHTML={{ __html: selectedPost.content.rendered }}
@@ -135,7 +135,6 @@ const BlogSection: React.FC = () => {
                     className="text-sm text-purple-100/70 font-light line-clamp-3 mb-6 flex-grow leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
                   />
-                  {/* Evento onClick para abrir la nota dentro de React manteniendo el mismo estilo de la web */}
                   <button 
                     onClick={() => {
                       setSelectedPost(post);
@@ -157,13 +156,35 @@ const BlogSection: React.FC = () => {
   );
 };
 
-// Componente de las Bases del Sorteo
+// Componente de las Bases del Sorteo con actualización de marcas y premio
 const BasesYCondiciones: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto w-full py-10 md:py-28 px-5 md:px-6 text-purple-100/90 font-light leading-relaxed">
-      <div className="text-center md:text-left mb-8 md:mb-16 border-b border-white/5 pb-6 md:pb-8">
+      
+      {/* ENCABEZADO CON LOGOS INSTITUCIONALES DE LAS 3 EMPRESAS */}
+      <div className="text-center md:text-left mb-8 md:mb-16 border-b border-white/5 pb-8 md:pb-12">
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 md:gap-10 mb-8 bg-white/5 p-4 md:p-6 rounded-2xl border border-white/5">
+          <img 
+            src="https://laboratorionewtec.com.ar/wp-content/uploads/2026/03/newtec-logo-blanco.png" 
+            alt="Newtec" 
+            className="h-6 md:h-9 w-auto object-contain"
+          />
+          <div className="hidden sm:block w-[1px] h-6 bg-white/20" />
+          <img 
+            src="https://laboratorionewtec.com.ar/wp-content/uploads/2026/09/logo-gamma-3-scaled.png" 
+            alt="Gamma" 
+            className="h-6 md:h-9 w-auto object-contain"
+          />
+          <div className="hidden sm:block w-[1px] h-6 bg-white/20" />
+          <img 
+            src="https://laboratorionewtec.com.ar/wp-content/uploads/2026/09/logo-max-transp-blanco.png" 
+            alt="Max" 
+            className="h-6 md:h-9 w-auto object-contain"
+          />
+        </div>
+
         <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-purple-400 mb-2 md:mb-3">
-          <strong>Laboratorio Ibero Americano S.A.</strong>
+          <strong>Laboratorio Ibero Americano S.A. - Piloña S.A. - Max Continental S.A.</strong>
         </p>
         <h1 className="text-2xl md:text-5xl font-black uppercase tracking-tight text-white leading-[1.1] font-brand">
           Bases y Condiciones <br className="hidden md:block" />
@@ -176,21 +197,21 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">01.</span> Organizador
           </h2>
-          <p>El presente sorteo es organizado por <strong>Laboratorio Ibero Americano S.A.</strong> (en adelante, el "Organizador").</p>
+          <p>El presente sorteo es organizado por <strong>Laboratorio Ibero Americano S.A., Piloña S.A. y Max Continental S.A.</strong> (en adelante, el "Organizador").</p>
         </section>
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">02.</span> Vigencia
           </h2>
-          <p>La participación en el sorteo comenzará el <strong>28 de mayo de 2026</strong> y finalizará el <strong>24 de junio de 2026</strong> inclusive.</p>
+          <p>La participación en el sorteo comenzará el <strong>XXXX</strong> y finalizará el <strong>XXXX</strong> inclusive.</p>
         </section>
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">03.</span> Participantes
           </h2>
-          <p>Podrán participar personas mayores de 18 años, asistentes o no al congreso, que residan en la República Argentina y se desempeñen como profesionales o trabajadores vinculados al ámbito hospitalario público y/o privado.</p>
+          <p>Podrán participar personas mayores de 18 años, asistentes o no al evento, que residan en la República Argentina y se desempeñen como profesionales o trabajadores vinculados al ámbito hospitalario público y/o privado.</p>
         </section>
 
         <section>
@@ -202,9 +223,9 @@ const BasesYCondiciones: React.FC = () => {
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
-            <span className="text-purple-400 font-mono">05.</span> Premios
+            <span className="text-purple-400 font-mono">05.</span> Premio
           </h2>
-          <p className="mb-3">Se sorteará una <strong>“Experiencia Tandil by Newtec”</strong>, que incluye:</p>
+          <p className="mb-3">Se sorteará un (1) premio consistente en una <strong>“Experiencia Tandil by Newtec”</strong> para un único ganador, que incluye:</p>
           <ul className="list-none space-y-2 pl-2 border-l-2 border-purple-500/30 my-4 text-purple-200/90 text-sm md:text-base">
             <li className="flex items-start gap-2">
               <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
@@ -226,40 +247,43 @@ const BasesYCondiciones: React.FC = () => {
               <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
               <span>Cenas correspondientes a las noches de estadía.</span>
             </li>
+            <li className="flex items-start gap-2">
+              <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              <span>Set exclusivo de productos Newtec.</span>
+            </li>
           </ul>
 
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed space-y-2 my-4">
             <p className="font-bold text-white uppercase tracking-wider text-xs">Traslados:</p>
-            <p>• Para ganadores cuyo domicilio residencial se encuentre <strong>fuera de la Provincia de Buenos Aires</strong>, el premio <strong>incluye los traslados</strong> ida y vuelta hacia la ciudad de Tandil (en el medio de transporte que el Organizador determine).</p>
-            <p>• Para ganadores residentes dentro de la Provincia de Buenos Aires, el traslado hacia y desde Tandil correrá por su exclusiva cuenta.</p>
+            <p>• Para el ganador cuyo domicilio residencial se encuentre <strong>fuera de la Provincia de Buenos Aires</strong>, el premio <strong>incluye los traslados</strong> ida y vuelta hacia la ciudad de Tandil (en el medio de transporte que el Organizador determine).</p>
+            <p>• En caso de que el ganador sea residente dentro de la Provincia de Buenos Aires, el traslado hacia y desde Tandil correrá por su exclusiva cuenta.</p>
           </div>
 
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed">
-            <strong>Período de validez:</strong> El premio podrá ser utilizado desde el 26 de junio de 2026 hasta el 30 de noviembre de 2026 inclusive, sujeto a disponibilidad y previa coordinación con el Organizador. Quedan expresamente excluidos los fines de semana largos, feriados y el período de vacaciones de invierno.
+            <strong>Período de validez:</strong> El premio podrá ser utilizado a partir de la fecha a coordinar posterior al sorteo y hasta el <strong>XXXX</strong> inclusive, sujeto a disponibilidad y previa coordinación con el Organizador. Quedan expresamente excluidos los fines de semana largos, feriados y el período de vacaciones de invierno.
           </div>
-          <p className="mt-4">Adicionalmente, se sortearán agendas institucionales Newtec entre los participantes.</p>
         </section>
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
-            <span className="text-purple-400 font-mono">06.</span> Selección de Ganadores
+            <span className="text-purple-400 font-mono">06.</span> Selección del Ganador
           </h2>
-          <p>Los ganadores serán seleccionados de forma aleatoria mediante un sorteo digital automatizado que se realizará el día <strong>25 de junio de 2026</strong>.</p>
+          <p>Habrá <strong>un único ganador</strong>, el cual será seleccionado de forma aleatoria mediante un sorteo digital automatizado que se realizará el día <strong>XXXX</strong>.</p>
         </section>
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">07.</span> Notificación y Adjudicación
           </h2>
-          <p>Los ganadores serán contactados vía correo electrónico y/o WhatsApp utilizando los datos de contacto proporcionados en el formulario.</p>
-          <p className="mt-2">Cada ganador tendrá un plazo improrrogable de <strong>siete (7) días corridos</strong> desde la notificación para responder y confirmar la aceptación del premio. Transcurrido dicho plazo sin obtener respuesta, el premio se considerará asignado al correspondiente suplente y el ganador original perderá todo derecho a reclamo.</p>
+          <p>El ganador será contactado vía correo electrónico y/o WhatsApp, utilizando los datos de contacto proporcionados en el formulario.</p>
+          <p className="mt-2">El ganador tendrá un plazo improrrogable de <strong>siete (7) días corridos</strong> desde la notificación para responder y confirmar la aceptación del premio. Transcurrido dicho plazo sin obtener respuesta, el premio se considerará asignado al correspondiente suplente y el ganador original perderá todo derecho a reclamo.</p>
         </section>
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">08.</span> Limitaciones
           </h2>
-          <p>Los premios son personales e intransferibles. Bajo ninguna circunstancia podrán ser canjeados por su equivalente en dinero en efectivo, servicios ni por otros bienes.</p>
+          <p>El premio es personal e intransferible. Bajo ninguna circunstancia podrá ser canjeado por su equivalente en dinero en efectivo, servicios ni por otros bienes.</p>
         </section>
 
         <section>
@@ -267,6 +291,7 @@ const BasesYCondiciones: React.FC = () => {
             <span className="text-purple-400 font-mono">09.</span> Privacidad y Datos Personales
           </h2>
           <p>Los datos recopilados serán tratados conforme a la Ley de Protección de Datos Personales N° 25.326. Serán utilizados para la gestión del presente sorteo y para el envío de información institucional, comercial y/o promocional relacionada con Newtec y <strong>Laboratorio Ibero Americano S.A.</strong></p>
+          
           <p className="mt-6 border-t border-white/5 pt-6 text-[10px] md:text-xs text-purple-400/60 font-medium uppercase tracking-wider">
             La participación en este sorteo implica el conocimiento y la total aceptación de las presentes Bases y Condiciones.
           </p>
