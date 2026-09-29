@@ -204,7 +204,7 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">02.</span> Vigencia
           </h2>
-          <p>La participación en el sorteo comenzará el <strong>XXXX</strong> y finalizará el <strong>XXXX</strong> inclusive.</p>
+          <p>La participación en el sorteo comenzará el <strong>30/09/2026</strong> y finalizará en una <strong>fecha a definirse próximamente</strong> inclusive.</p>
         </section>
 
         <section>
@@ -282,7 +282,7 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">06.</span> Selección de Ganadores
           </h2>
-          <p>Los ganadores serán seleccionados de forma aleatoria mediante un sorteo digital automatizado <!--que se realizará el día <strong>XXXX</strong>-->.</p>
+          <p>Los ganadores serán seleccionados de forma aleatoria mediante un sorteo digital automatizado {/*que se realizará el día <strong>XXXX</strong>*/}.</p>
         </section>
 
         <section>
