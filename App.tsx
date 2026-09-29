@@ -204,7 +204,7 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">02.</span> Vigencia
           </h2>
-          <p>La participación en el sorteo comenzará el <strong>30/09/2026</strong> y finalizará en una <strong>fecha a definirse próximamente</strong>.</p>
+          <p>La participación en el sorteo comenzará el <strong>30/09/2026</strong> y finalizará en una <strong>fecha a definirse próximamente</strong> por el Organizador.</p>
         </section>
 
         <section>
