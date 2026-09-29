@@ -211,7 +211,7 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">03.</span> Participantes
           </h2>
-          <p>Podrán participar personas mayores de 18 años, asistentes o no al evento, que residan en la República Argentina y se desempeñen como profesionales o trabajadores vinculados al ámbito hospitalario público y/o privado.</p>
+          <p>Podrán participar personas mayores de 18 años, asistentes o no al evento, que residan en la República Argentina y se desempeñen como farmacéuticos/farmacéuticas vinculados al ámbito hospitalario público y/o privado.</p>
         </section>
 
         <section>
@@ -274,7 +274,7 @@ const BasesYCondiciones: React.FC = () => {
           </div>
 
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed">
-            <strong>Período de validez:</strong> El premio de la Experiencia Tandil podrá ser utilizado a partir de la fecha a coordinar posterior al sorteo y hasta el <strong>XXXX</strong> inclusive, sujeto a disponibilidad y previa coordinación con el Organizador. Quedan expresamente excluidos los fines de semana largos, feriados y el período de vacaciones de invierno.
+            <strong>Período de validez:</strong> El premio de la Experiencia Tandil podrá ser utilizado a partir de la fecha a coordinar posterior al sorteo y hasta <strong>(fecha a definir)</strong> inclusive, sujeto a disponibilidad y previa coordinación con el Organizador. Quedan expresamente excluidos los fines de semana largos, feriados y el período de vacaciones de invierno.
           </div>
         </section>
 
@@ -282,7 +282,7 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">06.</span> Selección de Ganadores
           </h2>
-          <p>Los ganadores serán seleccionados de forma aleatoria mediante un sorteo digital automatizado que se realizará el día <strong>XXXX</strong>.</p>
+          <p>Los ganadores serán seleccionados de forma aleatoria mediante un sorteo digital automatizado <!--que se realizará el día <strong>XXXX</strong>-->.</p>
         </section>
 
         <section>
