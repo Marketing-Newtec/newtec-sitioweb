@@ -204,7 +204,7 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">02.</span> Vigencia
           </h2>
-          <p>La participación en el sorteo comenzará el <strong>30/09/2026</strong> y finalizará en una <strong>fecha a definirse próximamente</strong> por el Organizador.</p>
+          <p>La participación en el sorteo comenzará el <strong>30/09/2026</strong> y finalizará el <strong>13/10/2026</strong>.</p>
         </section>
 
         <section>
@@ -274,7 +274,7 @@ const BasesYCondiciones: React.FC = () => {
           </div>
 
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed">
-            <strong>Período de validez:</strong> El premio de la Experiencia Tandil podrá ser utilizado a partir de la fecha a coordinar posterior al sorteo y hasta <strong>una fecha a definir por el Organizador</strong>, inclusive, sujeto a disponibilidad y previa coordinación con el Organizador. Quedan expresamente excluidos los fines de semana largos, feriados y el período de vacaciones de invierno.
+            <strong>Período de validez:</strong> El premio de la Experiencia Tandil podrá ser utilizado posterior a la realización del sorteo y hasta <strong>el 30/11/2026</strong>, inclusive, sujeto a disponibilidad y previa coordinación con el Organizador. Quedan expresamente excluidos los fines de semana largos y feriados.
           </div>
         </section>
 
@@ -282,7 +282,7 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">06.</span> Selección de Ganadores
           </h2>
-          <p>Los ganadores serán seleccionados de forma aleatoria mediante un sorteo digital automatizado {/*que se realizará el día <strong>XXXX</strong>*/}.</p>
+          <p>Los ganadores serán seleccionados de forma aleatoria mediante un sorteo digital automatizado que se realizará el día <strong>13/10/2026</strong>.</p>
         </section>
 
         <section>
