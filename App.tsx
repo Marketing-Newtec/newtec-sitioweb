@@ -5,7 +5,6 @@ import { Features } from './components/Features';
 import { ProductSection } from './components/ProductSection';
 import { OriginSection } from './components/OriginSection';
 import { AboutSection } from './components/AboutSection';
-import { HRSection } from './components/HRSection';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 
@@ -152,6 +151,136 @@ const BlogSection: React.FC = () => {
           })}
         </div>
       )}
+    </div>
+  );
+};
+
+// Componente para la página de Farmacovigilancia
+const FarmacovigilanciaSection: React.FC = () => {
+  return (
+    <div className="max-w-4xl mx-auto w-full py-16 md:py-28 px-5 md:px-6 text-purple-100/90 font-light leading-relaxed">
+      <div className="text-center md:text-left mb-10 md:mb-16 border-b border-white/5 pb-8">
+        <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-purple-400 mb-2 md:mb-3">
+          Seguridad y Calidad de Productos
+        </p>
+        <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white leading-[1.1] font-brand">
+          Farmacovigilancia
+        </h1>
+        <p className="mt-4 text-sm md:text-base text-purple-200/80">
+          Para profesionales de la salud y pacientes por temas de seguridad y calidad de nuestros productos.
+        </p>
+      </div>
+
+      <div className="space-y-8 text-sm md:text-base antialiased">
+        <section className="bg-white/5 p-6 rounded-2xl border border-white/5">
+          <p>
+            <strong>LABORATORIO IBERO AMERICANO S.A.</strong> se encuentra comprometido con la seguridad de los productos que comercializa, realizando el seguimiento permanente a través de su sector de farmacovigilancia.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-lg md:text-xl font-black uppercase tracking-wider text-white mb-3 font-brand flex items-center gap-2">
+            <span className="text-purple-400 font-mono">01.</span> ¿Qué es la Farmacovigilancia?
+          </h2>
+          <p>
+            La Farmacovigilancia es el conjunto de actividades orientadas a la detección, evaluación y comprensión de eventos que pudieran presentarse durante el uso de los medicamentos tras su aprobación por la autoridad sanitaria (Administración Nacional de Medicamentos, Alimentos y Tecnología Médica - ANMAT), con el fin de establecer nueva información de seguridad y prevención. El objetivo de la farmacovigilancia es contribuir al uso seguro y racional de los medicamentos.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-lg md:text-xl font-black uppercase tracking-wider text-white mb-3 font-brand flex items-center gap-2">
+            <span className="text-purple-400 font-mono">02.</span> Reporte de Eventos Adversos
+          </h2>
+          <p>
+            Un evento adverso es un acontecimiento no deseado que puede presentarse tras la administración de un medicamento que puede o no estar relacionado con el mismo. Su reporte contribuye a detectar y minimizar posibles riesgos asociados al uso de los medicamentos.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-lg md:text-xl font-black uppercase tracking-wider text-white mb-3 font-brand flex items-center gap-2">
+            <span className="text-purple-400 font-mono">03.</span> ¿Qué se debe reportar?
+          </h2>
+          <p className="mb-3">
+            Cualquier evento adverso que se presente durante la administración de un medicamento.
+          </p>
+          <div className="bg-purple-950/40 p-4 rounded-xl border border-purple-500/20 text-purple-200 text-xs md:text-sm mb-4">
+            Las consultas relacionadas con condiciones de salud, consultas médicas o prescripción de medicamentos, se deben realizar con el médico tratante.
+          </div>
+          <p className="text-xs text-purple-300">
+            Para más información sobre eventos adversos dirigirse a:{" "}
+            <a 
+              href="https://www.argentina.gob.ar/anmat/regulados/acerca-del-sistema-nacional-de-farmacovigilancia/glosario" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="underline text-purple-400 hover:text-white transition-colors"
+            >
+              Glosario del Sistema Nacional de Farmacovigilancia (ANMAT)
+            </a>
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-lg md:text-xl font-black uppercase tracking-wider text-white mb-3 font-brand flex items-center gap-2">
+            <span className="text-purple-400 font-mono">04.</span> ¿Quién puede reportar?
+          </h2>
+          <p>
+            Cualquier paciente o profesional de la salud que tenga conocimiento de alguna de las situaciones anteriormente mencionadas con alguno de nuestros productos.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-lg md:text-xl font-black uppercase tracking-wider text-white mb-3 font-brand flex items-center gap-2">
+            <span className="text-purple-400 font-mono">05.</span> ¿Cómo reportar?
+          </h2>
+          <p className="mb-4">Usted puede contactarse a través de las siguientes vías:</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="bg-white/5 p-5 rounded-xl border border-white/5">
+              <p className="text-xs uppercase font-bold text-purple-400 mb-2">Teléfonos de Atención</p>
+              <p className="text-white font-medium">+54 9 249 440-01107</p>
+              <p className="text-white font-medium">+54 9 249 461-4377</p>
+              <p className="text-xs text-purple-200/60 mt-2">Lunes a Viernes de 8 a 17 horas</p>
+            </div>
+
+            <div className="bg-white/5 p-5 rounded-xl border border-white/5">
+              <p className="text-xs uppercase font-bold text-purple-400 mb-2">Correo Electrónico</p>
+              <a 
+                href="mailto:farmacovigilancia@laboratorionewtec.com.ar" 
+                className="text-white font-medium underline hover:text-purple-300"
+              >
+                farmacovigilancia@laboratorionewtec.com.ar
+              </a>
+            </div>
+          </div>
+
+          <div className="bg-white/5 p-5 rounded-2xl border border-purple-500/20 text-xs md:text-sm space-y-3">
+            <p className="font-bold text-white uppercase text-xs tracking-wider">
+              Datos requeridos al comunicarse por email:
+            </p>
+            <p className="leading-relaxed">
+              Por favor informar: nombre completo del paciente (o iniciales), edad (o fecha de nacimiento), sexo, medicamento sospechoso, fecha en la que comenzó el tratamiento, breve descripción de síntomas, signos o efectos inesperados observados junto con fecha de inicio de los mismos, y en caso de no ser el paciente quien se comunica, favor de informar nombre completo y relación con el mismo.
+            </p>
+            <p className="text-[11px] text-purple-400/80 italic border-t border-white/5 pt-2">
+              La información proporcionada a través de estos canales de comunicación será de carácter estrictamente confidencial.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-lg md:text-xl font-black uppercase tracking-wider text-white mb-3 font-brand flex items-center gap-2">
+            <span className="text-purple-400 font-mono">06.</span> Planes de Gestión de Riesgo (PGR)
+          </h2>
+          <p className="mb-3">
+            Los Planes de Gestión de Riesgos (PGR) se definen como un conjunto de actividades e intervenciones en farmacovigilancia diseñadas para identificar, caracterizar en forma temprana y prevenir o minimizar los riesgos relacionados con el uso de medicamentos.
+          </p>
+          <p className="mb-3">
+            Los PGR en general son requeridos para los productos nuevos, en cuyo caso se hace necesario realizar un seguimiento adicional durante los primeros años de comercialización o para los productos conocidos que presenten cuestiones de seguridad específicas que requieran monitorización.
+          </p>
+          <p className="text-xs text-purple-300 font-medium">
+            Para verificar si un medicamento de NEWTEC cuenta con un PGR, busque la información brindada para el producto en la sección “PRODUCTOS”.
+          </p>
+        </section>
+      </div>
     </div>
   );
 };
@@ -317,7 +446,7 @@ const BasesYCondiciones: React.FC = () => {
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [currentPage, setCurrentPage] = useState<'home' | 'bases' | 'blog'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'bases' | 'blog' | 'farmacovigilancia'>('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -331,6 +460,8 @@ const App: React.FC = () => {
       setCurrentPage('bases');
     } else if (page === 'blog') {
       setCurrentPage('blog');
+    } else if (page === 'farmacovigilancia') {
+      setCurrentPage('farmacovigilancia');
     } else {
       setCurrentPage('home');
     }
@@ -341,7 +472,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen main-gradient flex flex-col selection:bg-purple-300 selection:text-purple-900">
       
-      {currentPage === 'bases' ? (
+      {currentPage === 'bases' || currentPage === 'farmacovigilancia' ? (
         <header className="w-full border-b border-white/5 bg-[#7d55c7] sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-5 md:px-6 h-16 md:h-24 flex items-center">
             <a href="/" className="flex items-center gap-2 md:gap-3 transition-opacity hover:opacity-80" style={{ textDecoration: 'none' }}>
@@ -368,6 +499,18 @@ const App: React.FC = () => {
               transition={{ duration: 0.4 }}
             >
               <BasesYCondiciones />
+            </motion.div>
+          )}
+
+          {currentPage === 'farmacovigilancia' && (
+            <motion.div
+              key="farmacovigilancia"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4 }}
+            >
+              <FarmacovigilanciaSection />
             </motion.div>
           )}
 
