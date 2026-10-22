@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Columna 2: Nuestro Partner (Logo con +60% de tamaño) */}
+        {/* Columna 2: Nuestro Partner */}
         <div>
           <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Nuestro Partner</h4>
           <a 
@@ -36,17 +36,16 @@ export const Footer: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-block group"
           >
-            {/* Logo: h-[2.3rem] - Escalado un 60% más para mayor legibilidad y peso visual */}
             <motion.img 
               whileHover={{ scale: 1.05 }}
-              src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/logo-gamma-3-scaled.png" 
+              src="https://laboratorionewtec.com.ar/wp-content/uploads/2026/09/logo-gamma-3-scaled.png" 
               alt="Distribuidora Gamma" 
               className="h-[2.3rem] w-auto object-contain opacity-80 group-hover:opacity-100 transition-all drop-shadow-lg"
             />
           </a>
         </div>
 
-        {/* Columna 3: Navegación */}
+        {/* Columna 3: Navegación (Incluye Blog y Farmacovigilancia) */}
         <div>
           <h4 className="font-brand font-black text-xs mb-10 tracking-[0.4em] uppercase opacity-40">Navegación</h4>
           <ul className="space-y-6 text-purple-100/70 text-base font-semibold">
@@ -57,6 +56,16 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
             ))}
+            <li>
+              <a href="?page=blog" className="hover:text-white transition-all hover:translate-x-2 inline-block text-purple-300">
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="?page=farmacovigilancia" className="hover:text-white transition-all hover:translate-x-2 inline-block text-purple-300">
+                Farmacovigilancia
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -72,7 +81,7 @@ export const Footer: React.FC = () => {
                 info@laboratorionewtec.com.ar
               </a>
             </li>
-            <li className="pt-6 text-white/90 font-black tracking-wider text-sm leading-relaxed">
+            <li className="pt-2 text-white/90 font-black tracking-wider text-sm leading-relaxed">
               Tandil, Buenos Aires,<br />
               Argentina
             </li>
