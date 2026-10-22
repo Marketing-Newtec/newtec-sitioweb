@@ -237,7 +237,7 @@ const FarmacovigilanciaSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="bg-white/5 p-5 rounded-xl border border-white/5">
               <p className="text-xs uppercase font-bold text-purple-400 mb-2">Teléfonos de Atención</p>
-              <p className="text-white font-medium">+54 9 249 440-01107</p>
+              <p className="text-white font-medium">+54 9 249 400-01107</p>
               <p className="text-white font-medium">+54 9 249 461-4377</p>
               <p className="text-xs text-purple-200/60 mt-2">Lunes a Viernes de 8 a 17 horas</p>
             </div>
