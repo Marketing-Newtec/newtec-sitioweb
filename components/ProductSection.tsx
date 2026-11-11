@@ -5,7 +5,7 @@ export const ProductSection: React.FC = () => {
   const [index, setIndex] = useState(-1);
   const [hoveredProduct, setHoveredProduct] = useState<any>(null);
   const [isMobile, setIsMobile] = useState(false);
-  
+
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -17,8 +17,9 @@ export const ProductSection: React.FC = () => {
     { id: 5, name: "Ceftazidima Newtec", line: "Antibiótico Betalactámico", type: "Ceftazidima como pentahidrato 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/ceftazidima.png" },
     { id: 6, name: "Cefalotina Newtec", line: "Antibiótico Betalactámico", type: "Cefatolina como sal sódica 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/cefalotina.png" },
     { id: 7, name: "Pipertazo Newtec", line: "Antibiótico Betalactámico", type: "Piperacilina 4 g + Tazobactam 500 mg", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/05/pipertazo.png" },
-    { id: 8, name: "Bolsa de sangre | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Recolección de sangre y componentes sanguíneos. Cinco modelos disponibles", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-de-sangre-newtec.png", hasLogos: true },
-    { id: 9, name: "Bolsa de transferencia | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Almacenamiento de glóbulos rojos (300/600 ml) y plaquetas (300 ml)", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-transferencia-newtec.png", hasLogos: true }
+    { id: 8, name: "Imi + Cilastatina Newtec", line: "Antibiótico Betalactámico", type: "Imipenem 500 mg + Cilastatina 500 mg", icon: "https://laboratorionewtec.com.ar/wp-content/uploads/2026/08/Imipenem-A-5.png" },
+    { id: 9, name: "Bolsa de sangre | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Recolección de sangre y componentes sanguíneos. Cinco modelos disponibles", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-de-sangre-newtec.png", hasLogos: true },
+    { id: 10, name: "Bolsa de transferencia | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Almacenamiento de glóbulos rojos (300/600 ml) y plaquetas (300 ml)", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-transferencia-newtec.png", hasLogos: true
   ];
 
   useEffect(() => {
@@ -50,7 +51,7 @@ export const ProductSection: React.FC = () => {
   return (
     <section id="portafolio" className="py-24 md:py-40 px-6 overflow-hidden bg-white/5 relative">
       <div className="max-w-7xl mx-auto relative z-10">
-        
+
         <motion.div className="text-center mb-16 md:mb-24">
           <h2 className="text-[9vw] md:text-5xl lg:text-7xl font-brand font-black mb-6 md:mb-8 uppercase tracking-tighter leading-[0.9]">
             Los productos insignia <br className="hidden md:block" /> 
@@ -62,7 +63,7 @@ export const ProductSection: React.FC = () => {
         </motion.div>
 
         <div className="flex flex-col lg:grid lg:grid-cols-[1fr,1fr] gap-10 lg:gap-16 items-start">
-          
+
           <div ref={scrollContainerRef} className="w-full overflow-x-auto lg:overflow-visible pb-8 lg:pb-0 scrollbar-hide snap-x">
             <div className="flex lg:flex-col gap-3 lg:gap-4 min-w-max lg:min-w-0 px-[10vw] lg:px-0">
               {products.map((prod, i) => (
@@ -107,9 +108,9 @@ export const ProductSection: React.FC = () => {
                       className={`object-contain drop-shadow-xl transition-transform duration-500 ${activeProduct.line === "Línea para hemoterapia" ? 'scale-[1.35] w-full h-full' : 'scale-100 p-4 w-full h-full'}`} 
                     />
                   </div>
-                  
+
                   <h3 className="text-xl md:text-2xl font-brand font-black mb-2 uppercase leading-tight">{activeProduct.name.split('|')[0]}</h3>
-                  
+
                   {activeProduct.hasLogos && (
                     <div className="flex items-center justify-center gap-6 md:gap-10 mb-6 mt-3 bg-purple-50/70 py-3 px-6 md:px-10 rounded-full">
                       <img src="https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/TIANHE.png" alt="Tianhe" className="h-4 md:h-7 object-contain opacity-90" />
