@@ -18,7 +18,7 @@ export const ProductSection: React.FC = () => {
     { id: 6, name: "Cefalotina Newtec", line: "Antibiótico Betalactámico", type: "Cefatolina como sal sódica 1 g", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/cefalotina.png" },
     { id: 7, name: "Pipertazo Newtec", line: "Antibiótico Betalactámico", type: "Piperacilina 4 g + Tazobactam 500 mg", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/05/pipertazo.png" },
     { id: 8, name: "Bolsa de sangre | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Recolección de sangre y componentes sanguíneos. Cinco modelos disponibles", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-de-sangre-newtec.png", hasLogos: true },
-    { id: 9, name: "Bolsa de transferencia | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Almacenamiento de glóbulos rojos (300/600 ml) y plaquetas (300 ml)", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-transferencia-newtec.png", hasLogos: true
+    { id: 9, name: "Bolsa de transferencia | Tianhe/Hemobag", line: "Línea para hemoterapia", type: "Almacenamiento de glóbulos rojos (300/600 ml) y plaquetas (300 ml)", icon: "https://lavenderblush-snake-373826.hostingersite.com/wp-content/uploads/2026/03/bolsa-transferencia-newtec.png", hasLogos: true }
   ];
 
   useEffect(() => {
