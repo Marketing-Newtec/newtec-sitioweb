@@ -333,14 +333,14 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">02.</span> Vigencia
           </h2>
-          <p>La participación en el sorteo comenzará el <strong>30/09/2026</strong> y finalizará el <strong>13/10/2026</strong>.</p>
+          <p>La participación en el sorteo comenzará el <strong>03/12/2026</strong> y finalizará el <strong>04/12/2026</strong>.</p>
         </section>
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">03.</span> Participantes
           </h2>
-          <p>Podrán participar personas mayores de 18 años, asistentes o no al evento, que residan en la República Argentina y se desempeñen como farmacéuticos/farmacéuticas vinculados al ámbito hospitalario público y/o privado.</p>
+          <p>Podrán participar personas mayores de 18 años, asistentes al evento, que residan en la República Argentina y se desempeñen en puestos laborales vinculados al ámbito hospitalario público y/o privado.</p>
         </section>
 
         <section>
@@ -364,11 +364,11 @@ const BasesYCondiciones: React.FC = () => {
               <ul className="list-none space-y-2 pl-2 border-l-2 border-purple-500/30 text-purple-200/90 text-sm md:text-base">
                 <li className="flex items-start gap-2">
                   <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-                  <span>Tres (3) noches de estadía para dos (2) personas en la ciudad de Tandil, Provincia de Buenos Aires.</span>
+                  <span>Dos (2) noches de estadía para dos (2) personas en la ciudad de Tandil, Provincia de Buenos Aires.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-                  <span>Alojamiento en hotel o cabaña de categoría a designar por el Organizador.</span>
+                  <span>Alojamiento en hotel categoría a designar por el Organizador.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
@@ -376,34 +376,23 @@ const BasesYCondiciones: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-                  <span>Almuerzos correspondientes a los días de estadía.</span>
+                  <span>Un almuerzo.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-400 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-                  <span>Cenas correspondientes a las noches de estadía.</span>
+                  <span>Una cena.</span>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-white/5 p-5 rounded-2xl border border-purple-500/20">
-              <p className="font-bold text-white text-base mb-2 uppercase tracking-wide">
-                2° Premio: <span className="text-purple-300">Productos Newtec</span>
-              </p>
-              <p className="text-sm md:text-base text-purple-200/90 pl-2 border-l-2 border-purple-500/30">
-                Set exclusivo de productos Newtec.
-              </p>
-            </div>
-          </div>
-
           {/* Caja contenedor para la política de Traslados */}
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed space-y-2 my-6">
             <p className="font-bold text-white uppercase tracking-wider text-xs">Traslados (Experiencia Tandil):</p>
-            <p>• Para el ganador cuyo domicilio residencial se encuentre <strong>fuera de la Provincia de Buenos Aires</strong>, el premio <strong>incluye los traslados</strong> ida y vuelta hacia la ciudad de Tandil (en el medio de transporte que el Organizador determine).</p>
             <p>• En caso de que el ganador sea residente dentro de la Provincia de Buenos Aires, el traslado hacia y desde Tandil correrá por su exclusiva cuenta.</p>
           </div>
 
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed">
-            <strong>Período de validez:</strong> El premio de la Experiencia Tandil podrá ser utilizado posterior a la realización del sorteo y hasta <strong>el 30/11/2026</strong>, inclusive, sujeto a disponibilidad y previa coordinación con el Organizador. Quedan expresamente excluidos los fines de semana largos y feriados.
+            <strong>Período de validez:</strong> El premio de la Experiencia Tandil podrá ser utilizado posterior a la realización del sorteo y hasta <strong>el 31/01/2026</strong>, inclusive, sujeto a disponibilidad y previa coordinación con el Organizador. Quedan expresamente excluidos los fines de semana largos y feriados.
           </div>
         </section>
 
@@ -411,15 +400,15 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">06.</span> Selección de Ganadores
           </h2>
-          <p>Los ganadores serán seleccionados de forma aleatoria mediante un sorteo digital automatizado que se realizará el día <strong>13/10/2026</strong>.</p>
+          <p>Los ganadores serán seleccionados de forma aleatoria mediante un sorteo físico presencial que se realizará el día <strong>04/12/2026</strong>. No será requisito la presencia física del participante al momento del sorteo para resultar adjudicatario del premio.</p>
         </section>
 
         <section>
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">07.</span> Notificación y Adjudicación
           </h2>
-          <p>Los ganadores serán contactados vía correo electrónico y/o WhatsApp, utilizando los datos de contacto proporcionados en el formulario.</p>
-          <p className="mt-2">Cada ganador tendrá un plazo improrrogable de <strong>siete (7) días corridos</strong> desde la notificación para responder y confirmar la aceptación de su premio. Transcurrido dicho plazo sin obtener respuesta, el premio se considerará asignado al correspondiente suplente y el ganador original perderá todo derecho a reclamo.</p>
+          <p>En caso de ser necesario, los ganadores serán contactados vía correo electrónico y/o WhatsApp, utilizando los datos de contacto proporcionados en el formulario.</p>
+          <p className="mt-2">Cada ganador tendrá un plazo improrrogable de <strong>siete (7) días corridos</strong> desde la notificación para responder y confirmar la aceptación de su premio. Transcurrido dicho plazo sin obtener respuesta, el ganador original perderá todo derecho a reclamo.</p>
         </section>
 
         <section>
