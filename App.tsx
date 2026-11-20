@@ -384,6 +384,7 @@ const BasesYCondiciones: React.FC = () => {
                 </li>
               </ul>
             </div>
+          </div>
 
           {/* Caja contenedor para la política de Traslados */}
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed space-y-2 my-6">
@@ -392,7 +393,7 @@ const BasesYCondiciones: React.FC = () => {
           </div>
 
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed">
-            <strong>Período de validez:</strong> El premio de la Experiencia Tandil podrá ser utilizado posterior a la realización del sorteo y hasta <strong>el 31/01/2026</strong>, inclusive, sujeto a disponibilidad y previa coordinación con el Organizador. Quedan expresamente excluidos los fines de semana largos y feriados.
+            <strong>Período de validez:</strong> El premio de la Experiencia Tandil podrá ser utilizado posterior a la realización del sorteo y hasta <strong>el 31/01/2027</strong>, inclusive, sujeto a disponibilidad y previa coordinación con el Organizador. Quedan expresamente excluidos los fines de semana largos y feriados.
           </div>
         </section>
 
