@@ -389,7 +389,7 @@ const BasesYCondiciones: React.FC = () => {
           {/* Caja contenedor para la política de Traslados */}
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed space-y-2 my-6">
             <p className="font-bold text-white uppercase tracking-wider text-xs">Traslados (Experiencia Tandil):</p>
-            <p>• En caso de que el ganador sea residente dentro de la Provincia de Buenos Aires, el traslado hacia y desde Tandil correrá por su exclusiva cuenta.</p>
+            <p>En caso de que el ganador sea residente dentro de la Provincia de Buenos Aires, el traslado hacia y desde Tandil correrá por su exclusiva cuenta.</p>
           </div>
 
           <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-purple-200/80 text-xs md:text-sm leading-relaxed">
