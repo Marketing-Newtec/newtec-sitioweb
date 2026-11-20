@@ -359,7 +359,7 @@ const BasesYCondiciones: React.FC = () => {
           <div className="space-y-6">
             <div className="bg-white/5 p-5 rounded-2xl border border-purple-500/20">
               <p className="font-bold text-white text-base mb-2 uppercase tracking-wide">
-                1° Premio: <span className="text-purple-300">“Experiencia Tandil”</span>
+              Premio: <span className="text-purple-300">“Experiencia Tandil”</span>
               </p>
               <ul className="list-none space-y-2 pl-2 border-l-2 border-purple-500/30 text-purple-200/90 text-sm md:text-base">
                 <li className="flex items-start gap-2">
