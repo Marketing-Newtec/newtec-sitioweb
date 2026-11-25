@@ -340,7 +340,7 @@ const BasesYCondiciones: React.FC = () => {
           <h2 className="text-base md:text-lg font-black uppercase tracking-wider text-white mb-2 md:mb-3 font-brand flex items-center gap-2">
             <span className="text-purple-400 font-mono">03.</span> Participantes
           </h2>
-          <p>Podrán participar personas mayores de 18 años, asistentes al evento, que residan en la República Argentina y se desempeñen en puestos laborales vinculados al ámbito hospitalario público y/o privado.</p>
+          <p>Podrán participar personas mayores de 18 años, asistentes al evento, que residan en la República Argentina y se desempeñen como Jefes de Compras en ámbitos hospitalarios, públicos y/o privados.</p>
         </section>
 
         <section>
